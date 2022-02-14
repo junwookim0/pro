@@ -1,0 +1,38 @@
+.text {
+    direction: ltr;
+    letter-spacing: 10px;   
+    word-spacing: 10px;
+    text-decoration: overline underline dashed;   
+
+}
+.text2 {
+
+    text-shadow: 2px 1px lightblue;
+    line-height: 40px;
+    text-indent: 10px;
+}
+
+.font {
+    font-family: fantasy, "바탕";
+}
+.font_h3 {
+    font-family: fantasy, "휴먼둥근헤드라인";
+    font-size: 30px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rowdies:wght@300&display=swap');
+.web_font{
+    font-family: 'Rowdies',cursive;
+    font-size: 40px;
+    font: weight;
+    font-variant: small-caps;
+    font-style: italic;
+}
+    
+
+
+
+
+/* ltr : left to right  왼쪽에서 오른쪽으로 글 작성 
+   rtl ; right to left  오른쪽에서 왼쪽으로 글 작성 
+*/

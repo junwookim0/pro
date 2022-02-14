@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p {background-color: #000000;} <!-- 스타일 태그는 헤드에 넣어서 원하는 위치에 디자인 가능-->
+        table, tr, td {border : 2px solid black;} <!--헤드에 넣어서 전체 효과줘도되고-->
+    </style>
+</head>
+<body>
+     <h1>스타일 태그 확인</h1>
+     <p style=color:blue> 스타일 태그가 적용된 태그입니다 style=color: </p>
+     <p style="color: #000000;"> 스타일태그 </p>
+     <p style="background-color: #000000; border: 2px solid #000000;"> </p>
+     <h2> 링크 </h2>
+     <a href="텍스트 확인.html"> 텍스트 확인으로 넘어갑니다</a> <br>
+     <img src="/img/네이버.png" alt="네이버" title="절대경로를 이용해서 이미지 들고오기"> <br>
+     <img src="/img/다음.png" alt="다음" title="현재경로를 이용한 상대경로"> <br>
+     <a href="http://www.naver.com/">
+        <img src="/img/네이버.png">
+     </a>  <br>
+
+     <a href="http://www.daum.net/" target="_blank">
+        <img src="/img/다음.png" >
+    </a>
+
+    <a href="#up "> 맨위로 올리기</a>
+    <button type="button" onclick="goTop()"> ↑</button> <br>
+
+    <h3>리스트 태그 확인 </h3>
+    <ul style="list-style-type: circle;">
+        <li> 순서가 없는 리스트 1 </li>
+        <li> 순서가 없는 리스트 2 </li>
+        <li> 순서가 없는 리스트 3 </li>
+    </ul>
+    <ol style="list-style-type:lower-latin;">
+        <li> 순서가 있는 리스트 1 </li>
+        <li> 순서가 있는 리스트 2 </li>
+        <li> 순서가 있는 리스트 3 </li>
+    </ol>
+
+    <dl>
+        <dt>정의</dt>
+        <dd>뜻 </dd>
+        <dt> HTML </dt>
+        <dd>(Hypertext Markup Language)은 웹 페이지와 그 내용을 구조화하기 위해 사용하는 코드입니다. </dd>
+    </dl>
+
+    <h3> 테이블 작성</h3>
+    
+    <table border="5">
+    <tr title="row를 작성한다">
+        <td colspan="2">홍길동</td> <!--colspan 열합치기 rowspan 행합치기 -->
+        <td rowspan="2">부산 </td>
+        <td>하나의 셀이 생깁니다</td>
+    </tr>
+    <tr>
+        <td>고길동</td>
+        <td>서울</td>
+        <td>두번째 </td>
+    </tr>
+    
+</table>
+
+
+
+
+
+</body>
+</html>

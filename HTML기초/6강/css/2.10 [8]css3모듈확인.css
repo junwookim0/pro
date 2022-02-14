@@ -1,0 +1,62 @@
+/*
+body {
+    background: red;
+    background: -webkit-linear-gradient( #ffa7a3,#5673bd);
+    background: linear-gradient( to left, #ffa7a3,#5673bd );
+} */
+
+
+.color {
+    background: red;
+    background: -webkit-linear-gradient( #ffa7a3,#5673bd);
+    background: linear-gradient(to left, #ffa7a3,#5673bd );
+    width: 300px;
+    height: 300px;
+}
+.color_css3{
+    width: 300px;
+    height: 300px;
+    background: rgba(105, 170, 231, 0.5);
+}
+.color_gradient_dgre {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(180deg,green,yellow);
+}
+.color_gradient_circle {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(closest-corner,#ffa7a3,#5673bd);
+    box-shadow: 1px 1px 3px black;
+}
+.background_image{
+    background-image: url("https://pixabay.com/get/g5406bba9dab2189681ee96e748a16b29a3be619c3c83846878b81c0709bcb26952730291b3b56953ff5520f3dfa0539219e7adc87d7d443ed53a5ebfd2829020eabc8a1f23df6f266bc4705fe81e491c_640.jpg");
+    width: 600px;
+    height: 600px;   /*  출력될 사이즈만 적용 */ 
+    background-size: 600px 600px;   /* 실제 그림 비율   */
+    padding: 100px;
+    border: 10px solid black;
+    background-origin: content-box;
+}
+.border_image{
+    width: 300px;
+    height: 200px;
+    border: solid  20px transparent; /*선언순서중요 아니면 표시안됨*/
+    border-image: url(../img/cl.png) 33;
+    
+}
+.text_overflow{
+    width: 350px;
+    height: 1em;
+    white-space: nowrap;
+    border: 1px solid black;
+    text-overflow: ellipsis;
+    overflow: hidden; /*지정범위를 넘어가는 텍스트는 표시안됨*/
+}
+
+.word_wrap {
+    border: 2px solid black;
+    width: 130px;
+    word-wrap: break-word;
+
+}

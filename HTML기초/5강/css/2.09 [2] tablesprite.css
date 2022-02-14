@@ -1,0 +1,34 @@
+table {
+    border: solid 3px black;
+    border-collapse: separate;
+    text-align: center;    
+    background-color: blanchedalmond;
+    border-spacing: 10px;
+    empty-cells: hide; /* border-collapse : separate 일때만 적용 */
+}
+
+td {
+    border: dashed 1px gray;
+}
+.up , .down , .right , .left{
+    background-image: url("../img/img1.png");
+    width: 59px;
+    height: 62px;
+}
+
+.up{
+    background-position: 0 0 ;
+
+}
+.down{
+    background-position: -89pt 0 ;
+
+}
+.right{
+    background-position: -134pt 0 ;
+
+}
+.left{
+    background-position: -179pt 0;
+
+}

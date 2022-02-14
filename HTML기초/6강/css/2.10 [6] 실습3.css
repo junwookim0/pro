@@ -1,0 +1,47 @@
+div {
+    border: 3px solid red;
+}
+
+ul {
+    list-style-type: none; 
+}
+.link:link ,:visited {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+[title |= "red"] {
+    
+    font-weight: bold;
+    background-color: aqua;
+}
+[title |= "blue"]{
+    
+    font-weight: bold;
+
+}
+[title |= "yellow"]{
+
+    font-weight: bold;
+}
+
+p {
+    float: right;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+
+}
+
+/*div로 지정안해주고 각가에 안에서 줄수있다*/
+
+.hash > ul >li {
+    float: right;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+}

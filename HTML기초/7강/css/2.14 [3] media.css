@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(103, 194, 255);
+    /*important css 뒤에 선언되는게 덮어쓰기 되지만 
+    importantT 쓰면 고정값이됨*/
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+}
+.item {
+    display: inline-block;
+    padding: 30px;
+    border: 2px solid yellow;
+    background-color: beige;
+
+}
+@media screen  and (min-width: 700px){
+    body {
+        background-color: rgb(193, 152, 240);
+        content: " 480px보다 크다 ";
+    }
+}
