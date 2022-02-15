@@ -1,0 +1,51 @@
+div {
+    background-color: rgb(255, 185, 119);
+    display: inline-block; /*블록 한줄 개념 인라인은 같은줄판정*/
+    padding: 20px;   /*패딩값은 인란인 속성이라도 적용됨*/
+    width: 200px;
+}
+
+a {
+    width: 200px;
+    
+    background-color: darkgray;
+}
+
+p {
+    background-color: rgb(208, 133, 252);
+    margin: 0%;
+}
+.hidden{
+    visibility: hidden;
+
+}
+.none{
+    display: none;
+}
+.opacity{
+    filter: opacity(40%);
+    /* 일부브라우저에서 성능 향상을 위해 하드웨어가속사용 */
+}
+
+.static{
+    position:static;
+}
+.relative{
+    position: relative;
+    left: 50px;
+}
+.fix{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1; /*우선순위1 화면 제일 위로  */
+}
+.absoulute{
+    position: absolute;
+    right: 0;
+    top: 200px;
+}
+.clear {
+    background-color: white;
+    width: auto;
+}

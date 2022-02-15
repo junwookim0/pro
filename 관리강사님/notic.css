@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+}
+
+header {
+    background-color: darkblue;
+    padding: 30px;
+}
+header h1 {
+    text-align: center;
+    color: white;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+
+li a:hover{
+    color: white;
+    text-shadow: 1px 1px 3px darkblue;
+}
+
+.notic_left {
+    width: 300px;
+    float: left;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+.baner{
+    width: 300px;
+    height: 200px;
+    background-color: grey;
+    margin-top: 20px;
+}
+.notice_right, .notic_new{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    margin-left: 350px;
+    margin-bottom: 10px;
+}
+
+.notic_title{
+    border-bottom: dashed 2px gray;
+}
+.notic_new_body .after::after{
+    content: 'N';
+    background-color: darkblue;
+    color: white;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}
+
+section {
+    width: 100%;
+    padding: 10px;
+    
+}
+
+footer {
+    clear: both;
+    background-color: gray;
+    padding: 10px;
+}
+footer > p {
+    text-align: center;
+}

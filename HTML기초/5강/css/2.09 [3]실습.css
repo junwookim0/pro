@@ -1,0 +1,52 @@
+.font {
+    font-family: fantasy;
+    font-size: 30px;
+}
+
+ul {
+    list-style-type: circle;
+    background-color: #ffe4c4;
+    border: 2px solid olive;
+    width: 50%;
+}
+
+.link:link , :visited { 
+    color: black;
+    font-weight: bold; /*글씨 두껍게*/
+    text-decoration: none; /* 링크 밑줄 사라짐*/
+}
+
+.link:hover {
+    font-style: italic;
+    text-shadow: 1px 2px 2px;
+    color: black;
+}
+
+span {
+    font-family: 궁서체;
+    color: green;
+    text-decoration: underline wavy 2px red;
+}
+
+h1 {
+    text-align: center;
+}
+table {
+    margin: auto;
+    background-color: rgb(235, 235, 178);
+    border-collapse: collapse; /*셀병합*/
+    border-radius: 12px;  /*css 가장가까운스타일을 최우선적용*/
+    
+}
+
+.tr1 {
+    background-color: orange;
+    border-bottom: 1px solid red;
+}
+td{
+    padding:  10px 20px;
+}
+
+
+
+

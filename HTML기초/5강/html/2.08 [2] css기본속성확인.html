@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/2.09 [1] linklist.css">   
+    <link rel="stylesheet" href="../css/2.08[2] textfont.css">   
+    <link rel="stylesheet" href="../css/2.08[1] backgroundcolor.css">
+    <link rel="stylesheet" href="../css/2.09 [2] tablesprite.css">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   
+   
+</head>
+
+<body class="background_image">
+
+    <h1>css 기본 속성 확인</h1>
+    <p class="color_name">색이름으로 색 넣기: yellow </p>
+    <p class="color_rgb "> rgb()값으로 색넣기 : rgb(255,255,0)</p>
+    <p class="color_16">16진수 값으로 색 넣기 : #FFFF00</p>
+
+    <h3> background 를 통한 이미지 넣기</h3>
+    <div>
+        <p>
+            bod의 백그라운드에 이미지 넣기 
+        </p>
+        <p>이미지 링크를 통해서 이미지를 넣어줄수 있으면 , <br> 
+        기본값은 repeat이다. : no, x,y,repeat </p>
+        <p> position 으로 지정 가능 
+            세로축 위치 : top, center, bottm <br>
+            가로축 위치 : left, center, right <br>
+
+            attachment를 통해 위치를 고정 시켜줄수있다 . fixed scroll <br>      
+        </p>
+
+        <h3 class="font_h3"> 텍스트 font 속성확인  </h2>
+
+        <p class="text"> 글씨가 왼쪽에서 써집니다 </p>
+
+        <p class="text2">ISU는 8일(한국시간) '7일 열린 베이징올림픽 남자 쇼트트랙 1000m 경기에 대한 두번의 이의제기가 있었다'며 
+            한국과 헝가리의 항의를 받았다고 언급했다. ISU는 '한국 선수단은 황대헌이 실격처리를 받은 것에 대해 항의했다'고 전했다. <br>
+            황대헌은 7일 중국 베이징 캐피털실내경기장에서 열린 2022 베이징올림픽 남자 쇼트트랙 1000m 준결승에서 1위로 결승선을 통과했지만 
+            실격 처리를 받아 탈락했다. 황대헌은 레이스 중 1위 자리를 차지하는 과정에서 레인 변경을 늦게 했다는 판정으로 페널티를 받았다.
+             황대헌의 실격 처리로 인해 중국의 런쯔웨이와 리원룽이 대신 결승에 진출했고 런쯔웨이는 금메달까지 차지했다.
+        </p>
+
+        <h3>폰트 속성 확인하기</h2>
+
+        <p class="font">
+           fantasy 글꼴 속성입니다  
+        </p>
+
+        <h3> 링크를 통해 웹폰트 들고오기</h3>
+        <p style="font-family: 'Montserrat';"> 
+            link 를 통해 들고온 웹 폰트 
+        </p>
+
+        <p class="web_font">css 를 통해 들고온 웹 폰트 html에도 링크를 걸어주어야 한다</p>
+
+        <h3>하이퍼 링크에 css 효과로 뀌미기</h3>
+        <a href="https://www.naver.com/">네이버</a>
+
+        <h3>리스트에 css 효과로 꾸미기</h3>
+        <ul class="unordered_list_mark">
+            <li>순서가없는리스트</li>
+            <li>순서가없는리스트</li>
+            <li>순서가없는리스트</li>
+
+        </ul>
+        <ol class="ordered_list_mark">
+            <li>순서가있는리스트</li>
+            <li>순서가있는리스트</li>
+            <li>순서가있는리스트</li>
+            
+        </ol>
+
+        <p>list-style-type을 none 으로 만들면 앞의 숫자 혹은 마크가 없어진다</p>
+
+        <div>
+            <h1>테이블에 css 효과 넣기</h1>
+            <table>
+                <tr>
+                    <td>동물의 종류</td>
+                    <td>개월수</td>
+                    <td>이름</td>
+                </tr>
+                <tr>
+                    <td>강아지</td>
+                    <td>5</td>
+                    <td>아지</td>
+                </tr>
+                <tr>
+                    <td>강아지</td>
+                    <td>5</td>
+                    
+                </tr>
+            </table>
+            <p>border-collapse 속성은 collapse (합치기) separate(분리)
+                값이 있다. 
+                이떄 empty-cells를 사용할 separate 속성값일때 사용 가능 
+                border-spacing도 동일
+            </p>
+        </div>
+
+        
+        <div class="">
+            <h1>이미지 스프라이트 활용하기</h1>
+            <div class="up"></div>
+            <div class="down"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <p>이미지 스프라이트는 배경이미지를 통해서
+                그림을 잘라서 사용한다  <br>
+                이떄 div의 width 와 height를 사용하여 
+                배경이미지를 사용할 공간을 지정 <br>
+                div는 안에 컨텐츠가 없으면 공간을 주지않는다
+            </p>
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>

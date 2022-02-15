@@ -1,0 +1,63 @@
+.boxmodel {
+    width: 100px;
+    background-color: coral;
+    padding: 10px 10px 10px 50px; 
+
+
+
+}
+
+.groove_3d, .ridge_3d, .inset_3d, .outset_3d {
+    width : 100px;
+    height : 20px;
+
+}
+
+.groove_3d {
+    border-style: groove;
+    border-width: 10px;
+    border-color:coral;
+}
+.ridge_3d{
+    border: 10px ridge red;
+
+}
+.inset_3d{
+    border: 10px inset blue;
+
+}
+.outset_3d{
+    border: 10px outset orange;
+
+}
+.border_width {
+    width: 100px;
+    height: 20px;
+  
+    border-top: 10px solid red;
+    border-right: 5px dotted black;
+    border-bottom :5px dashed blue;
+    border-left : 5px double green;
+}
+.none{
+    width: 100px;
+    height: 20px;
+    background-color: burlywood;
+    border: none black;
+
+}
+.hidden {
+    width: 100px;
+    height: 20px;
+    background-color: aqua;
+    border: hidden black;
+}
+
+.margin {
+    width: 100px;
+    height: 80px;
+    background-color: chartreuse;
+    margin: auto; /*중앙정렬됨 auto로하면*/
+    outline: black solid 2px;
+    
+}

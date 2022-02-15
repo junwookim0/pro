@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+}
+header {
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+}
+
+nav{
+    text-align: center;
+    font-weight: bold;    
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.btn:link , :visited{
+    color: black; 
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn:hover{
+    color: white;
+    text-shadow: 2px 2px gray;
+}
+
+.after::after {
+    display: inline-block;
+    content: 'N';
+    background-color:darkblue;
+    border-radius: 50%;
+    padding: 2px;
+    color: white;
+}
+
+section {
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+}
+iframe{
+    height: fit-content;
+}
+
+.section1{
+    float: left;
+    width: 300px;
+    height: 400px;
+}
+.section2{
+    display: grid;
+    
+}
+.section3{
+    display: grid;
+}
+
+.dashed{
+    border-bottom: dashed 1px grey;
+    font-weight: bold;
+}
+.banner {
+    margin-top: 10px;
+}
+p{
+    margin: 0;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+}

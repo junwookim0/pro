@@ -1,0 +1,58 @@
+h2 {
+    text-align: center;
+}
+body{
+    margin: 0px;
+}
+
+header{
+    border: 3px solid yellowgreen;
+    float: left;
+    
+}
+nav {
+    border: 3px solid  violet;
+    float: right
+}
+article{
+    border: 3px solid rgb(248, 46, 113);
+    clear: both;
+    width: 50%;
+    
+     
+}
+section {
+    border: 3px solid rgb(185, 126, 252);
+    float: left;
+    
+}
+aside{
+    border: 3px solid rgb(253, 253, 57);
+    float: right;
+    margin: 0;
+}
+
+footer {
+    border: 3px solid rgb(49, 165, 243);
+    clear: both;
+}
+
+.color_box_margin{
+    border: 3px solid black;
+    background-color: rgb(62, 245, 175);
+    width: 200px;
+}
+.color_box_position{
+    position: absolute;
+    right: 0;
+}
+.margin{
+    margin: auto; /* 바디*/
+}
+.color_box_float {
+
+}
+.color_box_float{
+    float: right;
+}
+

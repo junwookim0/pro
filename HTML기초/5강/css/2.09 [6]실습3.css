@@ -1,0 +1,14 @@
+.btn:link , :visited { 
+    padding: 10px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    background: linear-gradient( to left, #ffa7a3,#5673bd );
+    
+
+}
+
+.btn:hover {
+    
+    background: linear-gradient( to left, #6ab4f8,pink);
+}

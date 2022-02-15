@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/2.10 [5]선택자.css">
+</head>
+<body>
+    <h1>결합선택자</h1>
+    <h3>자손선택자</h3>
+
+    <div class="parents">
+        <p>자식요소</p>
+        <div> <p>parents 의 자손</p>  </div>
+     </div>
+     <p>부모요소가 없습니다</p>
+
+     <h3>자식선택자 ' > p' </h3>
+
+    <div class="parents_children">
+        <p>자식요소</p>
+        <div> <p> parents 의 자손 </p></div>
+     </div>
+     <p>부모요소가 없습니다</p>
+
+     <h3> 일반 동위 연산자 ' ~ '</h3>
+     <p>바깥의 p 태그입니다</p>
+     <div class="sibling">
+         <p>sibling 안쪽의 p 태그 입니다</p>
+     </div>
+     <p>sibling된 태그 입니다</p>
+     <p>sibling된 태그 입니다</p>
+     <p>
+         ' ~ ' 뒤에 모든 p 에 적용
+     </p>
+     <h2>sibling 확인</h2>
+     
+     <h3> 인접동위선택자' +p '</h3>
+     <div class="adj">
+         <p>adjacet의 자식</p>
+     </div>
+     <p>인접한 p태그</p>
+     <p>인접하지 않은 p태그</p>
+
+     <div>
+         <h1>의사클래스</h1>
+         <h3>동적의사클래스</h3>
+         <div class="hover">
+             마우스를 올리면 배경색이 나타납니다
+         </div>
+         <input type="text" class="focus" value="미리적힌값">
+         
+         <h3>상태 의사 클래스</h3>
+         <p>input 태그와 함께사용</p>
+         <div class="input">
+             <input type="checkbox"name="num">
+             <span>HTML</span>
+             <input type="checkbox"name="num">
+             <span>CSS 체크박스클릭시 색바뀜</span>
+             <input type="checkbox"name="num" disabled>
+             <span>js</span>
+         </div>
+
+         <p>
+             상태 의사 클래스는 input과 함께 사용 <br>
+             input은 닫는 태그가 없기 때문에 글자가 포함되지 않음
+         </p>
+         <h3>구조 의사 클래스</h3>
+        <div>
+            <p class="first">첫번째 자식태그</p>
+            <p class="first">두번째 자식태그</p>
+            <p class="first">세번째 자식태그</p>
+            <p class="first">
+                first_child는 부모태그중에
+                첫번째로 가지는 태그 또는 클래스가
+                앞의 이름일때 효과를 준다 <br>
+                <strong>p</strong>:first_child
+            </p>
+        </div>
+
+        <div>
+            <h3>first-of-type</h3>
+        <p class="type">
+            자식태그로 들어간 최초 div 에서 적용 first는 
+        </p>
+        </div>
+
+        <h3>의사 요소</h3>
+        <div class="pseudo">
+            <p>텍스트 첫글자를 선택합니다</p>
+        </div>
+        <div class="pseudo_line">
+            <p>첫번째 줄을 선택합니다 <br> 
+               줄을 바꾸었습니다
+            </p>
+        </div>
+
+        <div class="before_after">
+            <p>첫문단</p>
+            <p>둘째문단</p>
+            <p> .before_after > p::before <br> 
+                before 태그 앞쪽에 추가 content 가능 
+            </p>
+        </div>
+        <div class="selection">
+            <p>드래그 했을 때 값 변화</p>
+        </div>
+    
+    <h3>속성선택자</h3>
+        <div class="atrribute">
+            <div title="div-title">타이틀입니다</div>
+            <p title="p-title">타이틀입니다</p>
+            <h1 title="h1-title">타이틀입니다</h1>
+
+            <p> [title] |="div"</p>
+            <p>  [title] ^="d"</p>
+            <p> [title] *="1"</p>
+        </div>
+
+        <h3>기타 의사 선택자</h3>
+        <div class="not">
+            <p>p 태그 </p>
+            <h1>h1 태그</h1>
+        </div>
+</div>
+
+
+</body>
+</html>

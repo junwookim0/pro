@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="icon" href="../img/그라데이션아이콘.PNG">
+</head>
+<body> 
+
+    <canvas id="myCanvas" width="300" height="500"
+     style="border: 3px solid rgb(55, 214, 253);">
+
+     
+    </canvas>
+
+
+
+    <script>
+        let paper = document.getElementById("myCanvas");
+        let context = paper.getContext("2d");
+      
+        
+        let grdline = context.createLinearGradient(0, 0, 200, 0); //그라디언트 속성 왼쪽 워 오른쪽 아래
+        grdline.addColorStop(0,"rgb(55, 214, 253");
+        grdline.addColorStop(1, "pink");
+
+        context.fillStyle = grdline; //그라디언트 범위  
+        context.fillRect(20, 20, 250,90);
+
+        context.font = "30px Arial";
+        context.fillStyle = "white";
+        context.fillText("CANVAS", 30, 60);
+
+
+        context.font = "30px Arial";
+        context.fillStyle = "white";
+        context.fillText("CANVAS", 60, 90);
+
+        
+
+
+        let img = new Image();
+        img.src = "/img/그라데이션.png";
+
+        img.onload = function(){
+
+            context.drawImage(img, 0, 162);
+        }
+
+        
+
+        
+    </script>
+
+
+    
+</body>
+</html>

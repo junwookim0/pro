@@ -1,0 +1,8 @@
+.before_after > p::after {
+    display: inline-block;
+    content: 'N';
+    background-color:orange;
+    border-radius: 50%;
+    padding: 2px;
+    color: white;
+}

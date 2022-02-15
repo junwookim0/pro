@@ -1,0 +1,84 @@
+.parents p {
+    background-color: darkgreen;
+}
+
+.parents_children > p {
+    background-color: yellow;
+}
+
+.sibling ~ p {
+    background-color: saddlebrown;
+}
+
+.adj + p {
+    background-color: yellowgreen;
+}
+
+.hover:hover {
+    background-color: salmon;
+
+}
+.focus:focus {
+    color: aqua;
+    font-weight: bold;
+
+}
+.input > input:checked + span {
+    color: rgb(37, 172, 172);    
+}
+.input > input:disabled + span {
+    text-decoration: line-through
+    
+}
+.first:first-child{
+    background-color: rgb(236, 178, 250);
+}
+.first:last-child{
+    background-color: slateblue;
+}
+/*
+p:first-of-type {
+    background-color: black;
+    color: white;
+}
+*/
+.type:first-of-type{
+    background-color: rgb(102, 38, 139);
+    color: red;
+}
+.pseudo > p::first-letter {
+    font-size: 2em;
+}
+
+.pseudo_line > p::first-line{
+    text-decoration: underline;
+}
+.before_after > p::before {
+    content: '1';
+    background-color: crimson;
+}
+
+.selection > p::selection{
+    color: cornflowerblue;
+}
+
+[title] {
+    background-color: rgb(206, 206, 104);
+}
+[title *= "1"] {
+    background-color: rgb(37, 182, 73);
+}
+
+.not > p:not(noscript) {
+    color: blue;
+    font-size: large;
+    font-style: italic;    
+    font-weight: bold;
+}
+.not > h1:not(noscript){
+    color: rgb(102, 204, 252);
+    font-weight: 100;
+}
+
+
+

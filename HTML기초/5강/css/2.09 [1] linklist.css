@@ -1,0 +1,36 @@
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 20;
+}
+
+a:link , a:visited { 
+    color: black;
+}
+
+/* hover 는 lick 와 visited 먼저 설정해줘서 동작가능 */
+
+a:hover {
+    color:  red;
+    background-color: green;
+}
+
+a:active{
+    color: yellow;
+    background-color: blue;
+}
+
+.unordered_list_mark{
+    list-style-image: url("");
+    list-style-position: outside;
+}
+
+.ordered_list_mark{
+    list-style-type: lower-alpha;
+    list-style-position: inside;
+}
+
+li {
+    background: violet;
+}
