@@ -22,8 +22,10 @@ div > h3 {
     height: 200px;
     margin: 10px;
     background-color: bisque;
-    
 } 
+.notice_page{
+    background-color: white;
+}
 
 .grid_page {
     display: grid;
