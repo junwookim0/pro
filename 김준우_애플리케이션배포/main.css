@@ -30,7 +30,7 @@ div > h3 {
     grid-template-columns: repeat(1,2fr);
 }
 
-@media screen  and (min-width: 700px){
+@media screen  and (min-width: 600px){
     main {
         display: grid;
         grid-template-columns: repeat(2,1fr);
