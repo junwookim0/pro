@@ -21,8 +21,8 @@ div > h3 {
 .notice {
     height: 200px;
     margin: 10px;
-   
-    justify-content: space-around;
+    background-color: bisque;
+    
 } 
 
 .grid_page {
