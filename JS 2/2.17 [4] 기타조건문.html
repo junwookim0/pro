@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //switch 조건문
+        let num =0;
+
+        switch(num){
+            case 0:
+            document.write("0 입니다");
+            break;
+            case 1:
+            document.write("1 입니다");
+            break;
+            default : 
+        }
+        document.write("<br>");
+
+        if (num==0){
+            document.write("0 입니다");
+        }
+        else if(num==1){
+            document.write("1 입니다");
+        }
+        document.write("<br>");
+
+        let score = "A";
+        switch(score){
+            case "A":
+            document.write("참잘했습니다");
+            break;
+            case "B":
+            document.write("잘했습니다");
+            break;
+            case "C":
+            document.write("아쉽습니다");
+            break;
+            case "D":
+            document.write("분발하세요");
+            break;
+            default:
+            document.write("잘못된 점수입니다");
+        }
+
+        //어느수가 들어 
+        let num3 = -4;
+        let result = (num>0) ? num3 :num3*-1;
+        document.write(`<p>${result}</p>`);
+
+        let test;
+        test = test ? test : "초기화값";
+        document.write(test);
+
+        // 간단한 초기화 값
+        test = test || "초기화";
+        document.write(test);
+
+
+        //삼항 연산자 실슬
+        let a = 4 , b = 3;
+        let max =  (a>b) ? a : b ;
+        document.write(max);
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
