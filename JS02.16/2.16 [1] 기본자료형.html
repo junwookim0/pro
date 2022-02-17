@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        console.log("hi");
+        document.write("hi");
+        document.write("기본자료형 - 숫자 <br> ");
+        document.write("3");
+        document.write("<br>");
+        document.write(4+5);
+        document.write("<br>");
+
+        document.write(100+100-50);
+        document.write("<br>");
+        document.write(100*2+100*3);
+        document.write("<br>");
+        document.write(100*4/20);
+        document.write("<br>");
+        document.write(100/3);
+        document.write("<br>");
+        document.write(100%3);
+        document.write("<br>");
+
+        document.write("<br> <br> 기본자료형 - 문자열 <br>");
+        document.write('홑따옴표를 사용해서 문자열을 넣을수 있다 <br>');
+        document.write("this is 'string'. <br>");
+
+        //document.write("\n을 이용 줄바꿈을 할수 있습니다" ); 
+        // console 창에서 확인이 가능하다
+        document.write("안녕"+"하세요 <br>" );
+        document.write("반갑습니다" +"홍길동입니다 <br>");
+        document.write("\t반갑습니다 \n홍길동입니다 <br>");
+        document.write("100*273+23 ="+ (100*273+23));
+
+        document.write("<br>");
+        document.write("기본자료형 불 boolean <br>");
+        document.write(true);
+        document.write("<br>");
+        document.write(50<60);
+        document.write("<br>");
+        document.write(50>60); 
+        document.write("<br>");
+        document.write(!true);
+        document.write("<br>");
+        document.write(true || false);
+        document.write("<br>"); 
+        document.write(true && false);
+        document.write("<br>");
+        document.write("안녕"!=="hi");
+        document.write("<br>");
+        
+        let a=1;
+        let b=2;
+        document.write(a+b);
+
+        let string = "줄바꿈이 들어간\n 문자열입니다";
+        document.write(string);
+
+        let sum = 1+10+100;
+        console.log(sum);
+        
+        document.write("<br>");
+        document.write("<br>");
+        let name = "홍길동";
+        let age = "20";
+        let phone = "010-123-4567"
+        name = "성춘향";
+
+        document.write("<br>");
+
+        let c =70;
+        let r = 65;
+        document.write(c>r);
+        document.write("<br>");
+        console.log(5+6);
+
+        
+        console.log("복합대입연산자");
+        let step =2;
+        console.log(step += 2);
+        console.log(step = 2);
+        console.log(step -= 2);
+        console.log(step *= 2);
+        console.log(step /= 2);
+
+        console.log("증강연상자");
+        let oneCount = 0;
+        oneCount++;
+
+        console.log("특수자료형");
+        let undefinedNum;
+        let nullNum = null;
+        console.log(undefinedNum);
+        console.log(nullNum);
+        //undefinedNum 은 값을 지정해주지않은 자료형
+        //NnullNum는 값을 임의로 비워둔 null자료형 
+        //두개의 값은 비교했을때 참.
+        typeof(undefinedNum);
+        typeof(Boolean(nullNum));
+        //안에 자료형이 뭔지 확인하는 함수 typeof 
+        //각각의 자료형인 number, string, boolean 은 형변환 함수를 이용해서 자료형을 강제로 바꿀수있다.
+        console.log(Number("string"));
+        // 숫자로 형변환한 값이 숫자가 아닐떄 nan 
+       // nan는 잘못된것을 알려준다 무조건 프로그램이 작동을 하지않으면 곤란한기 때문
+       console.log(Number("string")==NaN);
+
+       const MAX = 100;
+       console.log(MAX);
+
+       let num =10; 
+       let text= ":숫자입니다";
+       let numText = num + text;
+       console.log(numText);
+       
+       
+
+
+
+
+
+
+
+        
+
+        
+
+
+        
+    </script>
+    
+</body>
+</html>

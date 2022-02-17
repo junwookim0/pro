@@ -14,10 +14,7 @@ div > h3 {
     text-align: center;
     border-bottom: solid 1px rgb(184, 120, 24);
 }
-.btn:link , :visited{
-    color: black; 
-    text-decoration: none;
-}
+
 .notice {
     height: 200px;
     margin: 10px;
