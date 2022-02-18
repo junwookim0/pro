@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        //while반복문
+        let a =0;
+        while(a<10){
+            a++;
+            document.write(a);
+        }
+
+        let word = "";
+        while(word == ""){
+            document.write("빈값입니다");
+            word = prompt("값을 입력해주세요");
+        }
+        document.write(`<p> ${word}</p>`);
+
+        // 0을 입력했을때 while문이 멈추게 
+
+        /*while(word !="0"){
+            document.write(`<p> ${word}</p>`);
+        }*/
+        
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./함수정의.js"></script>
+    
+
+    <script>
+        function hi(num) {
+            document.write(`<p> ${num} : hi </p>`);
+            document.write("제곱 : ");
+        }
+        
+        function squr (num) {  //num : 매개변수로 사용 
+            return num*num ;  // 함수의 결과값을 리턴 
+        }
+        hi ();
+    </script>
+  
+</head>
+<body>
+
+    <script>
+
+       
+
+        for (let i=1; i<=10;i++){
+            hi(i);
+            document.write(squr(i));
+        }
+
+
+
+        let array = [1,2,3,4]; // ??????
+        let arraySqur = new Array();
+        arraySqur[0] =1;
+
+        for (let i=0; i<10;i++){
+            hi(i);
+            document.write(squr(i));  //return 값을 출력
+            arraySqur[i] =squr(i);    // reurn값을 할당
+        }
+
+        hi(); // 인수값이 없을 경우 undefined 값 자료형
+        hi(10,100);  // 초과하는 인수값은 사용하지않음 
+
+
+        //명시적 함수
+        // 함수를 호출하기전에 선언문은 
+
+        function add(){
+            //여러개의 인수는 arguments 에 배열로 저장 
+            let count = arguments.length;
+            let sum = 0;
+            for (num of arguments){  //배열 이기 때문에 for ... of 사용 가능
+                sum += num;
+            }
+            document.write(`총갯수 : ${count}, 합 : ${sum}`);
+        }
+
+    </script>
+    
+
+</body>
+</html>
