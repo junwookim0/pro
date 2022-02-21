@@ -1,0 +1,22 @@
+h1 {
+
+    text-align: center;
+    background-color: coral;
+    padding: 20px; 
+    
+}
+
+.pad {
+    
+    border : dashed black ;
+    border-radius: 12px;
+    padding: 30px;
+    min-width: 200px;
+}
+p {
+    min-width: 100px;
+    background-color: rgb(250, 157, 123);
+    padding-left: 20px;
+    padding: inherit; /*부모의 패딩가져옴*/
+
+}

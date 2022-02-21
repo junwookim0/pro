@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1> HTML5에서 추가된 input 속성</h1>
+    <form action="서버측 파일.html" autocomplete="off" id="form1" method="post"> <!-- autocomplete="ON OFF" 설정안해주면 자동 ON-->>
+        <input type="text" name="name" value="미리설정"> 한글 <br>
+        <input type="text" name="auto" autofocus> <br>
+
+        <input list="food" name="food">
+        <datalist id="food">
+            <option value="한식">
+            <option value="양식">
+        </datalist>
+
+        <input type="file" value="파일" multiple>
+        multiple을 사용하면 파일을 여러개 받아올 수 있다. <br>
+        <input type="text" pattern="[a-z]"> pattern 패턴에 들어가는 문자의 반복,규칙<br>
+        <input type="text" name="place" placeholder="힌트"> <br>
+        placeholder는 value 값이 아닌 사용자에게만 보이는 텍스트 <br>
+        <input type="text" required> <br>
+        빈값일 경우 전달되지않는다 <br>
+        <input type="number" step="2"> 2칸씩 건너뜁니다 <br>
+
+        <!-- 버튼입니다.-->
+        <input type="image" src="/img/네이버.png" alt="전송" height="100" width="200">
+        <br> image속성을 이용하여 이미지 버튼을 만들수 있다 alt는 이미지가 안보였을때 텍스트표사 <br>
+        scr로 파일 위치를 알려줄때 <strong>../ </strong> 을 사용시 자신의 상위폴더이동 <br>
+
+        <input type="submit" value="버튼" formaction="다른서버측파일.html" formenctype="application/x-www-form-urlencoded">
+        sumbit 타입은 form ~속성을 이용하여 인코딩을 바꾸거나 서버측 파일을  바꿀수 있다. <br>
+    </form>
+
+    <input type="text" name="form" form="form1">
+    form 속성을 이용해 form 태그 밖의 input 태그 사용하기
+    
+    
+</body>
+</html>

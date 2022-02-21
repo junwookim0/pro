@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //break
+        let count =0;
+        let pw = "green";
+        while(true){
+            pw = prompt("비밀번호입력");
+            count ++;
+
+            if(pw == "green"){
+                document.write(`${count}회 만에 맞췄습니다.`);
+                break;
+            }
+            if(count==1){
+                prompt("기회가 1번남았습니다");
+                alert("횟수 초과");
+            }
+        }
+
+        for(let i=1; i<=10; i ++){
+            if(i ==7){
+                continue;
+            }
+            document.write(i);
+        }
+
+    </script>
+    
+</body>
+</html>

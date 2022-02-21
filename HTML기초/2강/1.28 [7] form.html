@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Form 태그 활용</h3>
+    <form action="">
+        <input type="text"> <button type="button" onclick=""> send</button> <br>
+        <input type="text">
+    </form>
+
+    <form action="">
+        <label> 글자를 작성해주세요 </label>
+        <input type="text" value="아이디를 입력하세요"> <br>
+           
+        <input type="password" value="비밀번호를 입력하세요"> <br>
+        </imput>
+
+        <p> 라디오 버튼 입니다 셋중하나 선택가능</p>
+        <input type="radio" name="num" value="1">1 <br>
+        <input type="radio" name="num" value="2">2 <br>
+        <input type="radio" name="num" value="3">3 <br>
+
+
+        <p> 체크박스 입니다</p>
+        <input type="checkbox" name="movie" value="1"> 트와일라잇 <br>
+        <input type="checkbox" name="movie" value="2"> 뉴문<br>
+        <input type="checkbox" name="movie" value="3"> 이클립스<br>
+        <input type="checkbox" name="movie" value="4"> 브레이킹던 part1<br>
+        <input type="checkbox" name="movie" value="5"> 브레이킹던 part2<br>
+
+        <p>파일을 추가해주세요</p>
+        accept를 이용해서 입력받을수 있는 확장자의 종류를 한정시킬수있다 
+        <input type="file" name="file" accept="image/*">
+
+    <p>select 선택입력을 하나의 값 가져오기</p>
+    <select name="" id="">
+        <option value="">사과</option>
+        <option value="">딸기</option>
+        <option value="">귤</option>
+    </select>
+    <p>여러줄 입력하기 위한 texttarea</p>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    
+    <p>button</p>
+    <button type="button" onclick="alert('버튼을 클릭 했습니다')"> 버튼을 눌러 주세요
+    </button>
+
+
+    <p>input 전송버튼 </p>
+    <input type="submit" value="전송">
+    
+
+    </form>
+    
+</body>
+</html>

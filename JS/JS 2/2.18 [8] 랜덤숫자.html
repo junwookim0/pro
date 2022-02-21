@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>랜덤숫자</h1>
+    <input type="button" onclick="numCheck()"value="확인">
+
+    <script>
+
+        function numCheck(){
+            //아래의 코드를 이용해서 랜덤한 숫자가 3번 출력
+            //document.write(); 이용하여 출력
+
+            //math.random() //0이상1미안의 소수값
+           
+
+            for(let i = 0; i<3; i++){
+                let random = Math.random()*10; //0.1~9.2
+                random = parseInt(random); // 정수만 가져옴
+                document.write(random + "<br>");
+            }
+
+           
+           
+
+            
+            
+
+            
+            
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for 반복문
+        let sum =0;
+        for(let i=0; i<10; i++){
+            sum += i+1;
+
+            document.write(i);
+            document.write("<p>반갑습니다</p>")
+        }
+        document.write(sum);
+        document.write("<br>");
+
+        for(let num = 10; num>0; num--){
+            document.write(num+"<br>");
+        }
+        document.write("<br>");
+
+        for (let k=2; k<10; k++){
+            for(let j=1; j<=9;j++){
+                document.write((k*j)+"<br>");
+            }
+        }
+
+        let dan =2;
+        for(let s=1; s<10; s++){
+            document.write(dan*s+"<br>");
+        }
+
+        let carlsit = ['트럭','스포츠카','버스','승용차'];
+        //in 을 사용하면 인덱스값을 들고옴
+        for (let i in carlist){
+            document.write(i);
+            document.write(carlist[i]);
+        }    //of을 사용하면 배열의 요소값을 들고옴
+        for (let car of carlist){
+            document.write(car);
+        }
+
+
+    </script>
+    
+</body>
+</html>

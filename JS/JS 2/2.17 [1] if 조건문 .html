@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header"></h1>
+
+    <script>
+       //비가오면 우산을 들고간다 
+       let isRain = false;
+
+       if(isRain){
+           document.write("우산을 들고간다");
+       } 
+
+       //점수가 60이상이면 합겹이다
+
+       let score = 50;
+       if (score >=60){
+           document.write("통과입니다");
+       }
+
+       let check =true;
+        if(check){
+            document.write("확인하였습니다")
+        }
+        document.write("<br>");
+
+        let word = "의자";
+        if(word == "의자"){
+            document.write("맞습니다");
+            document.write("<br>");
+        }
+
+        //if else 조건문 
+        //키가 140이상은 놀이기구를 탈수있다.
+        //그렇지 않으면 탈수 없다.
+        let height = 130;
+        if(height >=140){
+            document.write("놀이기구를 탈수 있다");
+        }
+        else{
+            document.write("탈수없다");
+        }
+
+        let button =false;
+        if(button){
+            document.write("<p> 불이 켜졌다 </p>");
+        }
+        else{
+            document.write("<p> 불이 꺼졌다 </p>");
+        }
+        //if else 실습
+        let money = 1000;
+        let isCard =false;
+        if(money >= 1500 || isCard) {
+            document.write("<p> 버스를 타고 갑니다 </p>");
+        }
+        else {
+            document.write("<p>걸어갑니다</p>");
+        }
+
+
+
+
+
+
+
+    
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> canvas 확인하기</h1>
+    <canvas id="myCanvas" width="300" height="200"
+     style="border: 3px solid black;">
+    </canvas>
+
+    <h1> SVG 확인하기</h1>
+    <svg>
+    <line x ="50" y="0"  x2 ="500" y2="350" stroke="orange" stroke-width="5">
+    </line>
+</svg>
+
+    <script>
+        let paper = document.getElementById("myCanvas");
+        let context = paper.getContext("2d");
+        context.fillStyle="#FF0000";
+        context.fillRect(0,0,150,75);
+        
+        //원은 그리기전에 선을 초기화한다
+        context.beginPath();
+        context.arc(100,150,50,50,2,Math.PI);
+        context.strokeStyle="#FF00FF";
+        context.stroke();
+        
+        /* 패스를 지정한 후에 선을 그린다.
+        */
+
+        context.moveTo(0, 0);  // 시작점
+        context.lineTo(100, 75); //끝점
+        context.strokeStyle = "#00FFFF";
+        context.stroke();
+         //stroke 써야 표시
+
+        context.font = "30px Arial";
+        context.fillStyle = "#00FFFF";
+        context.fillText("CANVAS", 18, 50);
+    
+        //FILLTEXT 는 작성할 ㄹ내용과 X (시작위치)Y (문자의바닥)
+
+        //그라디언트 종류 : 선형/원형 
+        
+        let grd = context.createRadialGradient(0, 200, 5, 0, 200, 100);
+        // 원형 그라디언트 (시작 원의 x,y 중심점, 반지름, 끝나는원의 x,y중심점,)
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+        
+
+        let grdline = context.createLinearGradient(0, 200, 150, 200);
+        grdline.addColorStop(0,"blue");
+        grdline.addColorStop(1, "yellow");
+
+        context.fillStyle = grd;
+        context.fillRect(0, 150, 150,50);
+
+        context.strokeStyle = grd;
+        context.rect(0, 120, 75, 20);
+        context.stroke();
+        
+      
+        console.log(paper);
+
+
+
+
+    </script>
+    
+</body>
+</html>

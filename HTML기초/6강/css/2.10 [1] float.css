@@ -1,0 +1,14 @@
+.float_left{
+    width: 30%;
+    background-color: steelblue;
+    float: left;
+
+}
+
+.color_box {
+    border: 3px solid black;
+}
+
+p {
+    clear:both;  /* float에 영향 받지않고 그냥 적용됨*/
+}

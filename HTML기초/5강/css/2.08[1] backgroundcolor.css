@@ -1,0 +1,15 @@
+.color_name{color: yellow; background-color: black ;}
+.color_rgb{color: rgb(255,255,0);background-color: rgb(0,0,0) ;}
+.color_16{color: #FFFF00;background-color: #000000;}
+
+
+.background_image {
+    background-image:  linear-gradient(rgb(255,255,255,0.5),rgb(255,255,255,0.3) ), 
+                       url(/img/budapest-g8dcc9635b_640.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: scroll;
+}
+.background_image2 {
+    background: url(/img/budapest-g8dcc9635b_640.jpg)  no-repeat bottom fixed;
+}

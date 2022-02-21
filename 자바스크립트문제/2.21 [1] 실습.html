@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //6-1
+        let a =10;
+        let b =20;
+        let result = (a>b) ? a:b;
+        document.write(result+"<br>");
+        //6-2
+        let score =65;
+        if(score>=70){
+            document.write("합격");
+        }
+        else if(score>=60){
+            document.write("보충수업");
+        }
+        else{
+            document.write(재수강);
+        }
+        document.write("<br>");
+
+        //8-1
+        let c =0;
+        while(c<10){
+            c++;
+            document.write(c + " ");
+        }
+        document.write("<br>");
+        //9-1
+        for(let i=10; i>0; i--){
+            document.write(i+" ");
+        }
+        document.write("<br>");
+        //9-2
+        let numArray = [1,2,3,4]
+        for(let i of numArray){
+            document.write(i +" ");
+        }
+        document.write("<br>");
+        //9-3
+        let flowerArray =["해바라기","튤립","장미"];
+        for(let i in flowerArray){
+            document.write(flowerArray[i]+" ");
+        }
+        document.write("<br>");
+        //10-1
+        let d = 1;
+        while(true){
+            document.write(d);
+            if(d ==100){
+                break;
+            }
+            d++;
+        }
+        document.write("<br>");
+        //10-2
+        for(let i=1; i<51;i++){
+            if(i%3==0){
+                continue;
+            }
+            document.write(i)
+        }
+        document.write("<br>");
+        //기본연산자 1
+        let x =15;
+        let y =2;
+        document.write("둘레: " + 2*(x+y) +"&nbsp;");
+        document.write("넓이: " +x*y);
+        document.write("<br>");
+        //기본연산자 2
+        let time =40;
+        document.write(time*60);
+        document.write("<br>");
+        //조건문과 논리 연산자 1
+        let x1 =10;
+        let y1 =20;
+        let z1 =12;
+        let total = x1+y1+z1;
+        let max;
+        if(x1 > y1){
+            max=x1;
+            }
+        else{
+                max=y1;
+            }
+        if(max < z1){
+                max = z1;
+            }
+        else if(total-max <= max){
+                document.write("삼각형이 될 수 없습니다");
+            }
+        else {
+                document.write("삼각형이 될 수 있습니다"+" ");
+                if(y1*y1 == (x1*x1 +z1*z1) ){
+            document.write("직각");
+            }
+            else if(y1*y1 < (x1*x1 +z1*z1)){
+                document.write("예각");
+            }
+            else if(y1*y1 > (x1*x1 +z1*z1)){
+                document.write("둔각");
+            }
+        }
+            document.write("<br>");
+        //논리 연산자 1
+        
+        if(y1<x1+z1){
+            document.write("삼각형이 될 수 있습니다"+ " ");
+        }
+        if(y1*y1 == (x1*x1 +z1*z1) ){
+            document.write("직각");
+            }
+            else if(y1*y1 < (x1*x1 +z1*z1)){
+                document.write("예각");
+            }
+            else if(y1*y1 > (x1*x1 +z1*z1)){
+                document.write("둔각");
+            }
+        else{
+            document.write("삼각형이 될 수 없습니다");
+        } 
+    
+        document.write("<br>");
+
+        //조건문과 논리 연산자 2
+        let height = 1.7;
+        let weight = 66;
+        let bmi = weight/Math.pow(height,2);
+        if(bmi <18.5){
+            document.write("저체중");
+        }
+        else if(bmi <23){
+            document.write("정상");
+        }
+        else if(bmi <25){
+            document.write("과체중");
+        }
+        else if(bmi <30){
+            document.write("비만");
+        }
+        else{
+            document.write("고도비만");
+        }
+        document.write("<br>");
+
+        //조건문과 논리 연산자 3
+        let age =20;
+        let sections =2;
+        if(age>=19){
+            if(sections ==1){
+                document.write("1300원");
+            }
+            else if(sections ==2){
+                document.write("1500원");
+            }
+        }
+        else if(age >=13){
+            if(sections ==1){
+                document.write("1050원");
+            }
+            else if(sections ==2){
+                document.write("1200원");
+            }
+        }
+        else {
+            if(sections ==1){
+                document.write("650원");
+            }
+            else if(sections ==2){
+                document.write("750원");
+            }
+        }
+        document.write("<br>");
+        // 조건문과 논리 연산자 4
+        let Grades =140;
+        let Average=3.5;
+        if(Grades >=140 && Average >=3){
+            document.write("졸업가능합니다!");
+        }
+        else{
+            document.write("졸업이 힘듭니다!");
+        }
+        document.write("<br>");
+        //조건문과 논리 연산자 5
+        let day ="월";
+        if(day == "월"||day =="수"||day =="금"||day =="일"){
+            document.write("oh my god");
+        }
+        else if(day == "화"||day =="목"||day =="토"){
+            document.write("enjoy");
+        }
+        else{
+            document.write("잘못된 날짜입니다");
+        }
+        document.write("<br>");
+        //조건문과 논리연산자 5 케이스
+        
+        let date = "월";
+        switch(date){
+            case "월" : case "수": case "금": case "일":
+            document.write("oh my god");
+            break;
+            case "화": case "목": case "토":
+            document.write("enjoy");
+            break;
+            default : document.write("x");
+        }
+        document.write("<br>");
+
+        //반복문 1
+        for(let i=8;i<101;i++){
+            if(i%2==1){
+            document.write(i);
+            }
+        }
+        document.write("<br>");
+
+        //반복문2
+        let sum =0;
+        for(let i=30; i>0 ;i--){
+            document.write(i);
+            sum += i;
+        }
+        document.write("<br>");
+        document.write(sum);
+        document.write("<br>");
+        //반복문 3
+        let r =1;
+        let n =5;
+        for(let i =1; i<=n; i++){
+            r = r*i;
+        }
+        document.write(r);
+        document.write("<br>");
+
+        //반복문 4
+        let u =4; //가로세로길이
+        let allNum = 1; //1~길이의 제곱까지 1씩증가
+
+        for(let i =0; i <u;i++){
+            for(let j=0; j<u; j++){
+                document.write(allNum+" ");
+                allNum++;
+            }
+            document.write("<br>");
+        }
+
+        document.write("<br>");
+
+        for(let i=1; i<=u*u;i++){
+            document.write(i+" ");
+            if(i%u ==0){
+                document.write("<br>");
+            }
+        }
+        document.write("<br>");
+        //조건문과 반복문 혼합 1
+
+        let sum1 =0;
+
+        for (let i=1; i<=20; i++){
+            if( !(i%3 ==0 || i%2 ==0) ){
+               /* continue; */
+                sum1 += i;
+            }
+            /* sum1 += i; */
+        }
+        document.write(sum1);
+        document.write("<br>");
+
+        //조건문과 반복문 혼합2
+        let divisor =6;
+        let index =1;
+        while(index <= divisor){
+            if(divisor % index==0){
+                document.write(index + " ");
+            }
+            index += 1;
+        }
+        document.write("<br>");
+
+        //조건문과 반복문 혼합3
+        for(let i=1; i<=6;i++){ //하나의 주사위
+            for(let j=1; j<=6;j++){ //또다른 주사위
+            if(6==i+j){
+                document.write(i+","+j+" ");
+                }
+            }
+        }
+        document.write("<br>");
+
+        //조건문과 반복문 혼합4
+        for(let i=0;i<=5;i++){
+            for(let j=0;j<i;j++){
+                document.write('*');
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+        
+        //조건문과 반복문 혼합5
+        let array = ['A','B','C','D','E'];
+        let randomarray = [];
+
+        for(let j=1;j<=array.length;j++){            
+            document.write("<br>");
+            document.write(array[j-1]+" ");
+        for(let i =1; i<=6; i++){
+            random = Math.floor(Math.random() * 45 + 1);
+            if(randomarray.indexOf(random)=== -1){
+                randomarray.push(random);
+                document.write(random+" ");
+            } else{
+                i--;
+                }
+            }
+        }
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>
