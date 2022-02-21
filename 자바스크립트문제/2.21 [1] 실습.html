@@ -267,10 +267,11 @@
         let sum1 =0;
 
         for (let i=1; i<=20; i++){
-            if(i%3 ==0 || i%2 ==0){
-                continue; 
-            }
+            if( !(i%3 ==0 || i%2 ==0) ){
+               /* continue; */
                 sum1 += i;
+            }
+            /* sum1 += i; */
         }
         document.write(sum1);
         document.write("<br>");
