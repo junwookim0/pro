@@ -194,8 +194,11 @@
         if(day == "월"||day =="수"||day =="금"||day =="일"){
             document.write("oh my god");
         }
-        else{
+        else if(day == "화"||day =="목"||day =="토"){
             document.write("enjoy");
+        }
+        else{
+            document.write("잘못된 날짜입니다");
         }
         document.write("<br>");
         //조건문과 논리연산자 5 케이스
@@ -264,8 +267,8 @@
         let sum1 =0;
 
         for (let i=1; i<=20; i++){
-            if(i%3==0 || i%2==0){
-               /* continue; */
+            if(i%3 ==0 || i%2 ==0){
+                continue; 
             }
                 sum1 += i;
         }
@@ -314,7 +317,7 @@
                 randomarray.push(random);
                 document.write(random+" ");
             } else{
-               i--;
+                i--;
                 }
             }
         }
