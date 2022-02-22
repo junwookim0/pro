@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        let sumArrow = (num1,num2)=> num1-num2;   //console 창에서 확인 
+        // 함수 명이 따로 존재하는게 아니라 변수가 함수이름 
+        // 익명함수 - 뒤에 sumArrow에 데이터가 덮어씌워지면 사라짐 
+        // 한번만쓰고 안쓰는 경우 . 계속 쓰지않는 함수라면 이렇게도 씀 
+    </script>
+</head>
+<body>
+
+    <script>
+        
+        let hi = function() { //함수 이름대신 변수로 대체 
+            document.write("<p> <h1>안녕</h1> </p>");
+        } // 변수안에 할당하므로 ; 을 붙인다   ??? 설명 잘못하신거같아요.. 
+        
+        let hiName = function(name) { 
+            document.write(`<p> ${name} 안녕</p>`);
+        } 
+        hi();
+        hiName("태성"); 
+
+        let sub = function(num1,num2){
+            let result = num1 - num2;
+            return result;
+        }
+        document.write(sub(5,10)); 
+        document.write("<br>");
+
+        //선언식 함수와 함수표현식의 차이점 
+
+        a();
+        /* b(); */   //함수식표현은  위에서부터 읽어오기때문데 실행안됨 
+        function a() { //선언식 함수 
+            document.write("선언식 함수입니다 <br>");
+        }
+        let b = function(){
+            document.write("함수 표현식 입니다 <br>");
+        }
+        b();
+
+        // 선언식 함수와 함수표현식이 블록안과 밖에서 어떻게 사용되는지 
+        if(true){
+            function innerfunc(){
+                document.write("블록안에 만든 선언식 함수 <br>");  // 선언식은...다가능...? 호이스팅 된댜
+            }
+            let innerfuncNoname = function(){
+                document.write("블록안에 만든 표현식 함수 <br>"); //호이스팅 x 
+            }
+            innerfunc(); 
+            innerfuncNoname();
+            
+            
+        }
+        innerfunc();
+        //innerfuncNoname(); // 블록 밖에서 호출 안됨 !!! 
+
+        // 화살표 함수 
+        let hiA = () => {
+            document.write("<p> 안녕</p>");
+        };
+
+        let hiReturn = () => "<p>안녕1 </p>"
+
+        hiReturn();   // console 창에 안녕1 출력 됨  hiA는 undefined 
+        // 표현식
+        /* let hiA = function() {
+            document.write("<p> 안녕</p>");
+        }  */ 
+        
+        hiA();    //    |기점
+                //      |---함수--  |
+        let numTostring = n => String(n);    ///  => 리턴의 뜻인거같음 
+        let add =(a,b) => a+b;
+
+
+        //함수 실습
+        function ask(q, yes,no){ //q 질문 (문자열) 
+            if(confirm(q)){
+                yes(); // 함수를 입력받아 사용  매개변수안에 익명함수가 들어와서 함수호출가능
+            } else{   //  
+                no(); // 함수를 입력받아 사용 
+            }
+        }
+
+         /*ask(
+            "동의하십니까?" ,                     // 질문 q, 
+            function(){alert("동의하셨습니다")},  // yes , 
+            function(){alert("취소되었습니다")}   // no    
+        ); */
+
+        ask(
+            "동의하십니까?" ,                     // 질문 q, 
+            ()=>{alert("동의하셨습니다")},  // yes , 
+            function() {alert("취소되었습니다") }  
+        );
+     
+
+    </script>
+    
+</body>
+</html>
