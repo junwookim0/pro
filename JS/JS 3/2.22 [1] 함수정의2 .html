@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function a(){  // 매개변수 없는 함수  
+            document.write("홍!길!동!");
+        }
+        // 매개변수 1개 
+        function introName(name){
+            console.log("함수내용");
+            document.write(`안녕하세요 ${name}입니다. 반갑습니다`);
+        }
+        // 동일한 이름의 함수, 매개변수 개수가 2개 > 호출 o
+        function introNameReturn(name,address){
+            return `<p>후후 ${name}입니다 . ${address} 입니다</p>`;
+        }
+
+        function introNameReturnLog(name){
+            console.log(name);
+            return `<p>${name}</p>`
+        }
+
+        function area(num1,num2){  
+
+            let result = num1*num2; 
+            return result;
+        }
+
+        function avrg(array){
+            let numArray = [30,60,40,60,20];
+            let sum =0;
+            for (let i=0;i <numArray.length;i++){
+                 sum += numArray[i];
+            }
+            let result = sum/numArray.length;
+            return result ;
+        }
+/*
+        function avr(array1){
+            let avrgNum =0;
+            let sumNum =0;
+            for (let num of numArray1){
+                sunNum += num;
+            }
+            avrgNum = sumNum/numArray1.length;
+            return avrgNum ;
+        } */
+
+        function add(num1,num2){
+            if (num1 == undefined){    // undefined 로 해서 아래 script 에서 값이 주어지지 않았을때 
+                num1 =0;               // 임의로 0을 줌 
+            }
+            if(num2 == undefined){
+                num2=0;
+            }                            // 2가지 방법  
+            let sumt = num1 + num2;
+            return sumt;
+        }                                      
+        function multiply(a,b =1){   // b의 값을 아래의 script 에서 주어지지 않았을때 자동으로 1값 
+            return a+b;
+        }
+
+        function numPrint(a, ...b){   // numPrint(2,3); 콘솔했을때 출력 2 ,3  b는 나머지 매개변수(배열)
+            document.write("<p>"+a+"</p>");
+            document.write("<p>"+b[0]+"</p>"); //배열의 인덱스로 전급가능 
+        }
+
+        function numArgu(a){     // numArgu(2) >> 2 undefined 출력 
+            document.write("<p>"+a+"</p>");
+            document.write("<p>"+arguments[1]+"</p>");
+        } // arguments 모든 인수를 참조하여 값을 들고온다 
+
+        function addAll(){
+            let sum = 0;
+            for(num of arguments){   // num = Number형 
+                sum += num;
+            }
+            return sum;
+        }
+
+        
+    
+
+ </script>
+</head>
+<body>
+
+
+    <script>
+
+        //매개변수와 리턴값이 있는 함수의 형태
+
+        function functionName(name){  //매개변수 name , 값을 받을수있따
+            document.write(name);     // html에 출력하는 코드
+            return name +" 입니다";    // name 압나다 반환
+        } //함수 선언 끝
+
+        
+        functionName("홍길동");
+        document.write("<br>");
+        document.write("<br>");
+
+        function intro(){
+            document.write("안녕하세요. 반갑습니다")
+        }
+
+        intro();   //함수값 출력
+
+
+        document.write("<br>");
+        document.write("<br>");
+
+        a();
+        document.write("<br>");
+
+        
+        introName("홍길동1");
+        document.write("<br>");
+        
+        document.write(introNameReturn("홍길동2","부산"));
+        document.write(introNameReturnLog("홍길동3"));
+        document.write("<br>");
+
+        document.write(area(5,10));
+        document.write("<br>");
+        document.write(numPrint(1,3));
+        document.write("<br>");
+        
+        document.write(avrg());
+        document.write("<br>");
+        document.write("<br>");
+        /*
+        let numArray1 = [30,60,40,60,20];
+        document.write(avr(numArray1)); */
+
+        document.write(add(6));   // undefined로 값 확인
+        document.write("<br>");
+
+        document.write( multiply(2));  // 매게변수에 바로 입력 
+        document.write("<br>");
+        document.write(addAll(5,5,5,2));
+        numPrint(1,2,3,4,5);  // 1 =a 2 부터 2,3,4,5 배열 [0 1 2 3]
+    
+
+
+
+    </script>
+    
+</body>
+</html>
