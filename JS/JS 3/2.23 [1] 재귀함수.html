@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //반복문
+        for(let i=0; i<5; i++){
+            document.write("<p>반갑습니다</p>");
+        }
+        //재귀함수
+        function hi(n){ //n 은 반복할 숫자 매개변수
+        if(n==0){
+              // undefined > 함수를 끝내느 역할
+            return ;
+        }
+        else if (n>0){
+
+            document.write("<p>반갑습니다1</p>");
+            return hi(n-1);
+        }
+        }
+        hi(3);
+
+
+        let sumFor =0;
+        for(let i=0;i<=5;i++){
+            sumFor += 1;
+        }
+        document.write("<p>"+sumFor+"</p>");
+
+        
+        function sum(n){
+            if(n>0){
+                return n += sum(n-1);   // 
+            }
+            else {
+                return n ;  // 양수값이외 그대로 출력 
+            }
+        }
+        document.write(sum(5)+"<br>");
+
+        function f(a){
+            if(a>1){
+                return a*= f(a-1)
+            }
+            else {
+                return 1
+            }
+        }
+        document.write(f(5));
+        document.write("<br>")
+
+     setTimeout(()=>{
+            document.write("타이머함수");
+        }, 1000); //ms 기준 // 기존에 뜬 창이에서 변경
+                  //document.write("타이머함수"); 창만 뜸 
+       /* setInterval(
+            function(){
+                console.log("계속해서 반복합니다")},
+                1000,
+        ); */
+        
+       
+
+
+    </script>
+    
+</body>
+</html>

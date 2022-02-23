@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f(){
+            let value =123;
+            function g(){
+                alert(value);
+            }
+            g()
+        }
+        f();
+
+        function add(a,b){
+            let sum = a+b;
+            function printNum(){
+                document.write(sum);
+            }
+            printNum();
+        }
+        add(5,6);
+
+        let globalCount =0;
+        function CountG(){
+            globalCount++; // globalCount += 1;
+        }
+        
+        function CountL(){
+            let localCount =0;
+            function plus(){
+                return localCount +=1;
+            }
+            return plus();
+        }
+
+        let countTest = CountL();
+        alert(countTest);
+
+        // 람다형식
+        let lamda =(function (){  //익명함수를 ()감싼다 
+            return "람다형식입니다";        // ({}) 안까지 익명함수
+        }) 
+        //챡 134p 클로저 함수
+        let count =(function(){
+            let localCount =0; //이 함수를 전역 변수처럼 사용
+            return function(){ //return을 통해 익명함수를 되돌려줌
+                return localCount +=1;
+            };
+        })
+        
+
+    </script>
+    
+</body>
+</html>

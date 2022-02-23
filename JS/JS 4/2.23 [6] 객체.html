@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+          //객체 puppy 
+        let Puppy ={
+            //속성 name
+            // 속성값은 문자열, 숫자형 뿐만아니라 객체(object)도 사용 할 수 있다
+            name : "초코",
+            //메소드 eat
+            // 표현식함수(익명함수)로 들어오기에  화살표 함수로 (() =>)도 올 수 있다
+            eat : function(){
+                document.write("<p>밥을 먹습니다</p>");
+            },
+            namePrint : function() {
+                // this를 이용해서 값
+                console.log(this.name+"입니다");
+            }
+        };
+
+        let person = {
+            name : "홍길동",
+            address : "부산",
+            intro : function(){
+                return this.name+"입니다."+this.address+"에 거주중입니다";
+               // document.write(this.name+"입니다."+this.address+"에 거주중입니다");
+            }
+        };
+
+        let myCookie = {
+            shape : "원",
+            flavor : "초코",
+            intro : function() {
+                return `${this.shape}모양의 ${this.flavor}맛입니다.`;
+              //return this.shape+"모양의"+this.flavor+"맛입니다"
+            },
+            change : function(shape){////shape 매개변수를 통해서 값을 받아옴
+                this.shape = shape; //값을 속성에 할당할 수 있다.
+            } // myCookie.change("네모")  >> myCookie.intro 출력하면 네모모양의 초코맛입니다
+        };
+
+        let ob = new Object();
+        ob.name = "길동";
+        ob.address = "한국";
+        ob.intro = function(){
+            return `${this.name}입니다.저는${this.address}에 거주합니다`;
+        }
+
+        let tree = new Object();
+        tree.height = 200;
+        tree.type = "은행나무";
+        tree.fall = function(){
+            return "잎사귀가 노랗게 되었습니다";
+        }
+    </script>
+    
+</body>
+</html>
