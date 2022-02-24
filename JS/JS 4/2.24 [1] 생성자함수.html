@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //생성자 함수를 이용한 객체 생성
+        //Dog - 속성 : name age 메소스 : intro : age 살 입니다 >>return
+
+        function Dog(name ,age) {//값이 들어가는 생성자 함수 
+            this.name = name;
+            this.age = age;
+            this.intro = function(){
+                return this.age+"살입니다";
+            };
+        }
+        
+        let myDog = new Dog("초코",1);
+        let yourDog = new Dog("깡지",2);
+
+
+
+        function Student(name,score){
+            this.name = name;
+            this.score = score;
+            this.study = function(){
+               this.score+=10;
+            }
+            this.showScore = function(){
+                return this.score; 
+            }
+        }
+        let myStudent = new Student("홍길동",70);
+        let yourStudent = new Student("성춘향",80);
+
+
+
+        function BusCard(money){
+            this.money = money;
+            this.charge = function(n){
+                 this.money =this.money +n;
+                 return "잔액 : "+ this.money;
+            }
+            this.takeBus = function(){
+                if(this.money <1500){
+                    return "잔액이 부족합니다" + "잔액 : "+this.money;
+                }
+                else {
+                    this.money = this.money -1500;
+                    return  "잔액 : " +this.money;
+                }
+            }
+            this.showMoney = function(){
+                return "잔액 :" + this.money;
+            }
+        }
+        let myBusCard = new BusCard(1500);
+        let yourBusCard = new BusCard(1000);
+
+        function Messege(name,content,time){   // this 로 속성사용
+            this.name =name;
+            this.content =content;
+            this.time = new Date(); //Date 사용하면 국제표준시 로 알려줌 
+            this.modifyMessege = function(messege){
+                return this.content = messege;
+            }
+            this.showMessege = function(){
+                return this.name + "님께서" + this.content +"를"+ this.time+ "에 보냈습니다";
+            }
+        }
+        let myMessege = new Messege("홍길동","반갑습니다","");
+        let yourMessege = new Messege("성춘향","안녕하세요","0224");
+
+        for (let i in yourMessege){   // 디버깅으로 확인 해보기 
+            console.log(i+":"+yourMessege[i]);
+        }
+
+        let string = "";
+        for (let x in myBusCard){
+            string = string + x +":"+myBusCard[x]+".";
+        }
+        console.log(string);
+
+        let memo = {
+            title    : "오늘할일",   //title 속성에 문자열 값
+            todo     :            { //todo 속성에 객체값 3가지 배열 존재
+                morning    : ["청소", "준비"],  
+                afternoon : ["수업"],
+                evening   : ["정리","독서"]
+            }
+        }
+
+
+
+    </script>
+
+    
+</body>
+</html>

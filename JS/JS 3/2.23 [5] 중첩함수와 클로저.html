@@ -31,14 +31,14 @@
             globalCount++; // globalCount += 1;
         }
         
-        function CountL(){
+        function CountL(){   //클로져 함수   함수안에 함수 
             let localCount =0;
             function plus(){
                 return localCount +=1;
             }
             return plus();
         }
-
+           // 클로져 함수를 사용하기 위한 함수 
         let countTest = CountL();
         alert(countTest);
 
