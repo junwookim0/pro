@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let maxCount =10;
+        for(let checkCount=1; checkCount<=maxCount;checkCount++){
+            document.write(maxCount+"중의"+checkCount+"<br>");
+        }
+        document.write("<br>");
+
+        function c(n){
+            let check =0;
+            for(let i=1; i<=n;i++){
+                check = i;
+                document.write("10중의"+check+"<br>");
+                //  maxCount +=i;     //전역변수 사용 
+            }
+            return check;
+            // return maxCount;
+        }
+        c(5);
+        
+        document.write("<br>");
+
+
+        let outString="밖에 있는 문자 입니다"
+        function printString(){
+            let inString="안에 있는 문자 입니다"
+            return inString
+        }
+        document.write(outString);
+        document.write("<br>");
+        document.write(printString());
+    </script>
+    
+</body>
+</html>
