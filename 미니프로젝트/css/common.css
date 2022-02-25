@@ -21,11 +21,11 @@ form > input {
     padding: 5px;
     flex-wrap: wrap;
 }
-.flex div {
+.flex div { /*class.flex 안에 생성되는 메모장 div입니다 */
     width: 250px;
     background-color: rgba(255,255,255,2);
     padding: 20px;
-    margin: 10px;
+    margin: 50px;
     word-break: break-word; /*영어가 영역을 벗어나지않음*/
 }
 #clock {
