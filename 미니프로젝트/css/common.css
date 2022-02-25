@@ -1,0 +1,46 @@
+.hidden {
+    display : none;
+}
+form ,h1 {
+    text-align: center;
+}
+form > input {
+    margin-bottom: 50px;
+
+}
+.login_btns{
+    border: 1px solid  white;
+    background-color: rhba(0,0,0,0);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+.flex {
+    display: flex;
+    margin: 30px 10px;
+    padding: 5px;
+    flex-wrap: wrap;
+}
+.flex div {
+    width: 250px;
+    background-color: rgba(255,255,255,2);
+    padding: 20px;
+    margin: 10px;
+    word-break: break-word; /*영어가 영역을 벗어나지않음*/
+}
+#clock {
+    color: white;
+    text-shadow: 0px 0px 7px black;
+    font-size: 50px;
+}
+#greeting {
+    color: white;
+}
+form input[type="text"]{
+    background-color: transparent; /*배경투명*/
+    border: none;
+    border-bottom: 1px solid white;
+}
+form input[type="text"]::placeholder{
+    color: white;
+}

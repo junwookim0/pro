@@ -59,6 +59,46 @@
         tree.fall = function(){
             return "잎사귀가 노랗게 되었습니다";
         }
+
+        let myBook = new Object();  //주체가 함수이다 
+        myBook.title = "어린왕자";
+        myBook.price = 6000;
+        myBook.intro = function(){
+            return this.title +"입니다." + this.price+"입니다";
+            //return `${this.title}입니다. ${this.price}입니다`;
+            },
+        myBook.discount = function(){  //
+           // let dis_10p = this.price *0.1; //원래가격의 10%금액
+            //this.price = this.price - dis_10p;
+
+
+            this.price = this.price*0.9;
+            }
+        
+        let myWallet = new Object();
+        myWallet.owner = "홍길동";
+        myWallet.money = 10000;
+        myWallet.show = function(){   // money값을 리턴받아와서 보여준다
+            return `현재 ${this.money}남았습니다`;
+        },
+        myWallet.buy = function(n){ //
+            if(this.money<n){
+                console.log("물건을 살 수 없다");
+            }
+            else {
+                this.money = this.money-n;
+            }
+        }
+
+        let yourWallet = myWallet;
+        yourWallet.owner = "성춘향 "
+        console.log(myWallet.ower);
+        console.log(yourWallet.ower);  //your 이 들어감 뒤에 작성되있기 때문에 덮아씀 
+        console.log(myWallet.show());
+        console.log(yourWallet.show());  //your 들어감 
+        
+
+
     </script>
     
 </body>

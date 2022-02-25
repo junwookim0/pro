@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function AnimalChart(name,kind,age){
+            this.name = name;  //보호자 이름
+            this.kind =kind;   // 동물종류
+            this.age = age;   // 나이 
+            
+            this.receive = function(sickness,condition){  //병명 ,상태
+               this.sickness = sickness;
+               this.condition = condition;
+            }
+            this.confirm = function(){
+                return this.name+"님의 "+this.kind+"는 "+this.age+" 살입니다."+
+                       this.sickness+"이고 " +this.condition+"상태 입니다"
+            }
+        }
+
+        let animal = new AnimalChart("홍길동","고양이","2");
+
+
+        /*
+        this.confirm = function(){
+            for(let x in this){ // this는  생성된 객체를 의미함 
+            consol.log(typeof x);
+                if(!(x=="receive"||x=="confirm")){
+                    //receive 와 confirm이 아닐때 
+                    console.log(this[x]);
+                }
+            }
+        } */
+    </script>
+    
+</body>
+</html>
