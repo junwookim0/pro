@@ -47,6 +47,20 @@ form input[type="text"]::placeholder{
 div {
     font-family: 'GangwonEdu_OTFBoldA';
 }
+nav{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.memolistbtn:link , :visited{
+    color: black; 
+    text-decoration: none;
+    font-weight: bold;
+}
+.memolistbtn:hover{
+    color: white;
+    text-shadow: 2px 2px gray;
+}
 #memoimg{
     width: 40px;
 }
