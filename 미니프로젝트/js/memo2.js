@@ -28,4 +28,10 @@ function memoFormSubmit(event){
     memoInput.autofocus = true;  //자동으로 정렬 안써도 기본설정 true
 }
 
+function delDiv(){
+    let memo1 = document.getElementById("memo-board");
+    let last = memo1.lastChild;
+    last.remove();
+
+}
 memoForm.addEventListener("submit", memoFormSubmit);
