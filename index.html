@@ -4,37 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./main.css">
+    <title>mini propjext</title>
+    <link rel="stylesheet" href="./미니프로젝트/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
 </head>
 <body>
-    <header>
-        <h1>블로그</h1>
-    </header>
+    <h1 id="clock"> 00:00:00</h1>
+    <h1 id="greeting"></h1>
+    <h1 class="animate__animated animate__bounce" id="m"><img src="./미니프로젝트/img/icons8-memo-64.png"id="memoimg"></im> MEMO</h1>
+    <form id="login-form">
+        <input type="text" placeholder="이름을 적어주세요 hint:그린"required>
+        <input type="submit" value="Log in"  class="login_btns">
+    </form>
+
+    <form id="memo-form" class="hidden">
+        <input type="text"  placeholder="메모를 작성해주세요"required>
+        <input type="submit" value="memo" class="login_btns">
+        <input type="button" value="del" class="login_btns" onclick="delDiv()">
+    </form>
     <nav>
-        <a href="./공지.html" class="btn">공지사항</a>
-        <a href="./index.html" class="btn">게시글</a>
+        <a href="./index.html"class="memolistbtn">MEMO1</a>
+        <a href="./memo2.html"class="memolistbtn">MEMO2</a>
+        <a href="./memo3.html"class="memolistbtn">MEMO3</a>
     </nav>
 
-    <main class="grid">
-        <div class="notice">
-            <h3>제목1</h3>
-            <p>게시판 내용들</p>
-        </div>
-        <div class="notice">
-            <h3>제목2</h3>
-            <p>게시판 내용들</p>
-        </div>
-        <div class="notice">
-            <h3>제목3</h3>
-            <p>게시판 내용들</p>
-        </div>
-        <div class="notice">
-            <h3>제목4</h3>
-            <p>게시판 내용들</p>
-        </div>
-      
-    </main>
+    <div class="flex" id="memo-board"></div>
+    
+    <script src="./미니프로젝트/js/login.js"></script>
+    <script src="./미니프로젝트/js/memo.js"></script>
+    <script src="./미니프로젝트/js/background.js"></script>
+    <script src="./미니프로젝트/js/clock.js"></script>
     
 </body>
 </html>

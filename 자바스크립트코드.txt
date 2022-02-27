@@ -1,6 +1,0 @@
-var arr = [ ... ]; var i = 0; while (i < arr.length) {     ...     i++; }
-
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 아래코드가 성능10프로가량 높게 나온다
-
-var arr = [ ... ]; var i = 0, len = arr.length; while (i < len) {     ...     i++; }
-
