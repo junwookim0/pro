@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //6.객체 
+        let myDog = {
+            name : "Happy",
+            friends : ["Mini","Choco"],
+            bark : function(){
+                console.log("bow-wow");
+            }
+        }
+        /* my Dog.bark = function() {
+            consil.log("bow-wow");
+        }*/
+        //7
+        let person = new Object();
+        person.name = "Nature of Code";
+        person.price = "30000원";
+        person.author = "다니엘 쉬프만";
+        person.isbn = "9788968481901"
+        person.page = 620;
+
+        let book = {
+            title  : "Nature of Code",
+            pay    : "30000원",
+            author : "다이넹ㄹ 쉬프만",
+            ISBN   : "9788968481901",
+            page   : "620페이지"
+        };
+    
+        //8
+        function Product(name,weight,price){
+            this.name = name;
+            this.weight = weight;
+            this.price = price;
+            this.calculate = function(g){ //들고온 무게
+                return g*(this.pay/this.weight*100); // 들고온 무게와 가격 무게 *가격 
+            };
+        }
+        let myProduct = new Product("돼지고기",100,1690);
+
+
+        //함수 3문제 1
+        function power(n,c){
+            if(c){
+                let pow =1;
+                for(let i=0;i<c;i++){        //2,3  2*2*2 출력
+                    pow *= n;               // 
+
+                }return pow;
+            }
+        }
+            
+        
+        //함수 3문제 2
+        let multiplay = function(...num){ //...a 나머지매개변수,arguments 도 동일
+            let mult = 1;
+            for (let n of num){   //배열이니 for of 사용  num이라는 배열 중에서(of) n값
+                mult *=n;
+            }
+            return mult;
+        }
+        multiplay();
+        //함수 3문제 3
+        function meetAt(y,m,d){
+            this.y =y;
+            this.m = m;
+            this.d =d;
+            this.met = function(){
+                return this.y+"/"+this.m+"/"+this.d
+            }
+        }
+        let my = new meetAt("1994",4,4); //my.met();
+
+        function meeta(year,month,day){
+            this.year = year;
+            this.month = month;
+            this.day = day;
+            if(month ==undefined){
+                return `${year}`
+            }
+            else if(day == undefined){
+                return this.year +"/"+this.month
+            }else { 
+                return this.year + "/"+this.month+"/"+this.day
+            }
+        }
+        //객체 1
+        const myStorage = {
+            car: {
+                inside: {
+                    glovebox : "maps",
+                    passenger : "crumbs"
+                },
+            outside:{
+                trunk : "jack"
+            }
+        }
+    }   //myStorage.car.inside.glovebox() = maps      <<  maps 의 값을 불러오려면 어떻게 해야될까
+
+    //객체 2
+    function Products(name,pay){
+        this.name =name;
+        this.pay =pay;
+        this.keep = function(){
+            return this.name+"을 보관했습니다"
+        }
+        this.getPay = function(){
+            return this.pay;
+        };
+    }
+    let my1 = new Products("book",6000);
+    let my2 = new Products("pencil",2000);
+    let my3 = new Products("hat",8000);
+    //객체3
+
+    function User(id,money){
+        this.id =id;
+        this.money = money;
+        this.buyList = [];
+        this.charge = function(plusMoney){
+            this.money += plusMoney;
+            return "잔액 : "+ this.money;
+        }
+        this.buy = function(product){
+            if(this.money< product.getPay()){
+                return "부족"
+            }
+            else{
+                this.money -= product.getPay();
+                this.buyList.push(product.name);
+                return this.money 
+            };
+        }
+    }
+    let her = new User("harry",10000);
+
+    //일반함수 
+    function sum1(A,B){
+       let lcm =1;
+
+       while(true){   // 두수주의 최소공배수 구하기 
+           if((lcm%A ==0)&&(lcm % B ==0)){
+               break;
+           }
+           lcm ++;
+       }
+       return lcm
+    }
+
+    //객체와 함수
+    let myProfile = {
+        name: "김개발",
+        address : {
+            email : "geabal@gmail.com",
+            home  : "위워크" 
+        },
+        myfavorite : {
+            food : [{
+                name: "샐러드",
+                price: 3500,
+            },{
+                name : "삼겹살",
+                price : 15000
+            }],
+            hobby: ["축구"]
+        }
+    }
+    function getAnswer() {
+        console.log(myProfile.myfavorite.food[0])
+    }
+
+    //for문과 배열과 생성자 함수와 객체
+    function Profile(name,phoneNumber){
+        this.name= name;
+        this.phoneNumber= phoneNumber;
+        this.calling = function(){
+            return this.name+"에게 전화하고 있습니다"
+        }
+    }
+
+    let profileBook = [];
+    profileBook.push (new Profile("Harry",0543236543));
+    profileBook.push(new Profile("Sherlock",0994372684));
+    profileBook.push(new Profile("john",0120331254));
+    // profilebokk[0] = new Profile(harry,0543236543) ; 
+    // let harry = new Profile("harry",0543236543);        3가지 동일 
+    
+
+
+
+    </script>
+    
+</body>
+</html>

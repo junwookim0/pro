@@ -16,6 +16,7 @@ function memoFormSubmit(event){
     event.preventDefault();
     console.log(memoInput.value);
 
+
     //새로운 요소 (태그)를 만들어서 memo
     let memo = document.createElement("div");
 
@@ -26,15 +27,16 @@ function memoFormSubmit(event){
     memoInput.value ="";
     console.dir(memoInput);
     memoInput.autofocus = true;  //자동으로 정렬 안써도 기본설정 true
-    
+    localStorage.setItem("memo",memoInput.value);
+
 }
+
 
 function delDiv(){
     let memo1 = document.getElementById("memo-board");
     let last = memo1.lastChild;
-
     last.remove();
-
 }
 
+memo  = localStorage.getItem('div');
 memoForm.addEventListener("submit", memoFormSubmit);
