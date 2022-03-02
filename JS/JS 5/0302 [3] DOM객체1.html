@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM document</h1>
+    <a href="">링크입니다</a>
+    <p class="classname">단락입니다</p>
+    <h1 id="title">제목입니다</h1>
+
+    <div class="class">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <form id="form">
+        <input type="text">
+        <input type="submit" value="제출">
+    </form>
+
+    <script>
+        //html 콘솔창에서 직접 가능 
+        let aElement = document.querySelector("a");    // a태그를 불러옴
+        aElement.innerHTML;                            // a 태그 내용을 표시함
+        aElement.href = "http://www.naver.com";        // a태그에 주소값 입력 
+        document.querySelector("#title").innerHTML = "아이디로 바꾼 내용"  // # +아이디
+        //document.querySelector(".classname").innerHTML = "바꾼클래스내용" //. + 클래스네임
+
+        let lilist = document.querySelectorAll("li");
+        //NodeList : 접근방법은 배열과 동일
+
+        for(let i=0;i<lilist.length;i++){
+            lilist[i].innerHTML = "바뀝니다";
+        }
+
+        document.querySelector("#form input").disabled = true;   // input 비활성화
+        document.querySelector("#title").style.textDecoration="line-through"; //글가운데줄 
+        document.querySelector(".classname").style.backgroundColor ="yellow"; 
+        let liliststyle = document.querySelectorAll("li");  // 리스트all 해서  글 색 변경
+        for(let i=0;i<liliststyle.length;i++){
+            liliststyle[i].style.color = "blue";
+        }
+        console.dir(document.getElementsByTagName("li"));
+
+        lilist[0].childNodes  // li
+        lilist[0].parentNode  // ul
+        lilist[0].parentElement // ul
+
+        childNodes[0] // 값을 찾는다
+        .childNodes[0].nodeValue
+        .nextElementSibling  // 다음형제요소
+        .parentNode.nextElementSibling // 부모노드에 다음요소
+        .firstChild.nextSibling        // 해당요소의 첫번째 자식은 text 
+
+        let pe1 = document.createElement("p")           //p태그 요소 값 생성
+        pe1.innerHTML = "변경합니다"                    //p태그 내용변경
+        let atrr = document.createAttribute("style")   //style 요소 추가
+        atrr.value = "color : red";                   // 컬러 레드 
+        pe1.setAttributeNode(atrr)                   // pe1 p태그에 atrr을 추가
+        <p style="color : red">변경합니다 </p>       //결과값
+        // 위 과정으로 생성된 p태그 <p style="color : red">변경합니다 </p> 을 추가해주기
+        document.querySelector(".class").appendChild(pe1) // html에 p태그 추가됨
+        document.querySelector(".class").setAttributeNode(atrr) //사용불가 ..
+        document.querySelector(".class").setAttributeNode(atrr.cloneNode(true)) // 노드 복제 클론노드
+        //한번쓴 노드는 재활용이 힘듬...? 그래서 새로운 노드를 만들어 다른걸로 활용
+        // ul li 를 lilist롤 만든다음 
+        lilist[4].remove //지정해준 배열값을 삭제함
+
+
+    </script>
+</body>
+</html>

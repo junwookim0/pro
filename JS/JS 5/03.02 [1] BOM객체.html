@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //타이머확인
+        let time = 0;
+        let funcid = setInterval(
+            function(){
+                time ++;
+                document.write(`${time}초 <br>`)
+            },
+            1000 
+        );
+        console.log("실행이 되었습니다");
+        document.write("실행이 되었습니다");
+        //1000초뒤에 멈춤
+        setTimeout(()=> clearInterval(funcid),10000); // 그냥 clear만 쓰면 동작안함 말그대로 clear 작용
+
+        document.write("clearInterval뒤에 작성한 내용입니다.");
+    </script>
+    
+</body>
+</html>
