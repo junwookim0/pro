@@ -10,18 +10,14 @@
     <script>
         function printCenter(s) {
             var answer = '';
-            if(s.length % 2 ===0){
-            answer = answer.concat(s[s.length/2 -1]);
-            answer = answer.concat(s[s.length/2]);
+            if(s.length % 2 ==0){
+            answer = answer.concat(s[s.length/2 -1],s[s.length/2]);    // 받아온 문자열s 를 abcd 길이의 2분의1-1 부분과 2분의1부분 표시
             }else{
-                answer = answer.concat(s[Math.floor(s.length/2)]);
+                answer = answer.concat(s[Math.floor(s.length/2)]); 
             }
-            return answer;
+            return answer; 
         }
 
-
-
-        
         let quizArray = [
             {quiz: "이름은?",
             answer:"홍길동"},
@@ -30,14 +26,19 @@
             {quiz: "거주지는?",
             answer:"부산"}
         ];
-        function randomQuiz(a,n){
-            this.a = a;
-            this.n = n;
-           return a[Math.floor(Math.random()*quizArray.length)]; 
+        function randomQuiz(quizArray,count){
+            let score = 0;
+            let random = 0;
+
+            for(let i=0;i<count;i++){
+                random = Math.floor(Math.random()*quizArray.length);
+                let ans = prompt(quizArray[random].quiz);
+                if(ans == quizArray[random].answer){
+                    score++;
+                    }
+            }
+            return `총 ${count}문제중 ${score}개 맞췄습니다`;
         }
-        
-            randomQuiz(quizArray);
-            prompt(randomQuiz(quizArray));
 
     
 
