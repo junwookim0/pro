@@ -114,8 +114,8 @@
             return this.name+"을 보관했습니다"
         }
         this.getPay = function(){
-            return this.pay
-        }
+            return this.pay;
+        };
     }
     let my1 = new Products("book",6000);
     let my2 = new Products("pencil",2000);
@@ -124,19 +124,20 @@
 
     function User(id,money){
         this.id =id;
-        this.money =money;
+        this.money = money;
         this.buyList = [];
         this.charge = function(plusMoney){
             this.money += plusMoney;
             return "잔액 : "+ this.money;
         }
         this.buy = function(product){
-            if(this.money< Products.getPay()){
+            if(this.money< product.getPay()){
                 return "부족"
             }
             else{
-                this.money -= Products.getPay();
-                this.buyList.push(Products.name);
+                this.money -= product.getPay();
+                this.buyList.push(product.name);
+                return this.money 
             };
         }
     }
@@ -185,23 +186,14 @@
             return this.name+"에게 전화하고 있습니다"
         }
     }
-    let harry = new Profile("harry",0543236543);
-    let sherlock = new Profile("sherlock",0994372684);
-    let john = new Profile("john",0120331254);
 
-    let profileBook = [{
-        name : "harry",
-        phoneNumber : 0543236543 
-    },{
-        name : " sherlock",
-        phoneNumber : 0994372684
-    },{
-        name : "john",
-        phoneNumber : 0120331254
-    }]
+    let profileBook = [];
+    profileBook.push (new Profile("Harry",0543236543));
+    profileBook.push(new Profile("Sherlock",0994372684));
+    profileBook.push(new Profile("john",0120331254));
+    // profilebokk[0] = new Profile(harry,0543236543) ; 
+    // let harry = new Profile("harry",0543236543);        3가지 동일 
     
-
-
 
 
 

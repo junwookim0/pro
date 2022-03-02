@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BOM Browser Object Model</h1>
+    <script>
+
+        let check = confirm("운영체제를 알려드릴까요?");
+        if(check){
+            document.write(`${navigator.platform}입니다`);
+        }
+        else {
+            document.write("취소했습니다");
+        }
+        //코로나 19 사이트 http://ncov.mohw.go.kr/ 에서 확인
+        document.getElementsByClassName("m_fact")
+        document.querySelector(".m_fact")
+        document.querySelectorAll(".m_fact")
+        document.querySelector(".m_text_list")
+        document.querySelectorAll(".m_text_list")
+    </script>
+    
+</body>
+</html>
