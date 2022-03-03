@@ -1,0 +1,52 @@
+let h1 = document.querySelector("h1")
+h1.textContent = "DOM 이용한 수정"
+h1.setAttribute("style","color : blue")
+let header = document.querySelector("header")
+header.setAttribute("style","background:grey")
+let liList = document.querySelector("li")
+liList.childNodes[0]
+liList.removeChild(liList.childNodes[0])
+
+let pe = document.createElement("li")
+document.querySelector("li").appendChild(pe)
+
+let column = document.querySelector("ol")
+column.childNodes
+column.removeChild(column.childNodes[5])
+column.removeChild(column.childNodes[6])  원래는 3번째 삭제해야됨
+column.childNodes[1].textContent="내용"
+
+let p = document.querySelector(".text-stytle")
+p.setAttribute("style","color :red")
+
+
+----------------------------------------------------
+let h1 = document.querySelector("h1")    //h1으로 h1태그지정
+h1.style.color = "blue"                    
+h1.style.backgroundColor = "lightgrey"
+h1.textContent = "DOM 이용한 수정"
+
+let ul = document.querySelector("ul")   //ul으로 ul태그지정
+ul.removeChild(ul.childNodes[1])      // ul의 첫번째 자식 삭제
+
+let li = document.createElement("li")  // li 태그 생성
+li.innerHTML = "새로추가한 노드요소"    // li 내용입력
+ul.appendChild(li)                       // ul 끝줄에 li추가
+
+
+let ol =document.querySelector(".content-body", ".colum") // 컨텐드 바디 클래스에 있는 내용 ol로 지정
+
+let ol =document.querySelector("ol")  // 이렇게하면되는지.. 위에껀...흠..
+ol.removeChild(ol.firstElementChild)   //첫번쨰 지워짐 하지만 배열은 1,2,3 으로 유지
+ol.removeChild(ol.lastElementChild)    //마지막 
+//배열숫자는 유지됨 순서대로 굿
+
+
+let chageli = document.createElement("li")
+chageli.textContent = "내용바꿈"
+ol.replaceChild(chageli,ol.firstElementChild
+
+document.querySelector(".text-style").style.color ="red"
+let p = document.querySelector(".content-body p")
+document.querySelector(".content-body").appendChild(p.cloneNode(true))
+document.querySelector(".content-body").appendChild(p.cloneNode(true))

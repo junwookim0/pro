@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){   // widow.onload를 이용해서 html실행 후 script 실행
+            old();
+        }
+
+        function old(){
+        const p =document.querySelector("p");
+        p.textContent = "수정했습니다";
+        }
+    </script>
+    
+</head>
+<body>
+    <p>
+        1) 마우스 이벤트
+        click     : 요소에 마우스를 클릭했을 때 이벤트가 발생
+        dbclik    : 요소에 마우스를 더블클릭했을 때 이벤트가 발생
+
+        2) 키 이벤트
+        keydown keyup keypress
+
+        3) 폼 이벤트
+        foucs
+        blur
+        change
+        submit
+        reset
+        select
+
+        4) 로드 및 기타 이벤트 
+        load
+        abort
+        unload
+        resize
+        scroll  onfocus="foucsIn()" blur="focusOut()"
+    </p>
+
+    <input type="button" value="클릭" onclick="alert('클릭했습니다')">
+    <p id="color" onmouseover="color()"onmouseleave="color2()"> 마우스를 올리면 색이 변합니다</p>
+    <h1 id="tilte" onfocus="foucsIn()" blur="focusOut()"> 제목입니다</h1>
+
+    <input type="text" id="title" onfocus="foucsIn()" onblur="focusOut()" onchange="backgroundColorChange()">
+
+
+<script>
+    function color(){
+        const p = document.querySelector("#color")
+        p.style.color = "red";
+    }
+    function color2(){
+        const p = document.querySelector("#color")
+        p.style.color = "black";
+    }
+
+    function focusIn(){
+        const input = document.querySelector("#title");
+        input.style.color = "red";
+    }
+    function focusOut(){
+        const input = document.querySelector("#title");
+        input.style.color = "black";
+    }
+    function backgroundColorChange(){
+        
+    }
+</script>
+
+    
+</body>
+</html>

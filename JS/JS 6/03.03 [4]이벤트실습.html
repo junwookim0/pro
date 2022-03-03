@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> 값을 넣어주세요</p>
+    <form class="">
+        <input type="text" id="text_value" value="">
+        <input type="button" value="확인" onclick="textInput()" onfocus="focus1(event)" onblur="blur1()">
+    </form>
+    <p id="result"></p>
+
+    <input type="text">
+    <input type="button"value="버튼" onclick="">
+
+    <h1 id="color"> 마우스를 올리세요</h1>
+
+    <p id="btn">눌러주세요</p>
+
+    <ol>
+        <li id="first_list"><input type="checkbox" id="checkbox">첫번째 리스트입니다.</li>
+    </ol>
+
+
+    <script>
+
+        const ck = document.querySelector("#checkbox");
+        ck.addEventListener("click",check);
+        function check(e){
+            const li = document.querySelector("#first_list");
+            const checkEvent = e.target;
+            if(checkEvent.checked ==true){
+                li.style.color = "lightgray";
+            }else{
+                li.style.color = "black";
+            }
+        }
+
+
+        const p1 = document.querySelector("#btn");
+        p1.addEventListener("click",hid);
+        function hid(){
+
+            const px = document.querySelector("#btn");
+            if(px.textContent =="숨겨진단어입니다"){
+                px.textContent = "글자를 클릭해주세요";
+                px.style.color= "black";
+            }else{
+                px.textContent ="숨겨진단어입니다";
+                px.style.color = "blue"
+            }
+        }
+        
+        const h1 = document.querySelector("h1");
+        h1.addEventListener("click",color);
+        h1.addEventListener("dbclick",color2);
+
+        function color(){
+            const p = document.querySelector("#color");
+            p.style.color = "green";
+        }
+        function color2(){
+            const p = document.querySelector("#color");
+            p.style.color = "red";
+        }
+
+
+        function textInput(){
+            const textValue = document.querySelector("#text_value");
+            document.querySelector("#result").textContent=textValue.value;
+            textValue.style.color = "red"
+        }
+
+        function focus1(event){
+            //이벤트 객체를 들고 와서 이벤트가 실행되는 요소를 가져올수있다
+            const textInput = event.target;
+            //const input = document.querySelector("#text_value");
+            textInput.style.backgroundColor = "grey";
+        }
+        function blur1(){
+            const input = document.querySelector("#text_value");
+            input.style.backgroundColor = "white";
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

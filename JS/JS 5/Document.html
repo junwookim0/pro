@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)http://127.0.0.1:5500/JS/JS%205/0302%20[3]%20DOM%EA%B0%9D%EC%B2%B41.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="background : linear-gradient(to right,#ffa7a3,#5673bd)">textContent로 바꾼내용 innerHTML 보다 textContent로 사용 권장</h1>
+    <a href="http://127.0.0.1:5500/JS/JS%205/0302%20[3]%20DOM%EA%B0%9D%EC%B2%B41.html">링크입니다</a>
+    <p class="classname">단락입니다</p>
+    <h1 id="title">제목입니다</h1>
+
+    <div class="class">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <form id="form">
+        <input type="text">
+        <input type="submit" value="제출">
+    </form>
+
+    <script>
+        //html 콘솔창에서 직접 가능 
+        let aElement = document.querySelector("a");    // a태그를 불러옴
+        aElement.innerHTML;                            // a 태그 내용을 표시함
+        aElement.href = "http://www.naver.com";        // a태그에 주소값 입력 
+        document.querySelector("#title").innerHTML = "아이디로 바꾼 내용"  // # +아이디
+        //document.querySelector(".classname").innerHTML = "바꾼클래스내용" //. + 클래스네임
+
+        let lilist = document.querySelectorAll("li");
+        //NodeList : 접근방법은 배열과 동일
+
+        for(let i=0;i<lilist.length;i++){
+            lilist[i].innerHTML = "바뀝니다";
+        }
+
+        document.querySelector("#form input").disabled = true;   // input 비활성화
+        document.querySelector("#title").style.textDecoration="line-through"; //글가운데줄 
+        document.querySelector(".classname").style.backgroundColor ="yellow"; 
+        let liliststyle = document.querySelectorAll("li");  // 리스트all 해서  글 색 변경
+        for(let i=0;i<liliststyle.length;i++){
+            liliststyle[i].style.color = "blue";
+        }
+        console.dir(document.getElementsByTagName("li"));
+
+        lilist[0].childNodes  // li
+        lilist[0].parentNode  // ul
+        lilist[0].parentElement // ul
+
+        childNodes[0] // 값을 찾는다
+        .childNodes[0].nodeValue
+        .nextElementSibling  // 다음형제요소
+        .parentNode.nextElementSibling // 부모노드에 다음요소
+        .firstChild.nextSibling        // 해당요소의 첫번째 자식은 text  next형제노드
+
+        let pe1 = document.createElement("p")           //p태그 요소 값 생성
+        pe1.innerHTML = "변경합니다"                    //p태그 내용변경
+        let atrr = document.createAttribute("style")   //style 요소 추가
+        atrr.value = "color : red";                   // 컬러 레드 
+        pe1.setAttributeNode(atrr)                   // pe1 p태그에 atrr을 추가
+        <p style="color : red">변경합니다 </p>       //결과값
+        // 위 과정으로 생성된 p태그 <p style="color : red">변경합니다 </p> 을 추가해주기
+        document.querySelector(".class").appendChild(pe1) // html에 p태그 추가됨   
+        document.querySelector(".class").setAttributeNode(atrr) //사용불가 ..  
+        document.querySelector(".class").setAttributeNode(atrr.cloneNode(true)) // 노드 복제 클론노드
+        //한번쓴 노드는 재활용이 힘듬...? 그래서 새로운 노드를 만들어 다른걸로 활용
+        // ul li 를 lilist롤 만든다음 
+        lilist[4].remove //지정해준 배열값을 삭제함
+        removeChild()  // 현재노드안에 자식노드삭제
+        uo.childNodes  //배열찾기        // let uo = document.querySelector("ul")
+        uo.removeChild(uo.childNodes[1])  // 삭제
+        removeAttribute() //현재노드의 속성삭제 
+        
+        //h1이라는 변수로  h1.clone h1 변수에 지정된 h1태그를 복사
+        document.body.append(h1.cloneNode(true)) // let h1 = document.querySelector("h1")
+
+        textContent //노드의 글자변경 = innerHTML 동일  
+        a.setAttribute("class","name");
+                    //클래스  , 클래스이름(속성)
+        
+        a.style.backgroundColor = "grey"           //배경색은 회색으로 
+        a.setAttribute("style","color:yellow")     //setAttribute사용하면 전에 적용된 배경색은 사라짐
+
+        ul.replaceChild(ii,ul.firstElementChild)  // let ii =li ul의 첫번째 자식을 ii로 변경
+        
+        ul.firstElementChild.nextElementSibling.replaceChild(a,   //let a =document.querySelector("a")
+        ul.firstElementChild.nextElementSibling.childNodes[0])  // li의 2번째를 a값을대체  a는 a태그  ㅣ
+        
+        df
+
+
+
+    </script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
