@@ -18,11 +18,11 @@
         let random = Math.random()*100;
         random = parseInt(random);
         let count=0;
+        let guest = document.getElementById("gt").value;
+        let p = document.getElementById("alert");
+        let p2 = document.getElementById("countPtag");
 
         function send(){
-            let guest = document.getElementById("gt").value;
-            let p = document.getElementById("alert");
-            let p2 = document.getElementById("countPtag");
             count ++; 
             
             if(guest < random){
@@ -43,6 +43,9 @@
             count=0;
             random = Math.random()*100;
             random = parseInt(random);
+            p.textContent = "재시작";
+            p2.textContent ="시도횟수는 0";
+
         }
 
     

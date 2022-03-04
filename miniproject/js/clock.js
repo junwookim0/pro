@@ -7,7 +7,7 @@ function getClock(){
     const hour =String(date.getHours()).padStart(2,"0");
     const minutes =String( date.getMinutes()).padStart(2,"0");
     const seconds =String(date.getSeconds()).padStart(2,"0");
-    clock.innerHTML =`${hour}:${minutes}:${seconds}`;
+    return `${hour}:${minutes}:${seconds}`;
 }
 
-setInterval(getClock,1000);
+setInterval(()=>{clock.innerHTML=getClock();},1000);
