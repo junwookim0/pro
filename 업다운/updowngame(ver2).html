@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="alert"></p>
+
+    숫자 : <input type="number" name="숫자값" id="gt">
+    <button type="button" id="btn" onclick="send()"> 확인 </button>
+    <button type="button"id="re" onclick="reset()">다시</button>
+
+    <p id="countPtag"></p>
+    <script>
+        let random = Math.random()*100;
+        random = parseInt(random);
+        let count=0;
+
+        function send(){
+            let guest = document.getElementById("gt").value;
+            let p = document.getElementById("alert");
+            let p2 = document.getElementById("countPtag");
+            count ++; 
+            
+            if(guest < random){
+                p.textContent =`${guest}보다 up`;
+            }
+            else if(guest > random ){
+                p.textContent =`${guest}보다 down`;
+            }
+            else if(guest == random){
+                p.textContent =`${guest}입니다`;
+            }
+            else {
+                alert("잘못된 값을 입력하셨습니다");
+            }
+            p2.textContent = `시도횟수는 ${count}`;
+        }
+        function reset(){
+            count=0;
+            random = Math.random()*100;
+            random = parseInt(random);
+        }
+
+    
+    </script>
+</body>
+</html>
