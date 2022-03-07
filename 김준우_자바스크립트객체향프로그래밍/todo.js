@@ -17,7 +17,7 @@ function todoB(){
     const button = document.createElement("button");
     button.textContent = "x";
     button.addEventListener("click",del);
-    function del(event){
+    function del(){
         li.remove()
         if(checkbox.checked){
             count--;
@@ -42,7 +42,7 @@ function todocheck(event){
 }
 
 let count =0;
-function ckd(){
+function ckd(event){
     count++;
     let p =document.querySelector("p");
     const li = document.querySelectorAll("li");
