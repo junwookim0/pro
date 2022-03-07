@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="숫자값" id="">
+    <input type="button" name="" id="btn" value="확인">
+
+    <script>
+         let guest =""; 
+         let random = Math.random()*100;
+         random = parseInt(random);
+
+         while(true){
+            guest = prompt("숫자입력");
+
+            if(guest < random){
+                alert("up");
+                
+             }
+             else if(guest >random){
+                 alert("down");
+                 
+             }
+             else if(guest == random){
+                alert("clear");
+                document.write("정답");
+                break;
+             }
+             else {
+                alert("잘못된 값을 입력하셨습니다");
+                 document.write("x");
+             }
+         }
+
+    
+
+
+    </script>
+</body>
+</html>

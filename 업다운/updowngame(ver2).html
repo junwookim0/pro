@@ -11,18 +11,20 @@
 
     숫자 : <input type="number" name="숫자값" id="gt">
     <button type="button" id="btn" onclick="send()"> 확인 </button>
+    <button type="button"id="re" onclick="reset()">다시</button>
 
     <p id="countPtag"></p>
     <script>
         let random = Math.random()*100;
         random = parseInt(random);
+        let count=0;
+        let guest = document.getElementById("gt").value;
+        let p = document.getElementById("alert");
+        let p2 = document.getElementById("countPtag");
 
         function send(){
-            let guest = document.getElementById("gt").value;
-            let p = document.getElementById("alert");
-            let p2 = document.getElementById("countPtag");
-            let count = 0;
-            count++;
+            count ++; 
+            
             if(guest < random){
                 p.textContent =`${guest}보다 up`;
             }
@@ -36,7 +38,16 @@
                 alert("잘못된 값을 입력하셨습니다");
             }
             p2.textContent = `시도횟수는 ${count}`;
-    }
+        }
+        function reset(){
+            count=0;
+            random = Math.random()*100;
+            random = parseInt(random);
+            p.textContent = "재시작";
+            p2.textContent ="시도횟수는 0";
+
+        }
+
     
     </script>
 </body>

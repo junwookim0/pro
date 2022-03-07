@@ -6,8 +6,11 @@ form ,h1 {
 }
 form > input {
     margin-bottom: 50px;
-
 }
+form input[type="text"]:focus{
+    outline : none;
+}
+
 .login_btns{
     border: 1px solid  white;
     background-color: rhba(0,0,0,0);
@@ -47,6 +50,10 @@ form input[type="text"]::placeholder{
 }
 div {
     font-family: 'GangwonEdu_OTFBoldA';
+}
+ul {
+    font-family: 'GangwonEdu_OTFBoldA';
+    list-style : none;
 }
 nav{
     text-align: center;
