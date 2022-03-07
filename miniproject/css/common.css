@@ -7,7 +7,7 @@ form ,h1 {
 form > input {
     margin-bottom: 50px;
 }
-form input[type="text"]:focus{
+form input[type="text"]:focus{   /*input 태그 입력란 태두리 없음*/
     outline : none;
 }
 

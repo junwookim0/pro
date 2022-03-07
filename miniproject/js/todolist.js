@@ -9,11 +9,11 @@ function todoFormButton(event){
     const li = document.createElement("li");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    
     checkbox.addEventListener("click",todocheck);
-    
     //내용
     const text = document.createTextNode(todoInput.value);
+
+   
     
     /*  //x버튼 (아래에 appendChild 같이 활성화 해야함)
     const button = document.createElement("button");
@@ -35,6 +35,7 @@ function todoFormButton(event){
     li.appendChild(text);
    // li.appendChild(button);  //x버튼 
     li.appendChild(img);
+    
     
     //ul에 li추가
     todoBoard.appendChild(li);
