@@ -45,7 +45,6 @@ let count =0;
 function ckd(event){
     count++;
     let p =document.querySelector("p");
-    
     const checkbox = event.target;
     if(checkbox.checked){
     }
