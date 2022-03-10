@@ -43,14 +43,14 @@ function todocheck(event){
 
 let count =0;
 function ckd(event){
-    count++;
+    //count++;
     let p =document.querySelector("p");
-    const li = document.querySelectorAll("li");
     const checkbox = event.target;
     if(checkbox.checked){
+        count++;   
     }
     else{
-        count = count-2;
+        count = count-1; //count = count-2;
     }
     p.textContent = `오늘완료한일 : ${count}`;
 }
