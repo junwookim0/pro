@@ -44,10 +44,10 @@ function todocheck(event){
 let count =0;
 function ckd(event){
     //count++;
-    let p =document.querySelector("p");
+    //let p =document.querySelector("p");
     const checkbox = event.target;
     if(checkbox.checked){
-        count++;   
+        count++;    
     }
     else{
         count = count-1; //count = count-2;
