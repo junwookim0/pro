@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <form action="">
+        <input type="text" name="" id="change">
+        <input type="text" name="" id="select">
+    </form>
+    <p id="select_p"></p>
+    <select id="slctColors" name="slctColors">
+        <optgroup label="- Red Colors">
+            <option value="#cd5c5c" selected>Indian-Red</option>
+            <option value="#ff0000" >Red</option>
+            <option value="#8b0000">Dark-Red</option>
+        </optgroup>
+        <optgroup label="- Green Colors">
+            <option value="#90ee90">Light-Green</option>
+            <option value="#008000">Green</option>
+            <option value="#006400">Dark-Green</option>
+        </optgroup>
+        <optgroup label="- Blue Colors">
+            <option value="#add8e6">Light-Blue</option>
+            <option value="#0000ff">Blue</option>
+            <option value="#00008b">Dark-Blue</option>
+        </optgroup>
+        <option value="#808080">Gray</option>
+        <option value="#000000">Black</option>
+    </select>
+
+    <input type="text " id="fo">
+
+
+    <script>
+        $("#change").on("change", function(){
+            $(this).css("color","red");
+        });
+
+        $("#select").on("select",function(){
+            $("#select_p").append("선택되었습니다<br>");
+        });
+
+        $("#fo").on("focus",function(){
+            $("#fo").css({
+                'background' : 'red' ,
+                'color' : 'yellow' 
+            })
+        });
+        $("#fo").on("blur",function(){
+            $("#fo").css({
+                'background' : 'blue' ,
+                'color' : 'yellow' 
+            })
+        });
+
+        $('#slctColors').change(function() {
+    var value = $(this).val();
+    $(this).css('color', value);
+});
+var str = "";
+$('#slctColors option:not(:selected)').each(function(){
+    var text = $(this).text();
+    var value = $(this).val();
+    str += text + "/" + value + ", ";
+});
+    </script>
+    
+</body>
+</html>

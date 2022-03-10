@@ -32,7 +32,8 @@ function todoB(){
     todoBoard.appendChild(li);
     todoInput.value = "";
 }
-function todocheck(event){
+
+function todocheck(event){   // checkbox 선택 해제시 글자색 변경 
     const checkbox = event.target;
     if(checkbox.checked){
         checkbox.parentNode.style.color = "gray";
@@ -42,7 +43,7 @@ function todocheck(event){
 }
 
 let count =0;
-function ckd(event){
+function ckd(event){  // 체크 박스 선택 해제시 count 횟수 변경 
     //count++;
     //let p =document.querySelector("p");
     const checkbox = event.target;
