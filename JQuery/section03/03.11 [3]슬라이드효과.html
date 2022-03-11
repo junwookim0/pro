@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+    
+    <style>
+        div{
+            border: 4px solid orange;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: fixed; top:50px; left: 350px;
+            box-shadow: 2px 2px black;
+        }
+        #btn2{
+            position: fixed; top:56px; left: 428px;
+        }
+    </style>
+</head>
+<body>
+    <h1>고정된 div 나타내기</h1>
+    <button id="btn1">슬라이드 나타나기</button>
+    <div id="fix"><button id="btn2"> x </button></div>
+    <script>
+    $("#btn1").on("click",function(){
+        $("#fix").slideToggle();
+    });
+
+    $("#btn2").on("click",function(){
+        $("#fix").slideToggle();
+    });
+    </script>
+</body>
+</html>

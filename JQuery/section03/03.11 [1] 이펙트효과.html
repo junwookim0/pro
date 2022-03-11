@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="show_button"> 보이기 </button>
+    <button id="hide_button"> 숨기기 </button>
+    <p id="text"> 글자가 보이고 숨겨집니다 </p>
+
+    <button id="toggle"> 토글버튼 </button>
+    <div>
+        <p id="tog">toggle을 통해 효과를 주었습니다</p>
+    </div>
+
+    <button id="fadein"> fade보이기</button>
+    <button id="fadeout"> fade숨기기</button>
+    <p id="fade_text">글자가 보여지고 숨겨집니다</p>
+
+    
+    <script>
+        $("#show_button").on("click", function(){
+            $("#text").show(2000);
+        });
+        $("#hide_button").on("click", function(){
+            $("#text").hide(2000);
+        }); 
+
+        $("#toggle").on("click",function(){
+            $("#tog").toggle();
+        });
+        $("#tog").hide();
+
+        $("#fadein").on("click",function(){
+            $("#fade_text").fadeIn();
+        });
+        $("#fadeout").on("click",function(){
+            $("#fade_text").fadeOut();
+        });
+
+    </script>
+
+    
+
+</body>
+</html>

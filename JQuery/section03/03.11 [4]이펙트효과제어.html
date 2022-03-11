@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+    <style>
+        button{
+            display: flex;
+            margin-top: 10px;
+        }
+        #div_box,#div_box2{
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            border: solid 2px ;
+        }
+    </style>
+</head>
+<body>
+    <!--버튼3개-->
+    <!--slideToggle 버튼-->
+    <button id="sildetoggle">이펙트효과 버튼</button>
+
+    <!--stop()버튼-->
+    <button id="stop">이펙트 중지</button>
+
+    <!--finish() 버튼-->
+    <button id="finish">이벡트 끝내기</button>
+
+    
+    <!--아래 div를 제어 -->
+    <div id="div_box"></div>
+    
+    <!--animate()버튼-->
+    <button id="animate"> 애니메이션효과</button>
+    
+    <div id="div_box2"></div>
+
+    <script>
+        $("#sildetoggle").on("click",function(){
+            $("#div_box").slideToggle();
+        });
+        $("#stop").on("click",function(){       // 슬라이드 동작 중간에 멈춤 
+            $("#div_box").stop();
+        });
+        $("#finish").on("click",function(){     //슬라이드 동작을 끝냄 (슬라이드동작이 끝까지 바로 실행됨)
+            $("#div_box").finish();
+        });
+
+        $("#animate").on("click",function(){
+            $("#div_box2").animate({
+                opacity :0,
+                width : 0,
+                height : 0
+            },1000,function(){
+                $("#animate").text("이벤트가 끝났습니다");
+            });
+        });
+    </script>
+
+</body>
+</html>
