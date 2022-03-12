@@ -1,0 +1,30 @@
+:root {
+    --white-color: #fff;
+    --black-color: #140a00;
+    --blue-color: #045fd4;
+    --red-color: #ff0000;
+    --grey-dark-color: #909090;
+    --grey-light-color: #e0e0e0;
+
+
+
+
+}
+* {
+    padding: 0;
+    margin: 0;
+
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+header .logo {
+    font-size: larger;
+}
+header .logo i {
+    color: var(--red-color);
+}
