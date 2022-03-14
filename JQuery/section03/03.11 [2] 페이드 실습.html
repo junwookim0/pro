@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+    <style>
+        div{
+            border: 4px solid orange;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">버튼에 마우스를 올리면 상자가나타나고 사라집니다</button>
+    <div id="divs"></div>
+
+    <button id="slideUp"> 숨기기</button>
+    <button id="slideDown">보이기 </button>
+    <p id="slide_text"> 글자보여지고 숨겨집니다</p>
+
+
+    
+    <script>
+        $("#btn").on({
+            mouseleave : function(){   //마우스가 떠났을때 foadout - 숨김
+                $("#divs").delay(2000).fadeOut();
+            },
+            mouseenter : function(){   // 마우스가 올가갔을때 보여진다 
+                $("#divs").fadeIn();
+            }
+        });
+        $("#slideUp").on("click",function(){
+            $("#slide_text").slideUp();
+        });
+        $("#slideDown").on("click",function(){
+            $("#slide_text").slideDown();
+        });
+
+    </script>
+
+</body>
+</html>
