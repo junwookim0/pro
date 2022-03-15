@@ -9,9 +9,9 @@ function gnbPlay() {
       // PC와 태블릿일때
       /* 직접 작성할 공간 */
       //모든 보이는 서브메뉴를 닫는다
-    $("#gnb ul ul:visible").slideUp(300);
+    $("#gnb ul ul:visible").hide(300);
       //현재 이벤트로 선택된 a태그(메뉴)의 형제(서브메뉴)를 보여준다
-    $ts.next().stop(true,true).slideDown(300);
+    $ts.next().stop(true,true).show(300);
 
 } 
 
@@ -23,6 +23,6 @@ $(document).on("mouseleave",
 function gnbleave() {
       /* 직접 작성할 공간 */
       // 보이는 전체 서브메뉴를 닫고
-    $("#gnb ul ul:visible").slideUp(300);
+    $("#gnb ul ul:visible").hide(300);
 }
 

@@ -14,7 +14,7 @@
     margin: 0;
 
 }
-header .logo i {
+header .navbar_logo i {
     color: var(--red-color);
 }
 .navbar {
@@ -27,6 +27,9 @@ header .logo i {
 }
 .navbar_logo a{
     text-decoration: none;
+}
+.navbar_logo a:visited ,:link{
+    color: white;
 }
 
 .navbar_menu {
