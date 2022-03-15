@@ -8,21 +8,32 @@
 
     
 }
+
 * {
     padding: 0;
     margin: 0;
 
 }
-header {
+header .logo i {
+    color: var(--red-color);
+}
+.navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 12px;
     background-color: var(--black-color);
     color: var(--white-color);
 }
-header .logo {
-    font-size: larger;
+.navbar_logo a{
+    text-decoration: none;
 }
-header .logo i {
-    color: var(--red-color);
+
+.navbar_menu {
+    display: flex;
+    list-style: none;
+    padding: 10px;
+}
+.navbar_menu li {
+    display: block;
 }
