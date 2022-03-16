@@ -11,9 +11,16 @@
     list-style: none;
 }
 
+.main_div{
+    display: grid;
+    grid-template-columns: 110px 110px 110px 110px 110px 110px;
+}
+.main_div img {
+    margin-top: 10px;
+}
 
-.main {
-    display: grid; 
-    list-style: none;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.main_div2{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
 }
