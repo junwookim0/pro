@@ -15,53 +15,46 @@
     <p>3문제 중복있음</p>
     <a href="" id="start">시작</a>
 
+    
     <p id="quiz"></p>
     <form id="input_form" style="display: none;">  
-        <input type="text" required>
+        <input type="text">
     </form>
     <p id="score"></p>
 
 
     <script>
-        //사용되는 변수들
         let score = 0;
-        let count =0; //문제를 몇번 풀었는지 확인하기위한 카운트
+        let count =0; 
         let random=0;
         const quizArray = [
-                {quiz: "오리가얼면?", answer: "언덕"},
-                {quiz: "왕이넘어지면?", answer: "킹콩"},
+                {quiz: "오리가 얼면?", answer: "언덕"},
+                {quiz: "왕이 넘어지면?", answer: "킹콩"},
                 {quiz: "바나나가 웃으면?", answer: "바나나킥"},
                 {quiz: "엄마가 길을 읽으면", answer: "맘마미아"},
             ];
-
-        //시작을 눌렀을때 입력란 보이기 
         $("#start").on("click",function(e){
             e.preventDefault();
             $("#input_form").hide().slideDown();
             $("#input_form").children().first().focus();
             $("#score").text("");
-            //시작버튼을 눌렀을떄 출력되는 문제
             quizstart();
         });
 
-        //submit 이벤트 발생시 값 비교 
+        
         $("#input_form").on("submit",function(e){
-            //submit시 새로고침막기
             e.preventDefault();
-            //랜덤퀴즈답 가져옴 
             const answer = quizArray[random].answer;
             const user = $("#input_form").children().first().val();
-            //카운팅 횟수 증가
             count++;
-            //사용자 입력값과 답 비교 
             if(user == answer){
                 score++;
                 $("#score").text(`${count}개 중에서 ${score}개  맞췄습니다`);
+            }else {
+                $("#score").text(`${count}개 중에서 ${score}개  맞췄습니다`);
             }
-            //퀴즈를 새로 내고 입력값을 "" 넣어줌
             quizstart();
             $("#input_form").children().first().val()
-
             if(count==3){
                 $("#input_form").hide();
                 $("#quiz").text("");
@@ -69,12 +62,10 @@
                 score =0;
             }
         });
-
         function quizstart(){
             random =Math.floor(Math.random()*quizArray.length);
             $("#quiz").text(quizArray[random].quiz);
         }
-
 
     </script>
     

@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px;
+}
+.navbar ul {
+    display: flex;
+}
+.navbar li {
+    list-style: none;
+}
+
+
+.main {
+    display: grid; 
+    list-style: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
