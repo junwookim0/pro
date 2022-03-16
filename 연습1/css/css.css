@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+
+/* 이미지 슬라이더 섹션 */
+#main_visual{
+    width: 62.797619047619044%;/*633px*/
+    height: 332px;
+    border: 1px solid #5FCDD9;
+    border-radius: 7px;
+    background-color: #fff;
+    margin-bottom: 40px;
+    float: left;
+    position: relative;
+}
+
+/* 이미지 슬라이더 섹션 중 슬라이더 이미지 영역 */
+#main_visual .visual_item_wrap{
+    padding: 36px 11.532385466034755% 20px 46.44549763033176%; /*36px 73px 20px 294px*/
+    min-height:332px;
+    position: relative;
+}
+#main_visual .visual_item_wrap:after{
+    content: "";
+    width: 27.33017377567141%;/*173px*/
+    height: 276px;
+    position: absolute;
+    left: 11.848341232227488%; /*75px*/
+    top: 36px;
+    background: url(../img/gnb/gnb_m2_bn1.png) 0 0 no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+#main_visual .visual_item_wrap.item2:after{
+    background-image: url(../img/gnb/gnb_m2_bn2.png);
+}

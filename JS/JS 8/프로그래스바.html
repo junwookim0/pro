@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            width: 100%;
+            height: 3000px;
+            background-color: yellowgreen;
+        }
+
+        .progressbar {
+            position: fixed;
+            height: 15px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 500;
+            background-color: aqua;
+        }
+
+        .progressbar > .progress {
+            width: 45%;
+            height: 100%;
+            transition: width 0.3s ease; ; /*애니메이션 추가*/
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="warp">
+        <!--들어갈 컨텐츠 공간 설정-->
+        <div class="content"></div>
+        <div class="progressbar" id="progressbar">
+            <div class="progress"></div>
+        </div>
+    </div>
+    
+
+    <script>
+        window.addEventListener("DOMContentLoaded",function(){
+            //스크롤 이벤트 실행
+            window.addEventListener("scroll",function(e){
+                //프로그래스 바가 있다면 실행할 수 있도록 if문작성
+                if(document.querySelector(".progressbar")!=null){
+                    setProgress();
+                }
+            });
+        });
+
+        function setProgress(){
+            //스크롤한 높이
+            let currY = document.documentElement.scrollTop;
+            //전체높이
+            let totalY = document.documentElement.scrollHeight-document.documentElement.clientHeight;
+            //너비에 들어갈 퍼센트
+            let percentage = (currY/totalY)*100;
+            document.querySelector(".progress").style.width = percentage +"%";
+        }
+    </script>
+</body>
+</html>

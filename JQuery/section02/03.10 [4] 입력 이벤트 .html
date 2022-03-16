@@ -16,8 +16,6 @@
         <input type="text" name="" id="select">
     </form>
     <p id="select_p"></p>
-
-
     <select id="slctColors" name="slctColors">
         <optgroup label="- Red Colors">
             <option value="#cd5c5c" selected>Indian-Red</option>
@@ -47,10 +45,8 @@
         });
 
         $("#select").on("select",function(){
-            $("#select_p").append("선택되었습니다<br>");  //input 값 클릭시 select 됨 
+            $("#select_p").append("선택되었습니다<br>");
         });
-
-
 
         $("#fo").on("focus",function(){
             $("#fo").css({
@@ -65,19 +61,16 @@
             })
         });
 
-
-
-
         $('#slctColors').change(function() {
-            var value = $(this).val();
-            $(this).css('color', value);
-        });
-        var str = "";
-        $('#slctColors option:not(:selected)').each(function(){
-            var text = $(this).text();
-            var value = $(this).val();
-            str += text + "/" + value + ", ";
-        });
+    var value = $(this).val();
+    $(this).css('color', value);
+});
+var str = "";
+$('#slctColors option:not(:selected)').each(function(){
+    var text = $(this).text();
+    var value = $(this).val();
+    str += text + "/" + value + ", ";
+});
     </script>
     
 </body>
