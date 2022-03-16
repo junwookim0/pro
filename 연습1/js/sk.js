@@ -25,4 +25,3 @@ function gnbleave() {
       // 보이는 전체 서브메뉴를 닫고
     $("#gnb ul ul:visible").hide(300);
 }
-
