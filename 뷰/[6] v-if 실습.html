@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <button  v-on:click="login=!login">임시로그인 버튼</button>
+
+
+        <!--false일때-->
+        <p v-if="login">{{name+'님 로그인 하였습니다'}}</p>
+
+        <!--true 일떄 login p태그는 사맂고 아래에 div가 나옴 -->
+        <div v-else-if="login_not" >
+            <p>아이디를 입력해주세요</p>
+            <input type="text" v-model="name">
+            
+        </div>        
+    </div>
+
+<br>
+
+
+    <div id="second">
+        <button  v-on:click="canAddCart=!canAddCart">임시canAddCart버튼</button>
+        
+        <div v-if="canAddCart">
+            <p>상품이 있습니다</p>
+            <h3 v-show="canAddCart"><img src="img/c.png" alt="" height="200px"></h3>
+            <button><a href="https://search.shopping.naver.com/catalog/27658259434?query=%EC%8B%9C%EA%B3%84&NaPm=ct%3Dl0ukpxxs%7Cci%3D53f65cbc7231dac660c49abad3f3d6561d353138%7Ctr%3Dslsl%7Csn%3D95694%7Chk%3Df61faee4efe43ad11778f63f7208caddc49aeec1">구매가능합니다</a></button>
+        </div>
+        <div v-else>
+            <p>상품이 없습니다</p>
+            <button disabled>구매 불가능합니다</button>
+        </div>
+
+        <p>{{ canAddCart ? "상품이 있습니다" : "상품이 없습니다"}}</p>
+        <button :disabled="!canAddCart">구매{{canAddCart ? "가능" : "불가능"}}</button>
+
+
+    </div>
+
+    <script>
+        new Vue({
+            el : "#app",
+            data : {
+                login : false,
+                login_not : true,
+                name : "" 
+            }
+        })
+
+        new Vue({
+            el :"#second",
+            data : {
+                canAddCart : true
+            }
+        })
+    </script>
+    
+</body>
+</html>

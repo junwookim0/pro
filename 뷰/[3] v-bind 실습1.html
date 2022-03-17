@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>Vue bind</h3>
+        <p>{{ name+'입니다'}} </p> <!-- {{}} 머스테치 1+4 결과갑 가능 > < 가능  -->
+        <input type="checkbox":checked="checked">
+        <img  :src="image">
+        <h3>머스테치의 사용방법</h3>
+        <p>산술연산자 사용가능 : {{1-30}}</p>
+        <p>관계, 비교 연산자 사용가능 : {{1>40}}</p>
+        <p>data의 값을 넣어서 연산자 사용가능 : {{ sColor=="red" ? "빨간색" : "파란색"}}</p>
+    </div>
+
+
+    
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name : "travel",
+                checked : true,
+                sColor : "red",
+                image : "./img/travel.png",
+                image2 : "./img/mountain.png"
+            }
+        });
+    </script>
+</body>
+</html>
