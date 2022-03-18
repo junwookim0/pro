@@ -6,25 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
 </head>
 <body>
 
     <div id="app">
-        <button v-on:click="error=!error">error true/false</button>
-        <p v-if="error">에러발생 : 이미지를 로드하지 못했습니다</p>
-        <p v-else ="img"> <img :src="img"> </p>
+        <my-comp></my-comp>
+        
+        
     </div>
     
 
+
+
+
+    
     <script>
 
+        Vue.component('my-comp',{
+            template : `<div>직접만든 컴포넌트 입니다 </div>`
+        })
+
         new Vue({
-            el : "#app",
+            el :"#app",
             data : {
-                error : true,
-                img : "./img/travel.png"
+            },
+            methods : {
             }
         })
+
+
 
     </script>
 </body>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        li {
+            list-style: none;
+        }
+        .first {
+            border: 3px solid black;
+        }
+        .second {
+            border: 3px solid black;
+        }
+    </style>
+
+    
+</head>
+<body>
+
+    <div id="app">
+        <h1>computed 속성의 사용법</h1>
+        <input type="text" v-model="pay">
+        <br><br>
+        할인율 <input type="text" v-model="per">
+        <p>{{per}}% 할인된 가격 : {{ discount }} </p>
+
+        <h3>computed - 배열의 filer메소드와 문자열의 match메소드를 사용한 필터링</h3>
+        <label for="">나라검색</label>
+        <input type="text" v-model="searchCity">
+        <ul class="first">
+            <li v-for="city in cityfilter" > {{ city }}</li>
+        </ul>
+
+        <ul class="second">
+            <li v-for="city in cities"> {{city}}</li>
+        </ul>
+        
+        <input type="text" v-model="rev">
+        <p>{{re}}</p>
+
+    </div>
+    <script>
+        new Vue({
+            el :"#app",
+            data : {
+                pay : 1000,
+                per : 10,
+                mon : 0.01,
+                searchCity : "",
+                cities : ["Seoul","Paris","Sattle"],
+                rev : "",
+            },
+            computed :{
+                discount : function() {
+                    //return this.pay*(1-(this.per*this.mon));
+                    return this.pay*(100-this.per)/100;
+                },
+                cityfilter : function(){ //대문자로 검색 searchCity 값을 cities.filter랑  match해서 도출 
+                    return this.cities.filter(city => city.match(this.searchCity.toUpperCase()))
+                },
+                re : function(){
+                    return this.rev.split('').reverse().join('')
+                }
+            }
+    })
+
+    </script>
+</body>
+</html>

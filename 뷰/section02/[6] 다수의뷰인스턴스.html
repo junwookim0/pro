@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 
+
+    
+</head>
+<body>
+
+    <div id="app1">
+        <p>{{message}}</p>
+        <button @click=" changeMessage">눌러주세요</button>
+    </div>
+    <div id="app2">
+        <p>{{message}}</p>
+    </div>
+
+
+
+
+    
+    <script>
+        const vm1 = new Vue({
+            el :"#app1",
+            data : {
+                message : "첫번째 뷰 인스턴스입니다"
+            },
+            methods : {
+                changeMessage : function(){
+                    vm2.message ="메세지가 바뀌었습니다";
+                }
+            }
+        })
+
+        const vm2 = new Vue({
+            el :"#app2",
+            data : {
+                message : "두번째 뷰 인스턴스입니다"
+            },
+            methods : {
+            }
+    })
+
+
+    </script>
+</body>
+</html>

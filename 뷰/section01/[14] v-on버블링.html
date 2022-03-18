@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .div{
+            background-color: aquamarine;
+            border: black 1px solid;
+        }
+        p {
+            background-color: burlywood;
+            border: black solid 1px;
+        }
+        span {
+            background-color: cornflowerblue;
+            border: black solid 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <div class="div" @click="msg" id="div">
+            <p  @click.stop="msg" id="p">
+                p태그안의 <span  @click="msg" id="span">span태그</span>입니다
+            </p>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el :"#app",
+            data : {
+
+            },
+            methods : {
+                msg(e) {
+                   // e.stopPropagation();
+                    return alert(e.target.id+":"+e.currentTarget.id)
+                }
+            }
+    })
+
+    </script>
+</body>
+</html>
