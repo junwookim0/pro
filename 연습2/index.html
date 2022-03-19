@@ -6,19 +6,130 @@
     <title>Document</title>
     <link rel="stylesheet" href="poster.css">
     <script src="poster.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="test.js"></script>
 </head>
 
 <body>
-    <div class="movie-container">
-        <label>영화를 선택해주세요</label>
-        <select id="movie">
-            <option value="0" selected >선택해주세요</option>
-            <option value="10000">Frozen 2 (₩10,000)</option>
-            <option value="12000">Aladdin (₩12,000)</option>
-            <option value="8000">Toy Story4 (₩8,000)</option>
-            <option value="9000">The Lion King (₩9,000)</option>
-        </select>
-    </div>
+    <section>
+        <div class="main">
+            <div class="movie-poster">
+                <div class="poster1"></div>
+            </div>
+            <div class="movie-container">
+                <div id="movie-incontainer">
+                    <label>영화를 선택해주세요</label>
+                    <select id="movie">
+                        <option value="0" selected >선택해주세요</option>
+                        <option value="10000">기생수 (₩10,000)</option>
+                        <option value="12000">어벤져스 엔드게임 (₩12,000)</option>
+                        <option value="8000">Toy Story4 (₩8,000)</option>
+                        <option value="9000">스파이더맨 파프롬홈 (₩9,000)</option>
+                    </select>
+                </div>
+
+                <div class="movie-seat-ex">
+                    <div id="available"><span class="material-icons">square</span>
+                        <div id="ex-text">선택가능</div>
+                    </div>
+                    <div id="selected">
+                        <span class="material-icons">square</span> 
+                        <div id="ex-text">선택좌석</div>
+                    </div>
+                    <div id="occupied">
+                        <span class="material-icons">square</span>
+                        <div id="ex-text">선택불가</div>
+                    </div>
+                </div> 
+                <div>
+                    <div id="screen">screen</div>
+                </div>
+                <div class="seat">
+                    <div id="seat1">
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li> 
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        </div>
+                    <div id="seat2">
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                    </div>
+                    <div id="seat3">
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                        <li>
+                            <span class="material-icons">square</span>
+                            <span class="material-icons">square</span>
+                        </li>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
     
 </body>
 </html>
