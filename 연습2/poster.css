@@ -78,6 +78,7 @@ section .movie-seat-ex #occupied span{
 #screen {
     background-color: rgba(0, 0, 0, 0.432);
     padding: 12px;
+    border-radius: 12px;
     text-align: center;
     margin-top: 60px;
 }
