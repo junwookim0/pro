@@ -87,7 +87,9 @@ section .movie-seat-ex #occupied span{
     display: flex;
     margin-left: 125px;
     margin-top: 80px;
-
+}
+.seat li span:hover{
+    font-size: 27px;
 }
 #seat2 {
     padding-left: 20px;
@@ -104,7 +106,7 @@ section .movie-seat-ex #occupied span{
 }
 
 .poster1 {
-    background-image: url(http://kiramonthly.com/wp-content/uploads/2020/02/1.jpg);
+    background-image: url(http://kiramonthly.com/wp-content/uploads/2020/02/2.jpg);
     background-size: cover;
     border-radius: 12px;
     height: 650px;
