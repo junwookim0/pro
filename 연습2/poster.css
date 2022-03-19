@@ -70,7 +70,7 @@ section .movie-seat-ex #selected span{
     color: var(--red-color);
 }
 section .movie-seat-ex #occupied span{
-    color: var(--lightgray-color);
+    color: var(--ligthgray-color);
 }
 .main .seat {
     color: var(--yellow-color);
@@ -93,6 +93,15 @@ section .movie-seat-ex #occupied span{
     padding-left: 20px;
     padding-right: 20px;
 }
+#seat2 li:first-child{
+    color : var(--ligthgray-color);
+}
+#seat3 li:last-child{
+    color : var(--ligthgray-color);
+}
+#s_2 {
+    color : var(--ligthgray-color);
+}
 
 .poster1 {
     background-image: url(http://kiramonthly.com/wp-content/uploads/2020/02/1.jpg);
@@ -109,4 +118,17 @@ section .movie-seat-ex #occupied span{
 
 
 @media screen and (max-width: 980px) {
+    .movie-poster{
+        display: none;
+    }
+    section {
+        width: 700px;
+    }
+    .movie-container{
+        margin: 0;
+        width: 600px;
+    }
+    .movie-container .seat{
+        margin-left: 174px;
+    }
 }
