@@ -13,6 +13,7 @@
 <body>
     <h1>넌센스 Quiz 맞추기</h1>
     <p>3문제 중복있음</p>
+    <p id="timer">0초</p>
     <a href="" id="start">시작</a>
 
     
@@ -27,6 +28,10 @@
         let score = 0;
         let count =0; 
         let random=0;
+        let second=0;
+        let start=0;
+        let end=0;
+        let timeId;
         const quizArray = [
                 {quiz: "오리가 얼면?", answer: "언덕"},
                 {quiz: "왕이 넘어지면?", answer: "킹콩"},
@@ -39,6 +44,16 @@
             $("#input_form").children().first().focus();
             $("#score").text("");
             quizstart();
+            clearTimeout(timeId);
+            second=0;
+            start=Date.now() 
+            $("#timer").text(`${second}초`); //0초 만 넣어도 됨 second 불필요 
+
+            timeId = setInterval(() => {
+                second++;
+                end= Date.now();
+                $("#timer").text(`${Math.floor((end-start)/1000)}초`);
+            },1000);
         });
 
         
@@ -60,6 +75,9 @@
                 $("#quiz").text("");
                 count =0;
                 score =0;
+                clearTimeout(timeId);
+                $("#timer").text(`${Math.floor((end-start)/1000)}초 걸렸습니다`)
+                second=0;
             }
         });
         function quizstart(){

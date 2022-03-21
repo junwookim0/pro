@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>넌센스 Quiz 맞추기</h1>
+        <p>3문제 중복있음</p>
+        <!--머스테치를 이용해 time값 표시-->
+        <p >{{time}}</p>
+
+        <!--v-on을 이용한 이벤트 -->
+        <button v-on:click="start =!start">시작</button>
+        <!--v-on을 이용한 이벤트 값을 들거와 비교후 ,3문제가 지나면 종료-->
+        <a v-if="start"> 버튼을 누르면 시작됩니다 </a>
+        <form v-else @submit.prevent="onSumbit">
+            <!--머스테치를 이용해서 퀴즈 값 가져오기-->
+            <p>{{ quizstart }}</p> 
+            <input type="text" v-model="userAnswer">
+            <input type="submit" >
+        </form>
+
+
+
+
+        
+    </div>
+    
+    <script>
+    new Vue({
+        el :"#app",
+        data : {
+            start : true,
+            time : 0,
+            timeId: "",
+            random:0,
+            quizArray : [
+                {quiz: "오리가 얼면?", answer: "언덕"},
+                {quiz: "왕이 넘어지면?", answer: "킹콩"},
+                {quiz: "바나나가 웃으면?", answer: "바나나킥"},
+                {quiz: "엄마가 길을 읽으면?", answer: "맘마미아"},
+            ],
+            userAnswer : "",
+            score : 0,
+            count : 0,
+        },
+        methods : {
+            onSubmit(){
+                const answer = this.quizArray[random].answer;
+                const user = this.userAnswer;
+                if(user == answer){
+                    score++;
+                    count++;
+                }
+                else{
+                    count++;
+                }
+                this.quizstart();
+            }
+        },
+        computed : {
+            quizstart: function(){
+            random =Math.floor(Math.random()*this.quizArray.length);
+            return this.quizArray[random].quiz;
+            }
+        }
+    })
+    </script>
+</body>
+</html>

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
 
     
 </head>
@@ -17,6 +19,12 @@
         
         <input  v-if="buttonName" type="text" placeholder="사용자"v-model="name">
         <input  v-else            type="text" placeholder="이메일"v-model="email">
+        <br>
+        <br>
+
+        <span class="material-icons" v-on:click="change1" v-if="buttoncolor" style="color: red;">square</span>
+        <span class="material-icons" v-on:click="change1" v-else style="color: yellow;">square</span>
+        
         
         
     </div>
@@ -33,10 +41,14 @@
                 name : "",
                 email : "",
                 buttonName : true,
+                buttoncolor : true
             },
             methods : {
                 change : function() {
                     this.buttonName = !this.buttonName;
+                },
+                change1 : function() {
+                    this.buttoncolor = !this.buttoncolor;
                 }
             }
         })
