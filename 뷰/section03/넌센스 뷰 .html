@@ -12,21 +12,21 @@
         <h1>넌센스 Quiz 맞추기</h1>
         <p>3문제 중복있음</p>
         <!--머스테치를 이용해 time값 표시-->
-        <p >{{time}}</p>
+        <p >{{ time }}</p>
 
         <!--v-on을 이용한 이벤트 -->
-        <button v-on:click="start =!start">시작</button>
+        <button v-on:click="startBtn">시작</button>
         <!--v-on을 이용한 이벤트 값을 들거와 비교후 ,3문제가 지나면 종료-->
-        <a v-if="start"> 버튼을 누르면 시작됩니다 </a>
-        <form v-else @submit.prevent="onSumbit">
+        <form  v-if="start" @submit.prevent="onSubmit">
             <!--머스테치를 이용해서 퀴즈 값 가져오기-->
-            <p>{{ quizstart }}</p> 
+            <p>{{ quiz }}</p> 
             <input type="text" v-model="userAnswer">
-            <input type="submit" >
         </form>
+        <p>{{count}}중{{score}}점입니다</p>
 
-
-
+        <ul>
+            <li v-for="quiz in quizArray">{{quiz.quiz}}</li>
+        </ul>
 
         
     </div>
@@ -35,10 +35,11 @@
     new Vue({
         el :"#app",
         data : {
-            start : true,
+            start : false,
             time : 0,
             timeId: "",
             random:0,
+            usedQuiz: [],
             quizArray : [
                 {quiz: "오리가 얼면?", answer: "언덕"},
                 {quiz: "왕이 넘어지면?", answer: "킹콩"},
@@ -50,23 +51,45 @@
             count : 0,
         },
         methods : {
-            onSubmit(){
-                const answer = this.quizArray[random].answer;
-                const user = this.userAnswer;
-                if(user == answer){
-                    score++;
-                    count++;
-                }
-                else{
-                    count++;
+            startBtn(){
+                this.quizArray = this.quizArray.concat(this.usedQuiz)
+                this.score =0;
+                this.count =0;
+                this.start = !this.start
+                clearTimeout(this.timeId);
+                this.time =0;
+                if(this.start){
+                    this.timeId = setInterval(()=>{this.time++},1000);
                 }
                 this.quizstart();
+            },
+            onSubmit: function(){
+                let answer = this.quizArray[this.random].answer;
+                let user = this.userAnswer;
+                if(user == answer){
+                    this.count++;
+                    this.score++;
+                    this.usedQuiz.push(this.quizArray.splice(this.random,1)[0]);
+                }
+                else{
+                    this.count++;
+                }
+                
+                this.quizstart();
+                this.userAnswer = "";
+
+                if(this.count ==3){
+                    this.start = false;
+                    clearTimeout(this.timeId);
+                }
+            },
+            quizstart : function(){
+                this.random =Math.floor((Math.random()*this.quizArray.length));
             }
         },
         computed : {
-            quizstart: function(){
-            random =Math.floor(Math.random()*this.quizArray.length);
-            return this.quizArray[random].quiz;
+            quiz: function(){
+                return this.quizArray[this.random].quiz;
             }
         }
     })

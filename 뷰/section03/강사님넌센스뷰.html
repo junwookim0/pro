@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    
+    <div id="app">
+        <h1>넌센스 Quiz맞추기</h1>
+        <p>3문제 - 중복있음</p>
+        <!-- 머스테치를 이용해서 time 값 가져오기 -->
+        <p>{{time}}초</p>
+    
+        <!-- v-on을 이용한 이벤트 : show값을 변경, 초기화, 퀴즈시작 -->
+        <h3><a href="" v-on:click.prevent="showBtn">시작</a></h3>
+    
+        <!-- v-on을 이용한 이벤트 : 값을 들고 와 비교 후, 3문제가 지나면 종료 -->
+        <form v-if="show" v-on:submit.prevent="onSubmit">
+            <!-- 머스테치를 이용해서 quiz 값 가져오기 : computed random quiz들고옴 -->
+            <h3>{{quiz}}</h3>
+            <!-- v-model을 이용항 양방향 -->
+            <input type="text" v-model="useranwer">
+        </form>
+        <!-- 머스테치를 이용해서 score 값 가져오기 -->
+        <p v-show="show">{{score}}점입니다</p>
+
+
+        <ul>
+            <li v-for="quiz in quizArray">{{quiz.quiz}}</li>
+        </ul>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data : {
+                show : false,
+                time : 0,
+                timeId :"",
+                useranwer : "",
+                random : 0,
+                usedQuiz : [],
+                quizArray : [
+                    {quiz:"13+50", answer:"63"},
+                    {quiz:"10-3", answer:"7"},
+                    {quiz:"10-10", answer:"0"},
+                    {quiz:"0*39", answer:"0"},
+                    {quiz:"20*1", answer:"20"}
+                ],
+                score : 0,
+                count : 0,
+            },
+            methods : {
+                showBtn : function() {
+                    //초기화
+                    this.quizArray = this.quizArray.concat(this.usedQuiz)
+                    
+                    this.score = 0;
+                    this.count = 0;
+                    this.show = !this.show;
+                    clearTimeout(this.timeId);
+                    this.time = 0;
+                    if(this.show) {
+                        this.timeId = setInterval(() => {this.time++}, 1000);
+                    }
+                    this.startquiz();
+                },
+                onSubmit : function() {
+                    if (this.useranwer == this.quizArray[this.random].answer) {
+                        this.score++;
+                        // splice(인덱스, 삭제할 갯수) : 삭제한 요소를 배열로 반환
+                        this.usedQuiz.push( this.quizArray.splice(this.random, 1)[0] );
+                    }
+                    
+                    this.startquiz();
+
+                    //총 개수값 증가
+                    this.count ++;
+                    this.useranwer = "";
+
+                    //3번 지났을때 종료
+                    if ( this.count == 3 ) {
+                        this.show = false;
+                        clearTimeout(this.timeId);
+                    }
+                },
+                startquiz : function() {
+                    //랜덤값 바꾸기
+                    this.random = Math.floor((Math.random()*this.quizArray.length));
+                }
+                
+            },
+            computed : {
+                //퀴즈 화면에 출력
+                quiz : function(){
+                    return this.quizArray[this.random].quiz;
+                },
+            }
+        })
+
+    </script>
+</body>
+</html>
