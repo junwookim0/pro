@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .memo{
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+            border: dashed 2px maroon;
+            border-radius: 30px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+        <label>이름을 작성해주세요</label>
+        <input type="text" v-model="name">
+        <!-- 뷰 인스턴스가 부모가 되어 v-bind를 통해 message를 전달-->
+        <child-component v-bind:childname="name[0]" age="20"></child-component>
+        <child-component v-bind:childname="name[1]" age="28"></child-component>
+        
+    </div>
+    
+
+
+
+
+    
+    <script>
+
+        Vue.component('child-component',{
+            //태그에서 속성처럼 사용하여 값을 들고옴, 배열
+            props :['childname','age'],
+            template :
+            `
+            <div>
+                <p> 자식컴포넌트에 작성되고 있습니다 : {{ childname }}</p>
+                <p> {{age}}세 입니다 </p>
+                <p> {{ address }} </p>
+            </div>
+            `,
+            // Vue 컴포넌트 내부에서 사용되는 값 
+            data : function(){
+                return {
+                    address :"부산",
+                }
+            }
+        })
+        
+        
+        new Vue({
+            el :"#app",
+            data : {
+                name : ['a','b'],
+            },
+        })
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+    
+    <div id="app">
+        
+        {{ message }}
+        <!--메서드는 이벤트나 이름을ㅈ거어서 직접 호출해서 사용 -->
+        <button @click="changeMessage('메세지')">changeMessage</button>
+        <button @click="clickBtn">clickBtn</button>
+
+        <!--data의 값이 변경되었을때 계산값을 보여줄떄 computed-->
+        <p> {{ reverseMessage }}</p>
+
+    </div>
+    
+
+
+
+
+    
+    <script>
+        //자바스크립트의 객체 (인스턴스)
+        let pen = {
+            //속성
+            length : 10,
+            //메서드
+            write : function() {
+                return "글을 씁니다";
+            }
+        }
+        //vue 인스턴스
+        new Vue({
+            el :"#app",
+            data : {
+                message : "메세지입니다",
+                
+            },
+            methods : {
+                changeMessage : function(m) {
+                    this.message = m+"를 바꿔줄수있다";
+                },
+                clickBtn : function() {
+                    this.changeMessage(pen.write());
+                    
+                }
+                
+            },
+            computed : {
+                reverseMessage : function() {
+                    let rm = this.message.split('').reverse().join('');
+                    return rm;
+                } 
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

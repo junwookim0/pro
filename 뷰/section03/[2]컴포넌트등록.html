@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+    <div id="app">
+        <!--컴포넌트 이름의 태그로 불러옴-->
+        <!--새로운 태그를 만듬 : html 요소 확장-->
+        <!--안의 내용을 알수 없음 ,간단하게 쓸 수 있음: 캡슐화-->
+        <my-comp></my-comp>
+        <count-component></count-component>
+
+        <!-- 컴포넌트 안에 컴포넌트를 사용하여 불러옴-->
+        <used-component></used-component>
+        <!--Vue 인스턴스에 등록된 지역 컴포넌트-->
+        <vuein-component></vuein-component>
+        <mychild-component></mychild-component>
+        <mychild-component2></mychild-component2>
+        
+    </div>
+    
+
+
+
+
+    
+    <script>
+        //컴포넌트 등록
+        Vue.component('my-comp',{
+            template : //html 요소를 이용하여 화면 구성 
+            `
+            <div>
+            <p> {{message}} </p>
+            <button @click="countUp"> 카운트업</button>
+            <button @click="countDown"> 카운트다운</button>
+                <p>{{ count }}</p>
+            </div>
+            `,
+
+            data : function() {
+                return {
+                    message : "컴포넌트의 메세지 입니다",
+                    count : 0 ,
+                };
+            },
+            methods : {
+                countUp : function(){
+                    this.count +=1;
+                },
+                countDown : function(){
+                    this.count --;
+                }
+            }
+        })
+        Vue.component('count-component',{
+            template : //html 요소를 이용하여 화면 구성 
+            `
+            <div>
+            <p> {{message}} </p>
+            <button @click="countUp"> 카운트업</button>
+            <button @click="countDown"> 카운트다운</button>
+            <button @click="count=0"> 숫자0</button>
+                <p>{{ count }}</p>
+            </div>
+            `,
+
+            data : function() {
+                return {
+                    message : "컴포넌트의 메세지 입니다",
+                    count : 0 ,
+                };
+            },
+            methods : {
+                countUp : function(){
+                    this.count +=1;
+                },
+                countDown : function(){
+                    this.count --;
+                }
+            }
+        })
+        Vue.component('small-component',{
+            template : `<p>Hi</p>`,
+        })
+        Vue.component('used-component',{
+            template :
+            `
+            <div>
+                <p>used컴포넌트입니다</p>
+                <!--전역컴포넌트를 불러옴-->
+                <small-component></small-component>
+            </div> 
+            `,
+        })
+        
+        new Vue({
+            el :"#app",
+            components : {
+                'vuein-component' : {
+                    template : `<p> div#app에서만 쓸수있는 컴포넌트입니다</p>`
+                },
+                'mychild-component' : {
+                    template : `<p> Vue인스턴스의 첫번쨰 지역컴포넌트</p>`
+                },
+                'mychild-component2' : {
+                    template : `<p> Vue인스턴스의 두번쨰 지역컴포넌트</p>`
+                }
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>
