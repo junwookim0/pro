@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+    <div id="app">
+        
+        <named-component >
+
+            <div slot="person">
+                <img src="../img/홍길동.PNG" alt="" width="100">
+                <p>홍길동</p>
+            </div>
+            <p slot="depart"> {{ Departname }} </p>
+        </named-component>
+        <input type="text" v-model="Departname">
+        
+        
+    </div>
+    
+    <script>
+        Vue.component('named-component',{
+            template :
+            `
+            <div>
+            <h1>인사관리카드</h1>
+            <slot name="person"></slot>
+            <p>부서 : </p>
+            <slot name="depart"></slot>
+            </div>
+            `,
+            data : function(){
+                return {
+                    
+                }
+            },
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {
+                Departname : '',
+            },
+            methods : {
+                
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>

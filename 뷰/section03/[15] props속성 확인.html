@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+    <div id="app">
+        
+        <child-component v-bind:parent_message="message" v-bind:tag_message="text"></child-component>
+        <input type="text" v-model="message">
+        
+    </div>
+    
+    <script>
+        Vue.component('child-component',{  
+            props : ['parent_message','tag_message'],
+            template :
+            `
+            <div>
+                <p> 부모로 부터 들고온 메세지 : {{ parent_message }} </p>
+                <p> 태그로 부터 들고온 메세지 : {{ tag_message }} </p>
+            </div>
+            `,
+            data : function(){
+                return {
+                    
+                }
+            },
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {
+                message : '부모메세지입니다',
+                text : 'tagMessage',
+            },
+        })
+
+
+
+
+    </script>
+</body>
+</html>

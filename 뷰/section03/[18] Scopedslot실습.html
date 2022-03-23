@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+    <div id="app">
+        
+        <show-picture >
+            <template slot-scope='{catsname}'>
+                <p>{{catsname}}</p>
+                <p v-for="n in catsname">{{ n }}</p>
+            </template>
+            
+
+        </show-picture>
+
+
+        
+        
+        
+    </div>
+    
+    <script>
+        Vue.component('show-picture',{
+            template :
+            `
+            <div>
+                <h3> 컴포넌트의 data</h3>
+               
+                <slot  v-bind:catsname="name"></slot>
+                
+            </div>
+            `,
+            data : function(){
+                return {
+                    name : ['초코','모모','보리'],
+        
+                }
+            },
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {
+                
+            },
+            methods : {
+                
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>

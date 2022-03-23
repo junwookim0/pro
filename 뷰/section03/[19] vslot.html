@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+    <div id="app">
+        
+        <show-picture >
+            <template v-slot:cat='{catsname}'>
+                
+                <div v-for="n in catsname">
+                    <p> {{n.name}}</p> 
+                    <img src="" v-bind:src="n.src" width="300">
+                </div>
+                
+            </template>
+            <template v-slot:age>
+            1살
+            </template>
+        </show-picture>
+
+
+        
+        
+        
+    </div>
+    
+    <script>
+        Vue.component('show-picture',{
+            template :
+            `
+            <div>
+                <h3> 컴포넌트의 data</h3>
+            
+                <slot  name="cat" v-bind:catsname="catname"></slot>
+                <slot  name="age"></slot>
+                
+            </div>
+            `,
+            data : function(){
+                return {
+                    //1.속성의 값을 객체의 배열로 전달했을때 이름 출력하기
+                    //2. 부모에서 이미지 태그에 src값을 넣어 이미지 출력하기
+                    catname : [
+                        { name:'초코' , src:"../img/cat1.jpg"},
+                        { name:'모모' , src:"../img/cat2.jpg"},
+                        { name:'보리' , src:"../img/cat3.jpg"}
+                    ],
+                
+        
+                }
+            },
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {
+                
+            },
+            methods : {
+                
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>

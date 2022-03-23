@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+</head>
+<body>
+    <div id="app">
+        <slot-component>
+            새로운값을 넣어줍니다
+        </slot-component>
+        <slot-component>
+            <p>태그를 작성해서 넣어줍니다</p>
+        </slot-component>
+
+        <slot-component1>
+            <a href="https://www.naver.com/">네이버</a>
+        </slot-component1>
+        <slot-component1>
+            <a href="https://www.daum.net/">다음</a>
+        </slot-component1>
+        <slot-component2 url="https://www.naver.com/">
+            네이버
+        </slot-component2>
+        <slot-component2 url="https://www.daum.net/">
+            다음
+        </slot-component2>
+    </div>
+    
+
+    
+    <script>
+        Vue.component('slot-component2',{
+            props:["url"],
+            template :
+            `
+            <div>
+                <h3> props url슬롯입니다 </h3>
+                <a v-bind:href="url">
+                <slot></slot>
+                </a>
+            </div>
+            `,
+            data : function(){
+                return {
+        
+                }
+            },
+        })
+        Vue.component('slot-component1',{
+            template :
+            `
+            <div>
+                <h3> 슬롯입니다 </h3>
+                <slot></slot>
+                
+            </div>
+            `,
+            data : function(){
+                return {
+        
+                }
+            },
+        })
+        
+        Vue.component('slot-component',{
+            template :
+            `
+            <div>
+                <h3> 슬롯입니다 </h3>
+                <slot></slot>
+                
+            </div>
+            `,
+            data : function(){
+                return {
+                    
+                }
+            },
+        })
+
+        
+        new Vue({
+            el :"#app",
+            data : {},
+            methods : {}
+        })
+
+
+
+
+    </script>
+</body>
+</html>

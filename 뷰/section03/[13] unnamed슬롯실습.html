@@ -20,13 +20,11 @@
 </head>
 <body>
     <div id="app">
+        <input type="text" v-model="memo">
+        <button @click="addmemo"> 추가</button>
+        <memo-component v-for="m in memolist"> {{m}} </memo-component>
         
-        <!--배열의 값을 인덱스로 접근-->
-        <child-component v-bind:childname="name[0]" ></child-component>
-        <child-component v-bind:childname="name[1]" ></child-component>
-
-        <!-- 베열의 값을 v-for 를 이요하여 변수로 접근-->
-        <child-component v-bind:childname="n" v-for="n in name"></child-component>
+        
         
     </div>
     
@@ -36,31 +34,38 @@
 
     
     <script>
-
-        Vue.component('child-component',{
-            //태그에서 속성처럼 사용하여 값을 들고옴, 배열
-            props :['childname'],
+        Vue.component('memo-component',{
             template :
             `
-            <div>
-                <p> 자식컴포넌트에 작성되고 있습니다 : {{ childname }}</p>
-        
+            <div class="memo">
+                <h1>메모입니다</h1>
+                <slot></slot>
+                <p>
+                    {{ datealert }}
+                </p>
             </div>
             `,
-            // Vue 컴포넌트 내부에서 사용되는 값 
             data : function(){
                 return {
+                    datealert :new Date(),
                     
                 }
-            }
+            },
         })
-        
         
         new Vue({
             el :"#app",
             data : {
-                name : ['철수','영희'],
+                memolist:[],
+                memo: "",
             },
+            methods : {
+                addmemo : function(){
+                    //메모리스트에 메모값을 추가
+                    this.memolist.push(this.memo);
+                    this.memo ="";
+                }
+            }
         })
 
 

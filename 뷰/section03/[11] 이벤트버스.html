@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+</head>
+<body>
+    <div id="app">
+        <news-component> </news-component>
+        <person-component></person-component>
+    </div>
+    
+
+    
+    <script>
+        const EventBus = new Vue;
+    Vue.component('person-component',{
+            template :
+            `
+            <div>
+                
+                <p v-if="check"> 구독자확인 {{ count }} </p>
+                <button @click="check=!check"> show</button>
+            </div>
+            `,
+            data : function(){
+                return {
+                    count : 0,
+                    
+                    check : true,
+                }
+            },
+            created() {//새로고침 될때마다 실행.
+                EventBus.$on ('add',() =>{
+                    this.count++;
+                }),
+                EventBus.$on ('add1',() =>{
+                    this.count--;
+                })
+                console.log("created");
+            },
+            mounted() {
+                console.log("mounted")
+            },
+            update() {
+                console.log("update")
+            },
+            destroyed() { //화면이 꺼질때 발생 
+                console.log("destroyed")
+            }
+        })
+
+    Vue.component('news-component',{
+            template :
+            `
+            <div>
+                
+                <button @click="addCount"> {{ count }} : 신문발행 </button>
+                <button @click="addCount1"> {{ count1 }} : 구독취소 </button>
+                
+            </div>
+            `,
+            data : function(){
+                return {
+                    count : 0,
+                    count1 : 0,
+                }
+            },
+            methods : {
+            
+                addCount : function(){
+                    this.count++;
+                    EventBus.$emit('add');
+                },
+                addCount1 : function(){
+                    this.count1++;
+                    EventBus.$emit('add1');
+                },
+                
+                
+            }
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {},
+            methods : {}
+        })
+
+
+
+
+    </script>
+</body>
+</html>
