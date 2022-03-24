@@ -2,6 +2,8 @@ Vue.component('memo-component', {
     props :['id'],
     template :
     `
+    <!--v-if else 사용 checked :true lightgraycolor :false blackcolor-->
+
     <div id="memo" v-if="checked" v-bind:class="lightgrayColor+'_style'">
     
         <h3>
@@ -13,6 +15,7 @@ Vue.component('memo-component', {
         <hr>
         <p>{{timey}} {{timem}}  {{timed}}</p>
     </div>
+
     <div id="memo" v-else v-bind:class="blackColor+'_style'">
     
         <h3>
@@ -28,7 +31,7 @@ Vue.component('memo-component', {
     data : function() {
         return  {
             timey : new Date().getFullYear()+'년',
-            timem : new Date().getMonth()+'월',
+            timem : new Date().getMonth()+1+'월',
             timed : new Date().getDate()+'일',
             checked : false,
             blackColor : "black",

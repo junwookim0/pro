@@ -19,8 +19,7 @@
         v-for="m in memolist"
         v-bind:id="m.id"
         v-bind:key="m.id"
-        @delete="deleteMemo"
-        >
+        @delete="deleteMemo">
         <span slot="titles"> {{m.title}} </span>
         <p slot="memolst"> {{m.memo}} </p>
         </memo-component>
