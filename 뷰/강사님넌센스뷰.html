@@ -76,7 +76,7 @@
                     if (this.useranwer == this.quizArray[this.random].answer) {
                         this.score++;
                         // splice(인덱스, 삭제할 갯수) : 삭제한 요소를 배열로 반환
-                        this.usedQuiz.push( this.quizArray.splice(this.random, 1)[0] );
+                        this.usedQuiz.push( this.quizArray.splice(this.random, 1) );
                     }
                     
                     this.startquiz();
