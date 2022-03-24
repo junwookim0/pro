@@ -1,7 +1,7 @@
 new Vue({
     el : '#app',
     data : {
-        id: 0, 
+        id: [], 
         title : '',
         memo :'',
         memolist : [
@@ -21,6 +21,7 @@ new Vue({
                     index = i; 
                 }
             });
+
             this.memolist.splice(index,1);
         },
 

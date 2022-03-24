@@ -5,7 +5,6 @@ Vue.component('memo-component', {
     <!--v-if else 사용 checked :true lightgraycolor :false blackcolor-->
 
     <div id="memo" v-if="checked" v-bind:class="lightgrayColor+'_style'">
-    
         <h3>
             <input type="checkbox" v-model="checked">
             <slot name="titles"></slot>
