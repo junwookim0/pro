@@ -2,7 +2,7 @@ new Vue({
     el : '#app',
     data : {
         id:0, // 메모의 개인값을 알기위함.
-    
+        title : '',
         memo :'',
         memolist : [
         ]
@@ -10,8 +10,9 @@ new Vue({
     methods : {
         addMemo : function(){
             this.id= this.memolist.length;
-            this.memolist.push( {id: this.id , memo: this.memo} );
+            this.memolist.push( {id: this.id , title: this.title ,memo: this.memo} );
             this.id++;
+            this.title = "",
             this.memo="";
         },
         deleteMemo : function(id) {

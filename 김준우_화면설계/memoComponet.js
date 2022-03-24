@@ -6,26 +6,30 @@ Vue.component('memo-component', {
     
         <h3>
             <input type="checkbox" v-model="checked">
-            메모
+            <slot name="titles"></slot>
             <button @click="deletememo">X</button>
         </h3>
-        <slot></slot>
-        <p>{{time}}</p>
+        <slot name="memolst"></slot>
+        <hr>
+        <p>{{timey}} {{timem}}  {{timed}}</p>
     </div>
     <div id="memo" v-else v-bind:class="blackColor+'_style'">
     
         <h3>
             <input type="checkbox" v-model="checked">
-            메모
+            <slot name="titles"></slot>
             <button @click="deletememo">X</button>
         </h3>
-        <slot></slot>
-        <p>{{time}}</p>
+        <slot name="memolst"></slot>
+        <hr>
+        <p>{{timey}} {{timem}}  {{timed}}</p>
     </div>`,
     
     data : function() {
         return  {
-            time : new Date(),
+            timey : new Date().getFullYear()+'년',
+            timem : new Date().getMonth()+'월',
+            timed : new Date().getDate()+'일',
             checked : false,
             blackColor : "black",
             lightgrayColor : "lightgray",
@@ -35,6 +39,6 @@ Vue.component('memo-component', {
         deletememo : function(){
             this.$emit("delete", this.id );
         },
-        
+
     }
 })

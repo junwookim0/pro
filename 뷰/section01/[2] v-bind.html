@@ -8,8 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <style>
-        .blue_style{
-            color: blue;
+        .black_style{
+            color:black;
         }
         .red_style{
             color:  red;
@@ -18,7 +18,8 @@
 </head>
 <body>
     <div id="app">
-        <h3 v-bind:class="sColor+'_style'">Vue bind</h3>
+        <h3 v-if="ab" v-bind:class="sColor+'_style'">Vue bind</h3>
+        <h3 v-else v-bind:class="bcolor+'_style'">Vue bind</h3>
         <!--
             v-bind로 접근할수 있는값
             이미지 scr
@@ -35,8 +36,10 @@
             data: {
                 //sDate : "현재 년도 :" +new Date().getFullYear(),
                 sColor : "red",
+                bcolor : "blue",
                 sTime : `${new Date().getHours()} : ${new Date().getMinutes()}`,
-                disable : true
+                disable : true,
+                ab : false,
             }
         });
     </script>    
