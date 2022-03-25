@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+
+        <product-display></product-display>
+        
+        <!-- 리뷰 리스트-->
+        <review-list v-bind:reviews="reviews"></review-list>
+
+        <!-- 리뷰 작성 폼-->
+        <review-form v-on:submit-review="addReview"></review-form>
+
+    </div>
+
+    <!-- 컴포넌트 -->
+    <script src="./componets/ProductDisplay.js"></script>
+    <script src="./componets/reviewform.js"></script>
+    <script src="./componets/review-list.js"></script>
+
+    <!-- Vue app -->
+    <script src="./main.js">
+        
+    </script>
+
+
+</body>
+</html>

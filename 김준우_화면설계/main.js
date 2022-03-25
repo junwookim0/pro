@@ -11,7 +11,7 @@ new Vue({
         addMemo : function(){
             this.memolist.push( {id: this.id , title: this.title ,memo: this.memo} );
             this.id++;
-            this.title = '',
+            this.title = '';
             this.memo="";
         },
         deleteMemo : function(id) {

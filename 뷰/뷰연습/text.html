@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./test.css">
+
+    
+</head>
+<body>
+    <div id="app">
+
+        <show-picture id="block">
+            <template v-slot:cat='{catsname}'>
+                <div>
+                    
+                    <div v-for="n in catsname">
+                        <img src="" v-bind:src="n.src" >
+                        <p id="names"> {{n.name}}</p>
+                        
+                    </div>
+                    <div v-for="n in catsname">
+                        <p> {{n.explanation}}</p>
+                    </div>
+                </div>
+                
+            </template>
+        </show-picture>
+
+        <show1-picture id="block">
+            <template v-slot:cat='{catsname}'>
+                <div>
+                    <div v-for="n in catsname">
+                        <img src="" v-bind:src="n.src" >
+                        <p id="names"> {{n.name}}</p> 
+                        
+                    </div>
+                    <div v-for="n in catsname">
+                        <p> {{n.explanation}}</p>
+                    </div>
+                </div>
+            </template>
+        </show1-picture>
+
+        <show2-picture id="block">
+            <template v-slot:cat='{catsname}'>
+                <div>
+                    <div v-for="n in catsname">
+                        <img src="" v-bind:src="n.src" >
+                        <p id="names"> {{n.name}}</p> 
+                    </div>
+                    <div v-for="n in catsname">
+                        <p> {{n.explanation}}</p>
+                    </div>
+                </div>
+            </template>
+        </show2-picture>
+        
+    </div>
+    <script src="./componet/test.js"></script>
+    <script src="./componet/test2.js"></script>
+    <script src="./componet/test3.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
