@@ -3,6 +3,7 @@ Vue.component('review-form',{
     return {
         name : '',
         review : "",
+        id:0,
         rating :null,
         recommend : null,
     }
@@ -11,10 +12,12 @@ methods : {
     onSubmit : function () {
         
         let productReview = {
+            id : this.id,
             name :this.name,
             review : this.review,
             rating : this.rating,
-            recommend : this.recommend
+            recommend : this.recommend,
+            id : this.id++,
         }
         this.$emit('submit-review', productReview)
     }
