@@ -1,0 +1,16 @@
+div {
+    text-align: center;
+}
+.product button{ 
+    border: none;
+    background-color: transparent;
+    font-size: large;
+    color: darkgray;
+    cursor: pointer;
+}
+.product button.on{ 
+    border: none;
+    background-color: transparent;
+    font-size: large;
+    color: red;
+    }
