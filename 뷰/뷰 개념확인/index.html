@@ -28,9 +28,9 @@
         <p v-else>false</p>
         <p v-for="m in array">{{m.name}}</p>
         <p v-for="na in nas">{{ na }}</p>
-        <p v-for="n in 3">반복num</p>
+        <p v-for="n in num">{{n}}</p>
         <p v-bind:class="className"> v-bind </p>
-        <p v-bind:class="[{blu_style : isActive},backclass ]"> v-bind </p>
+        <p v-bind:class="[{blu_style : buttonOn}, colorStyle ]"> v-bind1 </p>
         <p v-bind:class="'red_style'"> v-bind </p>
         <img v-bind:src="srcImg" width="100px">
         <child-component></child-component>
@@ -106,9 +106,10 @@
                     {name : 3,} ,
                 ],
                 nas : "객체",
-                isActive : true,
+                num : 3,
+                buttonOn : true,
                 className : "blu_style",
-                backclass : "back_style",
+                colorStyle : "back_style",
                 srcImg : "../img/beach.jpg",
                 name1 : "이름"
             },
