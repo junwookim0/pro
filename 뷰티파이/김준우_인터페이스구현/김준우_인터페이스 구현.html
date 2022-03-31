@@ -12,15 +12,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
 
-    <style>
-        .up {
-            transform: translate(0,0); 
-            transition: transform 0.5s;
-        }
-        .up:hover {
-            transform: translate(0,-10px); 
-        }
-    </style>
 </head>
 <body>
 
@@ -69,7 +60,7 @@
                     <p class="d-flex justify-center"> 추천을 통해 인기있는 곳을 골라주세요</p>
                     <v-row>
                         <v-col cols="12" sm="6" v-for="(p, index) in pictures" :key="index" >
-                            <v-card class="up">
+                            <v-card>
                                 <v-img :src="p.src" aspect-ratio="2.0"></v-img>
                                 <v-card-title class="title" >{{p.title}}</v-card-title>
                                 <v-card-actions>
