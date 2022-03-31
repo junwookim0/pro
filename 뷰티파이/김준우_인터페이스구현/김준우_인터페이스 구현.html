@@ -49,13 +49,13 @@
                 <v-divider></v-divider>
 
                 <v-list>
-                    <v-list-item v-for="menu in menuList" :href="menu.link">
+                    <v-list-item v-for="item in itemList" :href="item.link" :key="item.title">
                         <v-list-item-action >
-                            <v-icon>{{menu.icon}}</v-icon>
+                            <v-icon>{{item.icon}}</v-icon>
                         </v-list-item-action>
                         <v-list-item-content>
                             <v-list-item-title>
-                                {{menu.title}}
+                                {{item.title}}
                             </v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
@@ -87,9 +87,9 @@
                 <v-container>
                     <v-card>
                             <v-slide-x-transition group>
-                                <v-list-item v-for="(rec, index) in recommend" :key="index">
+                                <v-list-item v-for="(r, index) in recommend" :key="index">
                                     <v-list-item-content>
-                                        <v-list-item-title>{{rec}}를 추천합니다</v-list-item-title>
+                                        <v-list-item-title>{{r}}를 추천합니다</v-list-item-title>
                                     </v-list-item-content>
                                 </v-list-item>
                             </v-slide-x-transition>
@@ -105,7 +105,7 @@
             vuetify : new Vuetify(),
             data:  {
                 ndrawer : false,
-                menuList : [
+                itemList : [
                     {
                         title : '메인페이지',
                         icon : 'mdi-card-bulleted-outline',
@@ -131,7 +131,7 @@
                     {
                         count:0,
                         title : "바다 도시 야경",
-                        src : "./img/아경.jpg"
+                        src : "./img/야경.jpg"
                     },
                     {
                         count:0,
