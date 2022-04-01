@@ -1,0 +1,10 @@
+body div #app {
+    background-color:  #BCAAA4 ;
+}
+#logo {
+    font-family: 'BIZ UDPMincho', serif;
+    color: white;
+    text-decoration: none;
+    line-height: 5px;
+}
+
