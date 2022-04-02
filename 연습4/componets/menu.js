@@ -18,7 +18,7 @@ Vue.component('menu-component',{
         <v-container>
             <v-row>
             <v-col cols="12" sm="6">
-                <a href="../연습4/hotel.html"> <v-img class="menu_btn" src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"></v-img> </a>
+                <a href="../연습4/hotel.html"><v-img class="menu_btn" src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"></v-img> </a>
             </v-col>
             <v-col cols="12" sm="6">
                 <a href="../연습4/dwelling.html"> <v-img class="menu_btn" src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"></v-img> </a>
