@@ -18,8 +18,24 @@ Vue.component('menu-component',{
         <v-container>
             <v-row>
             <v-col cols="12" sm="6">
-                <a href="../연습4/hotel.html"><v-img class="menu_btn" src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"></v-img> </a>
+                <v-hover v-slot="{ hover }">
+                    <v-card
+                        :elevation="hover ? 12 : 2"
+                        :class="{ 'on-hover': hover }"
+                    >
+                        <a  href="../연습4/hotel.html"><v-img  src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"  gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)">
+                        <div class="text-center mt-10 text-h3" :color="transparent" :class="{ 'show-btns': hover }"
+                        >
+                        <span id="menutext" > <i>HOTEL</i> </span>
+                        <v-icon :class="{ 'show-btns': hover }"
+                        :color="transparent" x-large> mdi-plus </v-icon>
+                        </div>
+                        </v-img> </a>
+                    </v-card>
+                </v-hover>
             </v-col>
+
+
             <v-col cols="12" sm="6">
                 <a href="../연습4/dwelling.html"> <v-img class="menu_btn" src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"></v-img> </a>
             </v-col>
@@ -59,9 +75,8 @@ Vue.component('menu-component',{
                     src : "./img/미용실 모델링 리터치01.PNG",
                     link : "#"
                 },
-                
-
             ],
+            transparent: 'rgba(255, 255, 255, 0)',
             
         }
     }

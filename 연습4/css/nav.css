@@ -4,6 +4,23 @@ body div #app {
 #logo {
     font-family: 'BIZ UDPMincho', serif;
     color: white;
-    text-decoration: none;
     line-height: 5px;
+}
+a {
+    text-decoration: none;
+}
+
+#menutext{
+    font-family: 'BIZ UDPMincho', serif;
+    color: white;
+}
+.v-card {
+    transition: opacity .4s ease-in-out;
+}
+
+.v-card:not(.on-hover) {
+    opacity: 0.6;
+}
+.show-btns {
+    color: rgb(255, 255, 255,1) !important;
 }
