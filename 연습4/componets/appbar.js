@@ -11,20 +11,17 @@ Vue.component('appbar-component',{
             </a>
             
             <v-spacer></v-spacer>
-            
-            
-                                
-            
-            <v-btn color="transparent" class="white--text ma-5" href="../연습4/index.html">
+            <!-- sm = tablet size  xs = phone size -->
+            <v-toolbar-item class="hidden-sm-and-down">
+            <v-btn text class="white--text ma-5" href="../연습4/index.html">
                 HOME
             </v-btn>
             
-            <div class="text-center">
+            
                 <v-menu offset-y transition="slide-y-transition">
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn
-                    color="transparent"
-                    dark
+                    text
                     v-bind="attrs"
                     v-on="on"
                     class="white--text ma-5"
@@ -42,15 +39,14 @@ Vue.component('appbar-component',{
                     <v-list-item-title>{{ item.title }}</v-list-item-title>
                     </v-list-item>
                 </v-list>
-                
                 </v-menu>
-            </div>
-            <div class="text-center">
+
+            
+            
                 <v-menu offset-y transition="slide-y-transition">
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn
-                    color="transparent"
-                    dark
+                    text
                     v-bind="attrs"
                     v-on="on"
                     class="white--text ma-5"
@@ -60,14 +56,21 @@ Vue.component('appbar-component',{
                 </template>
                 <v-list>
                     <v-list-item
-                    v-for="(item, index) in ORTFOLIO"
+                    v-for="(item, index) in PORTFOLIO"
                     :key="index"
                     >
                     <v-list-item-title>{{ item.title }}</v-list-item-title>
                     </v-list-item>
                 </v-list>
                 </v-menu>
-            </div>
+            
+            </v-toolbar-item>
+
+            <v-toolbar-item class="hidden-md-and-up">
+            <v-btn icon>
+                    <v-icon>mdi-dots-vertical</v-icon>
+                </v-btn>
+            </v-toolbar-item>
 
             
         </v-app-bar>
@@ -91,7 +94,7 @@ Vue.component('appbar-component',{
                     title:'미용실' , 
                     link : '../연습4/hairshop.html'}
             ],
-            ORTFOLIO: [
+            PORTFOLIO: [
                 {
                     title : '카페 리모델링',
                     link : '../연습4/hairshop.html'
