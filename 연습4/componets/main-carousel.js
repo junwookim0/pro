@@ -13,7 +13,19 @@ Vue.component('main-carousel',{
             v-for="(slide, i) in slides"
             :key="i"
             :src="slide.src"
-        > 
+            id="car"
+        >
+        <v-row
+        class="fill-height"
+        align="center"
+        justify="center"
+        >
+        <div id="carouseltext">
+        WE CREATE YOUR <br>
+        <span class="ml-14">SPACE BETTER</span>
+        </div>
+        </v-row>
+
         </v-carousel-item>
     </v-carousel>
     </div>

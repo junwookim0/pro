@@ -1,26 +1,32 @@
 body div #app {
     background-color:  #BCAAA4 ;
 }
+#appbar_font{
+    font-family: 'Ubuntu', sans-serif;
+}
 #logo {
+    font-size: 25px;
+    color: black;
+    line-height: 10px;
     font-family: 'BIZ UDPMincho', serif;
-    color: white;
-    line-height: 5px;
+    font-family: 'Playfair Display', serif;
+}
+#holiday_village{
+    color: black;
+}
+#dots-vertical{
+    color: black;
 }
 a {
     text-decoration: none;
 }
-
-#menutext{
+#carouseltext{
     font-family: 'BIZ UDPMincho', serif;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
     color: white;
 }
 .v-card {
     transition: opacity .4s ease-in-out;
 }
 
-.v-card:not(.on-hover) {
-    opacity: 0.6;
-}
-.show-btns {
-    color: rgb(255, 255, 255,1) !important;
-}

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo2.png">
-    <HelloWorld msg="Welcome to 태성"/>
+    <HelloWorld msg="HOMEVIEW 입니다"/>
   </div>
 </template>
 

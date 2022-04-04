@@ -1,51 +1,32 @@
 Vue.component('menu-component',{
     template : 
     `
-    <!--
+
+    
     <div>
         <v-container>
             <v-row>
-            <v-col cols="12" sm="6" v-for="(p, index) in pictures" :key="index">
-                <v-img class="menu_btn" :src="p.src" aspect-ratio="1.5">
-                <button id="linkbtn" :href="p.link">{{p.name}}</button>
-                </v-img>
-            </v-col>
-            </v-row>
-        </v-container>
-    </div>
-    -->
-    <div>
-        <v-container>
-            <v-row>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" sm="6"  v-for="(p, index) in pictures" :key="index">
                 <v-hover v-slot="{ hover }">
                     <v-card
                         :elevation="hover ? 12 : 2"
                         :class="{ 'on-hover': hover }"
                     >
-                        <a  href="../연습4/hotel.html"><v-img  src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"  gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)">
-                        <div class="text-center mt-10 text-h3" :color="transparent" :class="{ 'show-btns': hover }"
-                        >
-                        <span id="menutext" > <i>HOTEL</i> </span>
-                        <v-icon :class="{ 'show-btns': hover }"
-                        :color="transparent" x-large> mdi-plus </v-icon>
-                        </div>
-                        </v-img> </a>
+
+                        <v-img :src="p.src" aspect-ratio="1.5">
+                        </v-img>
+                    
+                        <v-fade-transition>
+                            <v-overlay
+                                v-if="hover"
+                                absolute
+                                color="#036358">
+                            <v-btn :href="p.link" > {{p.name}} See more info</v-btn>
+                        </v-overlay>
+                    </v-fade-transition>
                     </v-card>
                 </v-hover>
             </v-col>
-
-
-            <v-col cols="12" sm="6">
-                <a href="../연습4/dwelling.html"> <v-img class="menu_btn" src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"></v-img> </a>
-            </v-col>
-            <v-col cols="12" sm="6">
-                <a href="../연습4/Cafe.html"> <v-img class="menu_btn" src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"></v-img> </a>
-            </v-col>
-            <v-col cols="12" sm="6">
-                <a href="../연습4/hairshop.html"> <v-img class="menu_btn" src="./img/미용실 모델링 리터치04.PNG" aspect-ratio="1.5"></v-img> </a>
-            </v-col>
-            </v-row>
         </v-container>
     </div>
 
@@ -62,21 +43,22 @@ Vue.component('menu-component',{
                 {
                     name :" 주거공간" ,
                     src : "./img/미용실 모델링 리터치02.PNG",
-                    link : "#"
+                    link : "../연습4/dwelling.html"
                 },
                 
                 {
                     name :" 카페" ,
                     src : "./img/미용실 모델링 리터치03.PNG",
-                    link : "#"
+                    link : "../연습4/Cafe.html"
                 },
                 {
                     name :" 헤어샵" , 
                     src : "./img/미용실 모델링 리터치01.PNG",
-                    link : "#"
+                    link : "../연습4/hairshop.html"
                 },
             ],
             transparent: 'rgba(255, 255, 255, 0)',
+            overlay:false,
             
         }
     }
