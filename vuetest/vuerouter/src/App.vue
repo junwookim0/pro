@@ -5,7 +5,12 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/show">Show</router-link> |
+      <router-link to="/double">중첩</router-link> |
+      <router-link to="/doubledynamic">사용자페이지</router-link>
+
     </nav>
+    <p @click=" $router.push({name : 'show'})"> show </p>
+
     <ul>
       <li v-for="(num, i) in 4" :key="i">
         <!-- 주소값을 조합해서 출력하고 싶을 때 -->

@@ -33,6 +33,26 @@ const routes = [
     }
   },
   {
+    path: '/doubledynamic',
+    name: 'doubledynamic',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../components/DynamicComponent.vue')
+    }
+  },
+  {
+    path: '/double',
+    name: 'double',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/DoubleView.vue')
+    }
+  },
+  {
     path: "/dynamic/:id",
     name: "dynamic",
     component: function () {
@@ -44,6 +64,26 @@ const routes = [
     path: "*",
     // redirect 를 사용하면 이미 작성된 경로로 이동시킬수있다.
     redirect: "/show",
+  },
+  {
+    path: '/one',
+    name: 'one',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../components/OneComponent.vue')
+    }
+  },
+  {
+    path: '/two',
+    name: 'two',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../components/TwoComponent.vue')
+    }
   },
 
 ]
