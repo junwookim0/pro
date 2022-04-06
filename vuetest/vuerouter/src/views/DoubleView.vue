@@ -1,41 +1,18 @@
 <template>
     <div>
         <h1>중첩라우터입니다</h1>
-        <h1>두개의 컴포넌트를 라우팅합니다</h1>
+        <p>두개의 컴포넌트를 라우팅합니다</p>
         <nav>
-            <router-link to='/doubledynamic/1'>1</router-link>
-            <router-link to='/doubledynamic/2'>2</router-link>
+            <router-link to='/double/one'>1</router-link>
+            <router-link to='/double/two'>2</router-link>
         </nav>
-        <router-view/>
+        <router-view></router-view>
     </div>
 </template>
 
-<style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    }
-
-    nav {
-    padding: 30px;
-    }
-
-    nav a {
-    font-weight: bold;
-    color: #2c3e50;
-    text-decoration: none;
-    }
-
-    nav a.router-link-exact-active {
-    color: #42b983;
-    }
-</style>
-
 <script>
 export default {
-    name : 'DoubleView'
+    name :"DoubleView"
 }
 </script>
+© 2022 GitHub, Inc.

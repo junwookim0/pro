@@ -2,14 +2,34 @@
   <div id="app">
     
     <nav>
+    <!-- 컴포넌트 채로 바꿈, 새로고침x -->
+      <!-- 주소의 URL을 바로 넣어줌-->
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/show">Show</router-link> |
       <router-link to="/double">중첩</router-link> |
       <router-link to="/doubledynamic">사용자페이지</router-link>
-
     </nav>
-    <p @click=" $router.push({name : 'show'})"> show </p>
+      <button @click=" $router.push({name: 'show'}) ">show</button>
+      <button @click=" $router.push('/double') ">중첩</button><br>
+      
+      <button 
+      v-for="(num,i) in 4"
+      :key="i"
+      @click="$router.push(`/doubledynamic/${num}`)"
+      >
+        {{num}}
+      </button>
+      <br>
+      
+      <button 
+      v-for="(num,i) in 4"
+      :key="i"
+      @click="$router.push({name: 'doubledynamicid', params : {id : num}})"
+      >
+        {{num}}
+      </button>
+      <br>
 
     <ul>
       <li v-for="(num, i) in 4" :key="i">

@@ -3,7 +3,7 @@ Vue.component('appbar-component',{
     `
     <div>
         <v-app-bar  app  fixed  height="100" id="appbar_font">
-        
+
             <a href="../연습4/index.html" id="logo" class="ml-9" >
                 <v-icon class="pr-1 mb-2" size="33px" id="holiday_village">holiday_village</v-icon>
                 MY <br>
@@ -12,11 +12,10 @@ Vue.component('appbar-component',{
             
             <v-spacer></v-spacer>
             
-            
-            <v-toolbar-item class="hidden-sm-and-down">
-            <v-btn text class="black--text ma-5" x-large href="../연습4/index.html" :ripple="false">
-                HOME
-            </v-btn>
+            <div class="hidden-sm-and-down">
+                <v-btn text class="black--text ma-5" x-large href="../연습4/index.html" :ripple="false">
+                    HOME
+                </v-btn>
             
             
                 <v-menu offset-y transition="slide-y-transition" open-on-hover>
@@ -73,10 +72,11 @@ Vue.component('appbar-component',{
                     </v-list-item>
                 </v-list>
                 </v-menu>
-            </v-toolbar-item>
+            </div>
+        
             
 
-            <v-toolbar-item class="hidden-md-and-up">
+            <div class="hidden-md-and-up">
             
             <v-menu offset-y transition="slide-y-transition" open-on-hover>
             <template v-slot:activator="{ on, attrs }" >
@@ -96,7 +96,7 @@ Vue.component('appbar-component',{
                     </v-list-item>
                 </v-list>
                 </v-menu>
-            </v-toolbar-item>
+            </div>
             
 
             

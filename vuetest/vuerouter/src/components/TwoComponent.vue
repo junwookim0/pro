@@ -1,5 +1,5 @@
 <template>
-    <div class="two">
+    <div>
         <h1> 2번째 컴포넌트 입니다 </h1>
     
     </div>

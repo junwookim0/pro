@@ -12,7 +12,6 @@ Vue.component('menu-component',{
                         :elevation="hover ? 12 : 2"
                         :class="{ 'on-hover': hover }"
                     >
-
                         <v-img :src="p.src" aspect-ratio="1.5">
                         </v-img>
                     
@@ -23,10 +22,11 @@ Vue.component('menu-component',{
                                 color="#036358">
                             <v-btn :href="p.link" > {{p.name}} See more info</v-btn>
                         </v-overlay>
-                    </v-fade-transition>
+                        </v-fade-transition>
                     </v-card>
                 </v-hover>
             </v-col>
+            </v-row>
         </v-container>
     </div>
 

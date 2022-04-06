@@ -3,6 +3,7 @@ body div #app {
 }
 #appbar_font{
     font-family: 'Ubuntu', sans-serif;
+    
 }
 #logo {
     font-size: 25px;
@@ -28,5 +29,18 @@ a {
 }
 .v-card {
     transition: opacity .4s ease-in-out;
+}
+
+#carouselp{
+    margin: 170px auto;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 35px;
+}
+#uptext{
+    vertical-align: top;
+    font-size: 17px;
+    line-height: 38px;
+    margin-right: 20px;
 }
 
