@@ -37,23 +37,23 @@ Vue.component('menu-component',{
             pictures: [
                 { 
                     name :" 호텔" ,
-                    src : "./img/미용실 모델링 리터치04.PNG",
+                    src : "./img/exhotel.jpg",
                     link : "../연습4/hotel.html"
                 },
                 {
                     name :" 주거공간" ,
-                    src : "./img/미용실 모델링 리터치02.PNG",
+                    src : "./img/아파트/렌더링/밤장면1.PNG",
                     link : "../연습4/dwelling.html"
                 },
                 
                 {
                     name :" 카페" ,
-                    src : "./img/미용실 모델링 리터치03.PNG",
+                    src : "./img/카페/모델링/카페01 내부-낮장면00.PNG",
                     link : "../연습4/Cafe.html"
                 },
                 {
                     name :" 헤어샵" , 
-                    src : "./img/미용실 모델링 리터치01.PNG",
+                    src : "./img/미용실/미용실 모델링 리터치02.PNG",
                     link : "../연습4/hairshop.html"
                 },
             ],

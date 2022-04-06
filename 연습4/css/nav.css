@@ -1,8 +1,16 @@
 body div #app {
-    background-color:  #BCAAA4 ;
+    background-color:  rgba(32,73,105,1) ;
 }
+.original_color{
+    color: rgba(32,73,105,1) !important;
+}
+.original_color--text{
+    color: rgba(32,73,105,1) !important;
+}
+
 #appbar_font{
     font-family: 'Ubuntu', sans-serif;
+    z-index: 100;
     
 }
 #logo {
@@ -30,17 +38,25 @@ a {
 .v-card {
     transition: opacity .4s ease-in-out;
 }
+.textfont{
+    font-family: 'Poppins', sans-serif;
+}
+
 
 #carouselp{
-    margin: 170px auto;
-    font-family: 'Poppins', sans-serif;
-    color: white;
     font-size: 35px;
+    margin: 170px auto;
+    color: white;
 }
 #uptext{
     vertical-align: top;
-    font-size: 17px;
-    line-height: 38px;
+    font-size: 20px;
+    line-height: 40px;
     margin-right: 20px;
+    margin-left: 20px;
 }
 
+.test{
+    border: 1px solid black;
+    background-color: rgba(32,73,105,1);
+}
