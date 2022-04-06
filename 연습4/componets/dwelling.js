@@ -2,9 +2,9 @@ Vue.component('dwelling-component',{
     template : 
     `
     <div>
-        <v-card color="original_color">
+        <v-card>
             <v-card-title class="text-center justify-center py-6">
-            <h1 class="font-weight-bold text-h2 original_color--text">
+            <h1 class="font-weight-bold text-h2 original_blue_color--text">
                 LIVING SPACE
             </h1>
             </v-card-title>
@@ -12,7 +12,7 @@ Vue.component('dwelling-component',{
             <v-tabs
             v-model="tab"
             background-color="transparent"
-            color="original_color"
+            color="original_blue_color"
             grow
             >
                 <v-tab>
@@ -26,18 +26,20 @@ Vue.component('dwelling-component',{
                 </v-tab>
             
                 <v-tab-item>
-                <v-row>
+                <v-row class="mt-9">
                     <v-col cols="12" sm="6" v-for="item in plan" :key="item.name">
+                    <v-hover v-slot="{ hover }">
                         <v-card
-                        color="white"
                         elevation="6"
                         outlined
-                        :key="item.name"
                         class="pa-5"
+                        color="grey lighten-1"
+                        :elevation="hover ? 12 : 2"
                         >
                             <v-img :src="item.src"></v-img>
                             <v-card-title class="title"> {{ item.name }} </v-card-title>
                         </v-card>
+                        </v-hover>
                     </v-col>
                 </v-row>
                 </v-tab-item>
@@ -46,9 +48,10 @@ Vue.component('dwelling-component',{
                 <v-row class="mt-9">
                     <v-col cols="12" sm="6" v-for="item in modelling" :key="item.name">
                         <v-card
-                        color="white"
                         elevation="6"
                         outlined
+                        class="pa-5"
+                        color="grey lighten-1"
                         >
                             <v-img :src="item.src"></v-img>
                             <v-card-title class="title"> {{ item.name }} </v-card-title>
@@ -61,12 +64,11 @@ Vue.component('dwelling-component',{
                 <v-row class="mt-9">
                     <v-col cols="12" sm="6" v-for="item in ISO" :key="item.name">
                         <v-card
-                        color="original_color"
                         elevation="6"
                         outlined
+                        color="grey lighten-1"
                         >
                             <v-img :src="item.src"></v-img>
-                            
                         </v-card>
                     </v-col>
                 </v-row>

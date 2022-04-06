@@ -10,7 +10,6 @@ Vue.component('menu-component',{
                 <v-hover v-slot="{ hover }">
                     <v-card
                         :elevation="hover ? 12 : 2"
-                        :class="{ 'on-hover': hover }"
                     >
                         <v-img :src="p.src" aspect-ratio="1.5">
                         </v-img>
@@ -19,7 +18,8 @@ Vue.component('menu-component',{
                             <v-overlay
                                 v-if="hover"
                                 absolute
-                                color="#036358">
+                                color="#dadada"
+                                >
                             <v-btn :href="p.link" > {{p.name}} See more info</v-btn>
                         </v-overlay>
                         </v-fade-transition>
@@ -57,7 +57,6 @@ Vue.component('menu-component',{
                     link : "../연습4/hairshop.html"
                 },
             ],
-            transparent: 'rgba(255, 255, 255, 0)',
             overlay:false,
             
         }

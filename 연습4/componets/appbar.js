@@ -12,7 +12,7 @@ Vue.component('appbar-component',{
             
             <v-spacer></v-spacer>
             
-            <div class="hidden-sm-and-down">
+            <div class="hidden-sm-and-down" id="appbar_menu">
                 <v-btn text class="black--text ma-5" x-large href="../연습4/index.html" :ripple="false">
                     HOME
                 </v-btn>

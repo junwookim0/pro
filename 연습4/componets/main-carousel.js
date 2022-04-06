@@ -12,7 +12,6 @@ Vue.component('main-carousel',{
             <v-carousel
                 cycle
                 height="600"
-                
                 hide-delimiter-background
                 show-arrows-on-hover
                 interval="6000"
