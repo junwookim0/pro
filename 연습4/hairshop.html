@@ -25,7 +25,11 @@
     <div id="app">
         <v-app>
                 <appbar-component></appbar-component>
-                <sub-component></sub-component>
+                <template>
+                    <div>
+                        <v-img  height="600" src="./img/salon.jpg" aspect-ratio="1.5"></v-img>
+                        </div>
+                </template>
                 <hairshop-component></hairshop-component>
                 <footer-component></footer-component>
         </v-app>
@@ -33,7 +37,6 @@
     </div>
     <!-- 사용할 컴포넌트 -->
     <script src="./componets/appbar.js"></script>
-    <script src="./componets/submain.js"></script>
     <script src="./componets/hairshop.js"></script>
     <script src="./componets/footer.js"></script>
 

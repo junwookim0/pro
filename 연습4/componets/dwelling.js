@@ -26,7 +26,7 @@ Vue.component('dwelling-component',{
                 </v-tab>
             
                 <v-tab-item>
-                <v-row class="mt-9">
+                <v-row class="mt-9 mb-9">
                     <v-col cols="12" sm="6" v-for="item in plan" :key="item.name">
                     <v-hover v-slot="{ hover }">
                         <v-card
@@ -34,7 +34,7 @@ Vue.component('dwelling-component',{
                         outlined
                         class="pa-5"
                         color="grey lighten-1"
-                        :elevation="hover ? 12 : 2"
+                        :elevation="hover ? 12: 2"
                         >
                             <v-img :src="item.src"></v-img>
                             <v-card-title class="title"> {{ item.name }} </v-card-title>
@@ -45,31 +45,37 @@ Vue.component('dwelling-component',{
                 </v-tab-item>
 
                 <v-tab-item>
-                <v-row class="mt-9">
+                <v-row class="mt-9 mb-9">
                     <v-col cols="12" sm="6" v-for="item in modelling" :key="item.name">
+                    <v-hover v-slot="{ hover }">
                         <v-card
                         elevation="6"
                         outlined
                         class="pa-5"
                         color="grey lighten-1"
+                        :elevation="hover ? 12: 2"
                         >
                             <v-img :src="item.src"></v-img>
                             <v-card-title class="title"> {{ item.name }} </v-card-title>
                         </v-card>
+                        </v-hover>
                     </v-col>
                 </v-row>
                 </v-tab-item>
 
                 <v-tab-item >
-                <v-row class="mt-9">
+                <v-row class="mt-9 mb-9">
                     <v-col cols="12" sm="6" v-for="item in ISO" :key="item.name">
+                    <v-hover v-slot="{ hover }">
                         <v-card
                         elevation="6"
                         outlined
                         color="grey lighten-1"
+                        :elevation="hover ? 12: 2"
                         >
                             <v-img :src="item.src"></v-img>
                         </v-card>
+                        </v-hover>
                     </v-col>
                 </v-row>
                 </v-tab-item>

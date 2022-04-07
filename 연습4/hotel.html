@@ -18,6 +18,9 @@
     <!--뷰와 뷰티파이를 사용하기위한 cdn -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+
+
 </head>
 
 
@@ -25,7 +28,11 @@
     <div id="app">
         <v-app>
                 <appbar-component></appbar-component>
-                <sub-component></sub-component>
+                <template>
+                    <div>
+                        <v-img  height="600" src="./img/exhotel.jpg" aspect-ratio="1.5"></v-img>
+                        </div>
+                </template>
                 <hotel-component></hotel-component>
                 <footer-component></footer-component>
         </v-app>
@@ -33,7 +40,6 @@
     </div>
     <!-- 사용할 컴포넌트 -->
     <script src="./componets/appbar.js"></script>
-    <script src="./componets/submain.js"></script>
     <script src="./componets/hotel.js"></script>
     <script src="./componets/footer.js"></script>
     

@@ -14,8 +14,8 @@ Vue.component('mainp',{
             <p class="animate__animated animate__slideInRight"> SPACE BETTER </p>
         
         </div>
-        </v-img>
         </v-row>
+        </v-img>
     </div>
     `,
     data : function() {
