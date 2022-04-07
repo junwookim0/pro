@@ -30,6 +30,10 @@ a {
 .textfont{
     font-family: 'Poppins', sans-serif;
 }
+.textfont2{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: larger;
+}
 
 /*appbar logo*/
 #logo {
@@ -51,10 +55,6 @@ a {
 
 #appbar_menu{
     margin-top: 10px;
-}
-/**/
-.v-card {
-    transition: opacity .4s ease-in-out;
 }
 
 

@@ -124,7 +124,7 @@ Vue.component('appbar-component',{
             PORTFOLIO: [
                 {
                     title : 'CAFE Remodeling',
-                    link : '../연습4/hairshop.html'
+                    link : '#'
 
                 },
 

@@ -33,11 +33,12 @@ Vue.component('dwelling-component',{
                         elevation="6"
                         outlined
                         class="pa-5"
-                        color="grey lighten-1"
                         :elevation="hover ? 12: 2"
                         >
-                            <v-img :src="item.src"></v-img>
-                            <v-card-title class="title"> {{ item.name }} </v-card-title>
+                            <a :href="item.link" target="_blank" class="black--text">
+                                <v-img :src="item.src"></v-img>
+                                <v-card-title class="title"> {{ item.name }} </v-card-title>
+                            </a>    
                         </v-card>
                         </v-hover>
                     </v-col>
@@ -52,11 +53,12 @@ Vue.component('dwelling-component',{
                         elevation="6"
                         outlined
                         class="pa-5"
-                        color="grey lighten-1"
                         :elevation="hover ? 12: 2"
                         >
+                        <a :href="item.link" target="_blank" class="black--text">
                             <v-img :src="item.src"></v-img>
                             <v-card-title class="title"> {{ item.name }} </v-card-title>
+                        </a>
                         </v-card>
                         </v-hover>
                     </v-col>
@@ -70,11 +72,12 @@ Vue.component('dwelling-component',{
                         <v-card
                         elevation="6"
                         outlined
-                        color="grey lighten-1"
                         :elevation="hover ? 12: 2"
                         >
-                            <v-img :src="item.src"></v-img>
-                        </v-card>
+                            <a :href="item.link" target="_blank" class="black--text">
+                                <v-img :src="item.src"></v-img>
+                                </a>
+                                </v-card>
                         </v-hover>
                     </v-col>
                 </v-row>
@@ -91,66 +94,96 @@ Vue.component('dwelling-component',{
                 {
                     name :"평면도" ,
                     src : "./img/아파트/도면/21평 아파트 평면도.PNG",
+                    link : "./popup/livingP-popup.html",
+                },
+                {
+                    name :"평면도 컬러" ,
+                    src : "./img/아파트/도면 컬러링/21평 아파트 평면도.PNG",
+                    link : "./popup/livingP-popup.html",
                 },
                 {
                     name :"천장도" ,
                     src : "./img/아파트/도면/21평 아파트 천장도.PNG",
+                    link : "./popup/livingP-popup.html",
+                },
+                {
+                    name :"" ,
+                    src : "",
+                    link : "#",
                 },
                 {
                     name :"입면도 A,B" ,
                     src : "./img/아파트/도면/21평 아파트 입면도A,B.PNG",
+                    link : "./popup/livingP-popup.html",
+                },
+                {
+                    name :"입면도 A,B 컬러" ,
+                    src : "./img/아파트/도면 컬러링/21평 아파트 입면도A,B.PNG",
+                    link : "./popup/livingP-popup.html",
                 },
             ],
             modelling : [
                 {
                     name :"낮장면01" ,
                     src : "./img/아파트/렌더링/낮장면 카메라-01.PNG",
+                    link : "./popup/livingR-popup.html",
                 },
                 {
                     name :"낮장면02" ,
                     src : "./img/아파트/렌더링/낮장면 카메라-02.PNG",
+                    link : "./popup/livingR-popup.html",
                 },
                 {
                     name :"낮장면03" ,
                     src : "./img/아파트/렌더링/낮장면 카메라-03.PNG",
+                    link : "./popup/livingR-popup.html",
                 },
                 {
                     name :"낮장면04" ,
                     src : "./img/아파트/렌더링/낮장면 카메라-04.PNG",
+                    link : "./popup/livingR-popup.html",
                 },
                 {
                     name :"밤장면01" ,
                     src : "./img/아파트/렌더링/밤장면1.PNG",
+                    link : "./popup/livingR-popup.html",
                 },
                 {
                     name :"밤장면02" ,
                     src : "./img/아파트/렌더링/밤장면2.PNG",
+                    link : "./popup/livingR-popup.html",
                 },
                 {
                     name :"밤장면03" ,
                     src : "./img/아파트/렌더링/밤장면3.PNG",
+                    link : "./popup/livingR-popup.html",
                 },
                 {
                     name :"밤장면04" ,
                     src : "./img/아파트/렌더링/밤장면4.PNG",
+                    link : "./popup/livingR-popup.html",
                 },
             ],
             ISO : [
                 {
                     name :"1" ,
                     src : "./img/아파트/아이소/21평 아파트 ISO-01.PNG",
+                    link : "./popup/livingISO-popup.html",
                 },
                 {
                     name :"2" ,
                     src : "./img/아파트/아이소/21평 아파트 ISO-02.PNG",
+                    link : "./popup/livingISO-popup.html",
                 },
                 {
                     name :"3" ,
                     src : "./img/아파트/아이소/21평 아파트 ISO-03.PNG",
+                    link : "./popup/livingISO-popup.html",
                 },
                 {
                     name :"4" ,
                     src : "./img/아파트/아이소/21평 아파트 ISO-04.PNG",
+                    link : "./popup/livingISO-popup.html",
                 },
             ],
         }

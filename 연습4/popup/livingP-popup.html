@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+	
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="magnific-popup.css">
+
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Magnific Popup core JS file -->
+    <script src="jquery.magnific-popup.js"></script>
+
+    <style>
+        .image-source-link {
+	color: #98C3D1;
+}
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+	opacity: 0;
+	
+	/* ideally, transition speed should match zoom duration */
+	-webkit-transition: all 0.3s ease-out; 
+	-moz-transition: all 0.3s ease-out; 
+	-o-transition: all 0.3s ease-out; 
+	transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+		opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+		opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container, 
+.mfp-with-zoom.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="zoom-gallery">
+        <a href="../img/아파트/도면/21평 아파트 평면도.png" title="평면도" style="width:193px;height:125px;">
+            <img src="../img/아파트/도면/21평 아파트 천장도.png" width="400" height="300">
+        </a>
+        <a href="../img/아파트/도면/21평 아파트 천장도.png" title="천장도" style="width:193px;height:125px;">
+            <img src="../img/아파트/도면/21평 아파트 천장도.png" width="400" height="300">
+        </a>
+		<a href="../img/아파트/도면/21평 아파트 입면도A,B.png" title="아파트 입면도 A,B" style="width:193px;height:125px;">
+            <img src="../img/아파트/도면/21평 아파트 입면도A,B.png" width="400" height="300">
+        </a>
+		<a href="../img/아파트/도면 컬러링/21평 아파트 평면도.png" title="아파트 평면도 컬러" style="width:193px;height:125px;">
+            <img src="../img/아파트/도면 컬러링/21평 아파트 평면도.png" width="400" height="300">
+        </a>
+		<a href="../img/아파트/도면 컬러링/21평 아파트 입면도A,B.png" title="아파트 입면도 A,B 컬러" style="width:193px;height:125px;">
+            <img src="../img/아파트/도면 컬러링/21평 아파트 입면도A,B.png" width="400" height="300">
+        </a>
+        
+    </div>
+    <script>
+    $(document).ready(function() {
+	$('.zoom-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		image: {
+			verticalFit: true,
+			titleSrc: function(item) {
+				return item.el.attr('title');
+			}
+		},
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+		
+	});
+});
+    </script>
+
+
+    
+</body>
+</html>

@@ -53,7 +53,7 @@ Vue.component('menu-component',{
                 },
                 {
                     name :" 헤어샵" , 
-                    src : "./img/미용실/미용실 모델링 리터치02.PNG",
+                    src : "./img/미용실/모델링/미용실 모델링 리터치02.PNG",
                     link : "../연습4/hairshop.html"
                 },
             ],
