@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        li { list-style-type: none;}
+        .product {
+            border-radius: 20px;
+            border: solid gainsboro 1px;
+            width: 400px;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .product img{ 
+            width: 300px;
+            border-radius: 10px;
+        }
+        .product button{ 
+            border: none;
+            background-color: transparent;
+            font-size: large;
+            color: darkgray;
+            cursor: pointer;
+        }
+        .product button.on{ 
+            border: none;
+            background-color: transparent;
+            font-size: large;
+
+            color:  red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <product-component :products="products"></product-component>
+    </div>
+
+    <script>
+        Vue.component('product-component',{
+            props : ["products"],
+            template : `
+            <div class="product">
+                <div v-for="product in products">
+                    <img :src="product.img" alt="s22 Ultra">
+                    <h3>{{product.name}}</h3>
+                    <ul>
+                        <li v-for="detail in product.detail">{{detail}}</li>
+                    </ul>
+                    <button 
+                    @click="classOn = !classOn" 
+                    :class="{on : classOn}"
+                    >
+                    ♥
+                    </button>
+                </div>
+            </div>
+            `,
+            data : function() {
+                return {
+                    classOn : false
+                }
+            }
+        })
+
+        new Vue({
+            el :"#app",
+            data : {
+                //제품이 여러개 들어올경우 반복하기위함.
+                products : [
+                    {
+                        id : 0,
+                        name : 'Galaxy s22 Ultra',
+                        img : '//images.samsung.com/kdp/goods/2022/01/26/6b5a0d0f-b99d-414c-bb62-a4696d276a5a.png?$PF_PRD_KDP_PNG$',
+                        detail : [
+                            '디스플레이 : 178.55mm',
+                            'CPU종류 : Octa-Core'
+                        ]
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

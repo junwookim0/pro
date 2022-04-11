@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+</head>
+<body>
+    <div id="app">
+        {{name}}
+        <!-- 5 $emit을 통해 호출한 이벤트 발생-->
+        <!-- 6 Vue 인스턴스의 receivemessage메서드 호출-->
+        <child-component v-on:sendmessage="receivemessage"></child-component>
+    </div>
+    
+    
+
+
+
+
+    
+    <script>
+
+        Vue.component('child-component',{
+            template :
+            `
+            <div>
+                <!--2 자식컴포넌트에서 버튼을 눌렀을 떄 메서드 실행 -->
+                <input type="text" v-model="message"></input>
+                <button @click="send">부모컴포넌트로 전달</button>
+            </div>
+            `,
+            data : function(){
+                return {
+                    message: "자식이 보낸 메세지"
+                }
+            },
+            methods : {
+                // 3 자식 컴포넌트의 메서드에서 이벤트를 만들어서 호출한다
+                send : function(){
+                    // 4 이때 this.message를 인수로 함께 보낸다
+                    this.$emit('sendmessage', this.message);
+                }
+            }
+        })
+        
+        
+        new Vue({
+            el :"#app",
+            data : {
+                // 1 자식의 값을 받을 메세지
+                name : '$emit을 이용한데이터 전달'
+            },
+            methods : {
+                // 7 메서드를 호출하고 받아 온 인수 값을 (msg)를 this.message에 할당 
+                receivemessage : function(msg){
+                    this.name = msg;
+                }
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>

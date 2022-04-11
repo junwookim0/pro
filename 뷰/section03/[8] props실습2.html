@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .memo{
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+            border: dashed 2px maroon;
+            border-radius: 30px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+        
+        <!--배열의 값을 인덱스로 접근-->
+        <child-component v-bind:childname="name[0]" ></child-component>
+        <child-component v-bind:childname="name[1]" ></child-component>
+
+        <!-- 베열의 값을 v-for 를 이요하여 변수로 접근-->
+        <child-component v-bind:childname="n" v-for="n in name"></child-component>
+        
+    </div>
+    
+
+
+
+
+    
+    <script>
+
+        Vue.component('child-component',{
+            //태그에서 속성처럼 사용하여 값을 들고옴, 배열
+            props :['childname'],
+            template :
+            `
+            <div>
+                <p> 자식컴포넌트에 작성되고 있습니다 : {{ childname }}</p>
+        
+            </div>
+            `,
+            // Vue 컴포넌트 내부에서 사용되는 값 
+            data : function(){
+                return {
+                    
+                }
+            }
+        })
+        
+        
+        new Vue({
+            el :"#app",
+            data : {
+                name : ['철수','영희'],
+            },
+        })
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+.black_style{
+    color: black;
+}
+.lightgray_style{
+    color:  lightgray;
+}
+
+#memo {
+    margin: 10px 0px;
+    padding: 10px;
+}

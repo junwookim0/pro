@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <!--table을 이용해서 이름과 사진과 버튼 생성-->
+        <table>
+            <tr>
+                <td>도시이름</td>
+                <td>사진</td>
+                <td>추가정보</td>
+            </tr>
+
+            <tr v-for="city in citylist">
+                <td> {{ city.cityname }} </td>
+                <td>
+                    <img v-bind:src="city.img" v-bind:alt="city.cityname" style="height:200px">
+                </td>
+                <td>
+                    <!--for를 사용한 경우 for의 변수로 값 전달가능-->
+                    <button v-on:click="showCityname(city.cityname)">추가정보</button>
+                    <!--인수값을 전달하지 않을시 이벤트 객체 전달-->
+                    <button v-on:click="showButton">버튼정보</button>
+                    <!--인수값과 이벤트객체 전달시 이벤트 객체는 $를 붙인다-->
+                    <button v-on:click="showButtonCity(city.cityname , $event)">
+                        추가정보와 버튼정보
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        new Vue({
+            el :"#app",
+            data : {
+                citylist : [
+                    {cityname : "타하티",img:"../img/polynesia.jpg"},
+                    {cityname : "하와이",img:"../img/beach.jpg"},
+            ],
+        },
+            methods:{
+                showCityname(city) {
+                    return alert(city+"입니다");
+                },
+                showButton(event) {
+                    //자바스크립의 이벤트 객체와 동일하게 사용 
+                    return alert(event.target.innerHTML+"의"+event.type+"입니다"); 
+                },
+                showButtonCity(city,event) {
+                    //매개변수롤 인수와 이벤트를 가져와서 사용가능
+                    return alert(city+event.target.innerHTML+"의"+event.type+"입니다");
+                }
+            }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <style>
+        .up {
+            transform: translate(0,0);
+            transition: transform 0.5s;
+        }
+        .up:hover {
+            transform: translate(0,-10px);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <v-app>
+            <v-app-bar app color="primary" dark fixed>
+                <v-app-bar-nav-icon @click.stop="ndrawer = !ndrawer">
+                </v-app-bar-nav-icon>
+                <v-toolbar-title> 부산 관광 안내 </v-toolbar-title>
+            </v-app-bar>
+
+            <v-navigation-drawer absolute temporary v-model="ndrawer">
+                <v-toolbar flat height="80px">
+                    <v-list>
+                        <v-list-item>
+                            <v-list-item-avatar>
+                                <v-icon class="grey white--text">mdi-account</v-icon>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>즐거운 부산</v-list-item-title>
+                                <v-list-item-subtitle>다이나믹 부산</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-list>
+                </v-toolbar>
+                <v-divider></v-divider>
+
+                <v-list>
+                    <v-list-item v-for="item in itemList" :href="item.link" :key="item.title">
+                        <v-list-item-action >
+                            <v-icon>{{item.icon}}</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>
+                                {{item.title}}
+                            </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+            </v-navigation-drawer>
+
+
+            <v-main>
+                <v-container>
+                    <h1 class="display mt-5 d-flex justify-center">현재 인기있는 곳입니다</h1>
+                    <p class="d-flex justify-center"> 추천을 통해 인기있는 곳을 골라주세요</p>
+                    <v-row>
+                        <v-col cols="12" sm="6" v-for="(p, index) in pictures" :key="index" >
+                            <v-card class="up">
+                                <v-img :src="p.src" aspect-ratio="2.0"></v-img>
+                                <v-card-title class="title" >{{p.title}}</v-card-title>
+                                <v-card-actions>
+                                    <h3>{{p.count}}</h3>
+                                    <v-spacer></v-spacer>
+                                    <v-btn @click="add(index)" 
+                                    color="success" >추천</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-container>
+
+                <v-container>
+                    <v-card>
+                            <v-slide-x-transition group>
+                                <v-list-item v-for="(r, index) in recommend" :key="index">
+                                    <v-list-item-content>
+                                        <v-list-item-title>{{r}}를 추천합니다</v-list-item-title>
+                                    </v-list-item-content>
+                                </v-list-item>
+                            </v-slide-x-transition>
+                        </v-card>
+                </v-container>
+            </v-main>
+        </v-app>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            vuetify : new Vuetify(),
+            data:  {
+                ndrawer : false,
+                itemList : [
+                    {
+                        title : '메인페이지',
+                        icon : 'mdi-card-bulleted-outline',
+                        link : '#'
+                    },
+                    {
+                        title : '관광지소개',
+                        icon : 'mdi-content-paste',
+                        link : '#'
+                    },
+                    {
+                        title : '추천명소',
+                        icon : 'mdi-check',
+                        link : '#'
+                    }
+                ],
+                pictures : [
+                    {
+                        count:0,
+                        title : "해운대",
+                        src : "./img/해운대.jpg"
+                    },
+                    {
+                        count:0,
+                        title : "바다 도시 야경",
+                        src : "./img/야경.jpg"
+                    },
+                    {
+                        count:0,
+                        title : "광안대교",
+                        src : "./img/광안대교.jpg"
+                    },
+                    {
+                        count:0,
+                        title : "해운대 인어동상",
+                        src : "./img/인어동상.jpg"
+                    }
+                ],
+                recommend : []
+            },
+            methods : {
+                add : function(i) {
+                    this.recommend.push(this.pictures[i].title);
+                    this.pictures[i].count++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

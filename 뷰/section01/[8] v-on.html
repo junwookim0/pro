@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <button v-on:click="name='홍길동'">
+            클릭하면 이름이 바뀝니다
+        </button>
+        <button v-on:mouseover="name='성춘향'">
+            클릭하면 이름이 바뀝니다
+        </button>
+
+        <p>{{ name }}</p>
+        <!--버튼을 누르면 count +1증가 되는 이벤트-->
+        <button @click="countPlus">+1</button>
+        <p>{{ count}}</p>
+        <!--버튼을 누르면 count값이 0이 되는 이벤트-->
+        <button @click="countreset">숫자리셋</button>
+
+
+        <h1>Form submit 이벤트</h1>
+        <!--prevent를 이용하여 페이지 새로고침 -->
+        <form @submit.prevent="formSubmit">
+            <input type="text">
+            <input type="submit">
+        </form>
+        <p> {{ result }} </p>
+
+        <!--키 이벤트와 수식어를 통해 특정한 키를 눌렀을때 이벤트 발생-->
+        <input type="text" @keydown.space="countPlus"@keyup.delete="countreset">
+
+    </div>
+
+    <script>
+        new Vue ({
+            el : "#app",
+            data : {
+                name : "빈 이름",
+                count : 0,
+                result : ""
+            },
+            methods : {
+                countPlus() {this.count++},
+                countreset() {this.count=0},
+                formSubmit() {this.result="submit 하였습니다"}
+            }
+        })
+
+
+    </script>
+</body>
+</html>

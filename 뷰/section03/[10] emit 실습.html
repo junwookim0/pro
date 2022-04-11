@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+</head>
+<body>
+    <div id="app">
+        {{name}}
+        <!-- 5 $emit을 통해 호출한 이벤트 발생-->
+        <!-- 6 Vue 인스턴스의 receivemessage메서드 호출-->
+        <child-component v-on:sendmessage="receivemessage"> </child-component>
+    </div>
+    
+
+    
+    <script>
+
+        Vue.component('child-component',{
+            template :
+            `
+            <div>
+                
+                <button> {{ count }}</button>
+                <button @click="send">카운트값 증가</button>
+                <button @click="sendm">카운트값 감소</button>
+            </div>
+            `,
+            data : function(){
+                return {
+                    message: "카운트값이 증가합니다",
+                    message2: "카운트값이 감소합니다",
+                    count : 0,
+                }
+            },
+            methods : {
+            
+                send : function(){
+                    this.count++;
+                    this.$emit('sendmessage', this.message);
+                },
+                sendm : function(){
+                    this.count--;
+                    this.$emit('sendmessage', this.message2);
+                }
+                
+            }
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {
+            
+                name : '$emit을 이용한데이터 전달',
+                
+            },
+            methods : {
+                
+                receivemessage : function(msg){
+                    this.name = msg;
+                },
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>

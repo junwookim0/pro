@@ -71,7 +71,7 @@
 /* 슬릭 디자인 시작 */
 /* 아래 이미지 위치를 알리는 점 디자인 */
 #main_visual .slick-dots { display: block; width: 100%; text-align: center; 
-                           position: relative; bottom: 70px;}
+                            position: relative; bottom: 70px;}
 #main_visual .slick-dots li { display: inline-block; width: 15px; height: 15px; margin: 5px;}
 #main_visual .slick-dots li button {
     border: none;

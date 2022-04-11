@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--JQuery-->
+    
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="magnific-popup.css">
+
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Magnific Popup core JS file -->
+    <script src="jquery.magnific-popup.js"></script>
+
+
+</head>
+<body>
+    <div class="popup-gallery">
+        <a href="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-01.png" title="The Cleaner"><img src="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-01.png" width="75" height="75"></a>
+        <a href="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-02.png" title="Winter Dance"><img src="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-02.png" width="75" height="75"></a>
+        <a href="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-03.png" title="The Uninvited Guest"><img src="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-03.png" width="75" height="75"></a>
+        <a href="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-04.png" title="Oh no, not again!"><img src="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-04.png" width="75" height="75"></a>
+        <a href="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-01.png" title="Swan Lake"><img src="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-01.png" width="75" height="75"></a>
+        <a href="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-02.png" title="The Shake"><img src="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-02.png" width="75" height="75"></a>
+        <a href="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-03.png" title="Who's that, mommy?"><img src="./imginterior/21평 아파트 자료/렌더링/낮장면 카메라-03.png" width="75" height="75"></a>
+    </div>
+    <script>
+    $(document).ready(function() {
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		
+		
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+	});
+});
+    </script>
+
+
+    
+</body>
+</html>

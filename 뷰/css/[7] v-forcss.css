@@ -1,0 +1,17 @@
+table {
+    border-collapse:collapse;
+}
+/*
+tr:first-child{
+    background-color: bisque;
+}
+*/
+
+tr:nth-of-type(odd){
+    background-color: bisque;
+}
+
+
+td{
+    border: solid 1px  black;
+}

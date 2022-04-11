@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+
+    <div id="app">
+
+    </div>
+    <script>
+        new Vue({
+            el :"#app",
+            data : {
+                msg : "data의 메세지 입니다",
+                msg2 : "v-model로 복사한 메세지입니다",
+                text : ""
+            },
+            template : 
+            ` <div>
+                <h1>template으로 생성된 화면입니다</h1>
+                <p>{{msg}}</p>
+                <div>div 요소입니다</div>
+                <input type="text" v-model="text">
+                <p> {{ text }} </p>
+                <input type="text" v-model="msg2">
+                <p> {{ msg2 }} </p>
+            </div>
+            `
+    })
+
+    </script>
+</body>
+</html>

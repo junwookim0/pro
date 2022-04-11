@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .memo{
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+            border: dashed 2px maroon;
+            border-radius: 30px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="memo">
+        <button @click="addmemo"> 추가</button>
+        <memo-component v-for="m in memolist"> {{m}} </memo-component>
+        
+        
+        
+    </div>
+    
+
+
+
+
+    
+    <script>
+        Vue.component('memo-component',{
+            template :
+            `
+            <div class="memo">
+                <h1>메모입니다</h1>
+                <slot></slot>
+                <p>
+                    {{ datealert }}
+                </p>
+            </div>
+            `,
+            data : function(){
+                return {
+                    datealert :new Date(),
+                    
+                }
+            },
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {
+                memolist:[],
+                memo: "",
+            },
+            methods : {
+                addmemo : function(){
+                    //메모리스트에 메모값을 추가
+                    this.memolist.push(this.memo);
+                    this.memo ="";
+                }
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>

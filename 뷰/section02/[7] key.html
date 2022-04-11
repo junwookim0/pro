@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+
+    
+</head>
+<body>
+
+    <div id="app">
+        <button v-on:click="change">버튼을 누르면 input이 바뀝니다</button>
+        <br>
+        
+        <input  v-if="buttonName" type="text" placeholder="사용자"v-model="name">
+        <input  v-else            type="text" placeholder="이메일"v-model="email">
+        <br>
+        <br>
+
+        <span class="material-icons" v-on:click="change1" v-if="buttoncolor" style="color: red;">square</span>
+        <span class="material-icons" v-on:click="change1" v-else style="color: yellow;">square</span>
+        
+        
+        
+    </div>
+    
+
+
+
+
+    
+    <script>
+        const vm1 = new Vue({
+            el :"#app",
+            data : {
+                name : "",
+                email : "",
+                buttonName : true,
+                buttoncolor : true
+            },
+            methods : {
+                change : function() {
+                    this.buttonName = !this.buttonName;
+                },
+                change1 : function() {
+                    this.buttoncolor = !this.buttoncolor;
+                }
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

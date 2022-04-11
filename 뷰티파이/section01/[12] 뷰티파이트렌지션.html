@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-btn @click="fade=!fade">Fade</v-btn>
+            <v-fade-transition>
+                <h1 v-show="fade">fade</h1>
+            </v-fade-transition>
+            
+            <v-btn @click="slide=!slide">slide</v-btn>
+            <v-slide-x-transition>
+                <h1 v-show="slide">slide</h1>
+            </v-slide-x-transition>
+
+
+            <v-btn @click="num+=1">count</v-btn>
+            <v-slide-x-transition>
+                <v-list v-show="slide">
+                    <v-list-item v-for="n in num" :key="n">
+                        <v-list-item-content>
+                            <v-list-item-title>{{n}}</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+            </v-slide-x-transition>
+
+
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        data: {
+            fade : false,
+            slide : false,
+            num : 1,
+        }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .black_style{
+            color:black;
+        }
+        .red_style{
+            color:  red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3 v-if="ab" v-bind:class="sColor+'_style'">Vue bind</h3>
+        <h3 v-else v-bind:class="bcolor+'_style'">Vue bind</h3>
+        <!--
+            v-bind로 접근할수 있는값
+            이미지 scr
+            a의 href, class, style, key 
+        -->
+        <input type="text" :value="sDate" :disabled="disable">
+        <p>{{sTime}} </p>
+        
+    </div>
+
+    <script>
+    new Vue ({
+        el: "#app",
+            data: {
+                //sDate : "현재 년도 :" +new Date().getFullYear(),
+                sColor : "red",
+                bcolor : "blue",
+                sTime : `${new Date().getHours()} : ${new Date().getMinutes()}`,
+                disable : true,
+                ab : false,
+            }
+        });
+    </script>    
+</body>
+</html>

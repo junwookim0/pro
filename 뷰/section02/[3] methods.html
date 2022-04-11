@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+
+    <div id="app">
+        <button @click="sayHello1">hell01</button>
+        <button @click="sayHello2">hello2</button>
+        <button @mouseover="sayHello2">hello3</button>
+        <button v-on="sayHello2">hello3</button>
+        <br><br><br>
+        <input type="text" v-model="name">
+        <button @click="datamsg">누르면 alert이 발생합니다</button>
+    </div>
+    <script>
+        new Vue({
+            el :"#app",
+            data : {
+                message : "hi",
+                name : "",
+                msg : "님의 data의 메세지입니다"
+
+            },
+            methods :{
+                sayHello1 : function(){
+                    alert(this.message);
+                },
+                sayHello2  (e){
+                    if(e.type == "mouseover"){
+                        alert("마우스가 올라갔습니다")
+                    }
+                    else{
+                        alert(this.message)
+                    }
+                },
+                datamsg(e) {
+                    alert(this.name+this.msg)
+                }
+                
+
+            }
+    })
+
+    </script>
+</body>
+</html>

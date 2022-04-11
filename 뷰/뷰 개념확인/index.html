@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red_style{
+            color: red;
+        }
+        .blu_style{
+            color: blue;
+        }
+        .back_style{
+            background-color: bisque;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div id="app">
+        <p v-on:click="changeMessage">{{message}}</p>
+        <button v-on:click="check=!check">클릭!</button>
+        <p v-if="check">true</p>
+        <p v-else>false</p>
+        <p v-for="m in array">{{m.name}}</p>
+        <p v-for="na in nas">{{ na }}</p>
+        <p v-for="n in num">{{n}}</p>
+        <p v-bind:class="className"> v-bind </p>
+        <p v-bind:class="[{blu_style : buttonOn}, colorStyle ]"> v-bind1 </p>
+        <p v-bind:class="'red_style'"> v-bind </p>
+        <img v-bind:src="srcImg" width="100px">
+        <child-component></child-component>
+        <named-component v-bind:fname="name1">
+            <p slot="first">첫번째 슬롯</p>
+            <p slot="second">두번쨰슬롯</p>
+        </named-component>
+
+    </div>
+    
+
+
+
+
+    
+    <script>
+        Vue.component('child-component',{
+            template :
+            `
+            <div>
+                
+                <button> {{ count }}</button>
+                <button @click="send">카운트값 증가</button>
+                <button @click="sendm">카운트값 감소</button>
+            </div>
+            `,
+            data : function(){
+                return {
+                    message: "카운트값이 증가합니다",
+                    message2: "카운트값이 감소합니다",
+                    count : 0,
+                }
+            },
+            methods : {
+            
+                send : function(){
+                    this.count++;
+                    this.$emit('sendmessage', this.message);
+                },
+                sendm : function(){
+                    this.count--;
+                    this.$emit('sendmessage', this.message2);
+                }
+                
+            }
+        })
+        Vue.component('named-component',{
+            props : ['fname'],
+            template :
+            `
+            <div>
+            {{fname}}
+            <slot name="first"></slot>
+            <p>슬롯사이 p태그</p>
+            <slot name="second"></slot>
+            </div>
+            `,
+            data : function(){
+                return {
+                    
+                }
+            },
+        })
+
+        new Vue({
+            el :"#app",
+            data : {
+                message : "ㄴㅇㄴㅇ",
+                check : true,
+                array : [
+                    {name : 1},
+                    { name : 2,},
+                    {name : 3,} ,
+                ],
+                nas : "객체",
+                num : 3,
+                buttonOn : true,
+                className : "blu_style",
+                colorStyle : "back_style",
+                srcImg : "../img/beach.jpg",
+                name1 : "이름"
+            },
+            methods : {
+                changeMessage : function(){
+                    this.message = "바뀐메세지";
+                }
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

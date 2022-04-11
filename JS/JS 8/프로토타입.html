@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Dog(name ,age){
+            this.name = name;
+            this.age  = age;
+        }
+
+        let myDog = new Dog("마루",1);
+        let yourDog = new Dog("초코",1);
+
+
+        Dog.prototype.family = "시베리안허스키";
+        Dog.prototype.familyPrint = function() {
+            return this.family;
+        }
+
+        console.dir(myDog);
+        console.dir(yourDog);
+        console.log(myDog);
+
+
+
+    </script>
+    
+</body>
+</html>

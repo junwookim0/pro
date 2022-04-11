@@ -17,7 +17,7 @@ function onLoginSumit(event){
     event.preventDefault(); //이벤트를 막는다
     //console.log(loginInput.value); //loginInput 안에 있는 속성값을 확인
     const username = loginInput.value;
-    if(username == "그린"){
+    if(username == "준"){
         greeting.innerHTML = `반갑습니다. ${username}님`;
         /*let nik = document.getElementById("Nick").value;
         nik = "안녕하세요 "+nik+"님";

@@ -1,0 +1,12 @@
+{
+    "language" : [
+        {"name" : "HTML" , "category":"Web" , "developer" : "W3C"},
+        {"name" : "CSS" , "category":"Web" , "developer" : "W3C"},
+        {"name" : "Java" , "category":"application" , "developer" : "Oracle"}
+    ],
+    "students" : [
+        {"name":"홍길동" , "age":"20"},
+        {"name":"성춘향" , "age":"20"},
+        {"name":"흥부" , "age":"22"}
+    ]
+}

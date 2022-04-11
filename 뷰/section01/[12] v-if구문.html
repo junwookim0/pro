@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <button v-on:click="stock -=1">구매 </button>
+        <button v-on:click="stock +=1"> 충전 </button>
+        <p>{{stock}}</p>
+        <p v-if="stock >5"> 물건이 있습니다</p>
+        <p v-else-if="stock >0"> 물건이 얼마남지 않았습니다</p>
+        <p v-else="stock >5"> 품절되었습니다</p>
+
+    </div>
+    <script>
+        new Vue({
+            el :"#app",
+            data : {
+                stock : 10
+            }
+        })
+    </script>
+</body>
+</html>

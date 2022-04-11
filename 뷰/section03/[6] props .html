@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .memo{
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+            border: dashed 2px maroon;
+            border-radius: 30px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="message">
+        <!-- 뷰 인스턴스가 부모가 되어 v-bind를 통해 message를 전달-->
+        <child-component v-bind:childmessage="message"></child-component>
+        <!--parent컴포넌트가 부모가 되어 v-bind를 통해 message 전달-->
+        <parent-component></parent-component>
+        <!--v-bind가 아닌 속성의 이름으로만 전달하면 그값이 문자열로 전달-->
+        <child-component childmessage="message"></child-component>
+        
+    </div>
+    
+
+
+
+
+    
+    <script>
+        Vue.component('parent-component',{
+            template : `
+            <div>
+                <p>부모컴포넌트 </p>
+                <child-component v-bind:childmessage="message"></child-component>
+            </div>
+            `,
+            data : function(){
+                return{
+                    message : "부모"
+                }
+            }
+        })
+
+        Vue.component('child-component',{
+            //태그에서 속성처럼 사용하여 값을 들고옴, 배열
+            props :['childmessage'],
+            template :
+            `
+            <div>
+                <p> {{ childmessage }}</p>
+            </div>
+            `,
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {
+                message : "부모의 메세지"
+            },
+        })
+
+
+
+
+    </script>
+</body>
+</html>

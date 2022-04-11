@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .memo{
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+            border: dashed 2px maroon;
+            border-radius: 30px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+        <button @click="memolist +=1"> 누르면 메모가 늘어납니다</button>
+        <memo-component v-for=" m in memolist"></memo-component>
+        
+        
+    </div>
+    
+
+
+
+
+    
+    <script>
+        Vue.component('memo-component',{
+            template :
+            `
+            <div class="memo">
+                <h1>제목입니다</h1>
+                <p>
+                    내용입니다
+                    기록시간 : {{ datealert }}
+                </p>
+            </div>
+            `,
+            data : function(){
+                return {
+                    datealert :new Date()
+                }
+            }
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {
+                memolist:2,
+            },
+        })
+
+
+
+
+    </script>
+</body>
+</html>

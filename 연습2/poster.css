@@ -1,0 +1,136 @@
+:root {
+    --red-color:rgb(189, 15, 15);
+    --yellow-color :  rgb(246, 203, 59);
+    --ligthgray-color : rgb(214,211,214);
+}
+
+body {
+    background-image: url(./img/galaxy-gfd78d24f9_1280.png);
+    height: 100vh;
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+
+section {
+    background-color: white;
+    border-radius: 20px;
+    justify-content: center;
+    width: 1200px;
+    height: 800px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+li {
+    list-style: none;
+}
+
+.main {
+    width: 1200px;
+    height: 800px;
+    padding: 80px 60px;
+}
+.movie-poster {
+    float: left;
+    padding-left: 30px;
+}
+.movie-container{
+    margin-left: 550px;
+    margin-right: 149px;
+
+}
+#movie-incontainer {
+    border: solid var(--red-color);
+    background-color: var(--red-color);
+    padding: 10px 10px;
+    border-radius: 12px;
+}
+#movie-incontainer label {
+    color: white;
+    padding: 1px 46px;
+}
+
+
+.movie-seat-ex{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.movie-seat-ex div{
+    display: flex;
+}
+.movie-seat-ex #ex-text{
+    margin-left: 10px;
+}
+
+section .movie-seat-ex #available span{
+    color: var(--yellow-color);
+}
+section .movie-seat-ex #selected span{
+    color: var(--red-color);
+}
+section .movie-seat-ex #occupied span{
+    color: var(--ligthgray-color);
+}
+.main .seat {
+    color: var(--yellow-color);
+}
+#screen {
+    background-color: rgba(0, 0, 0, 0.432);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.seat {
+    display: flex;
+    margin-left: 125px;
+    margin-top: 80px;
+}
+.seat li span:hover{
+    font-size: 27px;
+}
+#seat2 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#seat2 li:first-child{
+    color : var(--ligthgray-color);
+}
+#seat3 li:last-child{
+    color : var(--ligthgray-color);
+}
+#s_2 {
+    color : var(--ligthgray-color);
+}
+
+.poster1 {
+    background-image: url(http://kiramonthly.com/wp-content/uploads/2020/02/2.jpg);
+    background-size: cover;
+    border-radius: 12px;
+    height: 650px;
+    width: 450px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 980px) {
+    .movie-poster{
+        display: none;
+    }
+    section {
+        width: 700px;
+    }
+    .movie-container{
+        margin: 0;
+        width: 600px;
+    }
+    .movie-container .seat{
+        margin-left: 174px;
+    }
+}

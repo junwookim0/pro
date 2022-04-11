@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+    <div id="app">
+        
+        <named-component >
+            <p slot="movie">어벤져스 엔드게임</p>
+            <p slot="rate">10/10</p>
+        </named-component>
+        
+        
+    </div>
+    
+    <script>
+        Vue.component('named-component',{
+            // 슬롯에 이름을 넣어서 여러개의 슬롯을 사용한다 
+            template :
+            `
+            <div>
+                <h3>영화</h3>
+                <slot name="movie"></slot>
+                <h3>평점</h3>
+                <slot name="rate"></slot>
+            </div>
+            `,
+            data : function(){
+                return {
+                    
+                }
+            },
+        })
+        
+        new Vue({
+            el :"#app",
+            data : {
+                memolist:[],
+                memo: "",
+            },
+            methods : {
+                addmemo : function(){
+                    //메모리스트에 메모값을 추가
+                    this.memolist.push(this.memo);
+                    this.memo ="";
+                }
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>

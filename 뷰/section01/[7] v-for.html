@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="../css/[7] v-forcss.css">
+</head>
+<body>
+    <div id="app">
+        <h1>v-for</h1>
+        <ul>
+            <!--books 이라는 배여렝 값을 item에 담아서 사용-->
+            <li v-for="item in books"> {{ item.id+item.title+","+item.stock}}</li>
+            <li v-for="item in books"> {{`${ item.id}목록에 ${item.title}이 ${item.stock}권 남았습니다`}}</li>
+            <!--n in 숫자 를 이용하면 1~숫자값까지 반복한다 -->
+            <li v-for="n in 10"> {{ n }} </li>
+        </ul>
+
+        <ol>
+            <h3>빌린사람</h3>
+            <li v-for="value in people">{{ value.name }} </li>
+        </ol>
+        <ol>
+            <h3>빌린사람</h3>
+            <li v-for="na in nas">{{ na }} </li>
+        </ol>
+
+        <table>
+            <tr>
+                <td>도서번호</td>
+                <td>도서명</td>
+                <td>재고량</td>
+            </tr>
+            <tr v-for="item in books">
+                <td>{{item.id}}</td>
+                <td id="title">{{item.title}}</td>
+                <td>{{item.stock}}</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>이름</td>
+                <td>도서명</td>
+            </tr>
+            <tr v-for="name in namelist">
+                <td>{{name.name1}}</td>
+                <!--n값을 이용해서 배열의 인덱스에 접근할수있다  n값은 1~2이기떄문에 n-1 >>배열은  0,1 -->
+                <td v-for ="n in 2">{{name.book[n-1]}}</td>
+                
+            </tr>
+        </table>
+    </div>
+    
+
+    <script>
+        new Vue ({
+            el : "#app",
+            data : {
+                books : [
+                    { id : 1, title : "마지막수업",stock : 1 },
+                    { id : 2, title : "불편한 편의점",stock : 0 },
+                    { id : 3, title : "그리스 로마신화",stock : 3 },
+                    { id : 4, title : "월씰킹",stock : 4 },
+                    { id : 5, title : "돈의 심리학",stock : 8 },
+                ],
+                people : [
+                    {name : "길동"},
+                    {name : "철수"},
+                    {name : "영희"},
+                    {name : "기영"},
+                    {name : "기철"},
+                ],
+                nas : ["영희","철수","짱구"],
+
+                namelist : [
+                    {name1 :"철수",book:["그리스 로마신화"]},
+                    {name1 :"영희",book:["월씽킹","불편한 편의점"]},
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

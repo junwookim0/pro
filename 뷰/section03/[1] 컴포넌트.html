@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    
+</head>
+<body>
+    
+    <div id="app">
+        <my-comp></my-comp>
+
+        
+    </div>
+    
+
+
+
+
+    
+    <script>
+
+        Vue.component('my-comp',{
+            template : `<div>직접만든 컴포넌트 입니다 </div>`
+        })
+
+        new Vue({
+            el :"#app",
+            data : {
+                message : "",
+            },
+            methods : {
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>
