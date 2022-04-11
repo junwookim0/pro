@@ -25,7 +25,6 @@
                 v-bind:style="{ backgroundColor : variant.color}"
                 v-on:mouseover="updateVariant(index)"
                 v-bind:key="index"
-                :src="`@/assets/variants/%{image}`"
                 >
                 </div>
 
@@ -48,8 +47,8 @@ export default {
                         '플라스틱(코편)' ,
                         '나일론끈' ],
             variants : [
-                {color : 'white', image : '../assets/maskwhite.jpg' , stock : 10},
-                {color : 'black', image : '../assets/maskblack.jpg' , stock : 0},
+                {color : 'white', image : require('../assets/maskwhite.jpg') , stock : 10},
+                {color : 'black', image : require('../assets/maskblack.jpg')  , stock : 0},
             ],
             //선택한 상품
             selction : 0,
