@@ -4,6 +4,9 @@
     <h1> coumputed 사용해서 카운터에서 가져온 값 입니다 {{count}}</h1>
     <button @click="$store.commit('addcount')"> 카운트 증가 </button>
     <button @click="$store.commit('removecount')"> 카운트 감소</button>
+    <button @click="timer">1초 뒤 추가 appvue에서</button>
+    <button @click="ntimer({count :50 ,time:1000})">50 추가 </button>
+    <button @click="timersecond">1초마다 1증가</button>
     <ul>
       <li v-for="list in $store.state.list" :key="list.id">
         {{list.memo}}
@@ -53,6 +56,17 @@ export default {
       return this.$store.getters.doneTodos
     }
   },
+  methods : {
+    timer : function(){
+      this.$store.dispatch('timer')
+    },
+    ntimer : function(time){
+      this.$store.dispatch('ntimer' , time)
+    },
+    timersecond : function(){
+      this.$store.dispatch('timersecond')
+    },
+  }
 }
 </script>
 
