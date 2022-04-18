@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ajax 실행</h1>
+    <button id="btn"> 버튼 </button>
+    <p id="print"></p>
+    <script>
+        //http 요청을 만들수 있는 객체생성
+        const req = new XMLHttpRequest();
+
+        /*
+        readtState : 0~4
+        1 : open 메소드 호출후 , send 메소드 호출전
+        2 : 보낸 요청에 대해 응답 헤더가 수신되후
+        3 : 응답의 바디 부분이 수신 중일때
+        4 : 모든 응답이 수신되었을때
+        */
+        req.onreadystatechange = function a (){
+            console.log(this.readyState)
+            console.log(this.status)
+            //모든 응답이 수신되고  응답번호가 200일때 콘솔에 출력
+            if(this.readyState==4 && this.status == 200){
+                console.log(this.status);
+            }
+        }
+
+        //http request method(GET ,POST) 가져올수 url 설정
+        req.open("GET","./data.txt");
+        //요청 전송
+        req.send();
+        //응답확인 : req.response에서 확인
+        console.log(req.response);
+        //현재 send()을 보내자마자 바로 접근하기에 안에 값이 비어있음
+        //그러면 값이 들어왔따면 실행할수 있도록 해주어야한다 callback
+
+        //dom 에 이벤트를 붙이는순서
+        //id 혹은 class 값을 찾아서 addEventLisener('이벤트방식',실행될함수)
+        const btn = document.querySelector('#btn');
+        const printtext = document.querySelector('#print');
+        btn.addEventListener('click', function(){
+            const btnreq = new XMLHttpRequest();
+            btnreq.onreadystatechange = function a(){
+                if(this.readyState==4 && this.status ==200){
+                    printtext.innerHTML= this.response;
+                }
+            }
+            btnreq.open("GET", './btndata.txt');
+            btnreq.send();
+        })
+
+    </script>
+    
+</body>
+</html>
