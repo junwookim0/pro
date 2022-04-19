@@ -10,6 +10,10 @@
     <h1>Ajax 실행</h1>
     <button id="btn"> 버튼 </button>
     <p id="print"></p>
+    
+    <button id="btnjson">json버튼</button>
+    <p id="printjson"></p>
+
     <script>
         //http 요청을 만들수 있는 객체생성
         const req = new XMLHttpRequest();
@@ -52,7 +56,29 @@
             }
             btnreq.open("GET", './btndata.txt');
             btnreq.send();
-        })
+        });
+        
+        //json 데이터 들고오기 
+        const btnjson = document.querySelector('#btnjson');
+        const printjson = document.querySelector('#printjson');
+        btnjson.addEventListener('click', function(){
+            const btnjsonreq = new XMLHttpRequest();
+            btnjsonreq.onreadystatechange = function a(){
+                if(this.readyState==4 && this.status ==200){
+                    //json 형식으로 들고와도 string 값으로 출력된다
+                    //string 형식은 객체 형식으로 출력할수 없음
+                   // printjson.innerHTML= this.response;
+                    console.log(typeof(this.response));
+                    //json.parse 를 통해서 자바스크립트 객체로 들고 올 수 있다
+                    const data = JSON.parse(this.response);
+                    console.log(typeof(data));
+                    
+                    printjson.innerHTML= data.memo;
+                }
+            }
+            btnjsonreq.open("GET", './data.json');
+            btnjsonreq.send();
+        });
 
     </script>
     

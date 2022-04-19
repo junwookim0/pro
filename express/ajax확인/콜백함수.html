@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //콜백함수
+        function A(anum){
+            return anum;
+        }
+        //콜백함수를 부르는 함수(매개변수로 함수를 갖는다)
+        function B(bFunc){
+            return bFunc(100);
+        }
+
+        // 함수A를 매개변수를갖는 함수B를 호출해서
+        // 함수A에 100이라는 인수를 주어 실행
+        console.log(B(A));
+
+    </script>
+    
+</body>
+</html>
