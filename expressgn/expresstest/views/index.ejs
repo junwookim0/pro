@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>API로 값 가져오기</h1>
+  <input type="number" id="num">
+  <button id="btnapi">확인</button>
+  <p id="apitext"></p>
+
+  <script>
+    //Ajax
+    function openapi() {
+      const req = new XMLHttpRequest();
+      req.open('GET', "https://busan-food.openapi.redtable.global/api/menu/korean?serviceKey=3cOsoxEnSZYVeTrfKrARQcYYonhykJwpZEurgWtYALHVUijbNn2a5tu7p5V7MIcw")
+      req.send();
+      req.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          // p태그에 출력
+          const apitext = document.querySelector('#apitext');
+          const num = document.querySelector('#num');
+          // string 문자열을 JSON 객체형식으로 바꿈
+          const data = JSON.parse(this.response)
+          // 식당이름 출력하기 "RSTR_NM"
+          apitext.textContent = data.body[num.value].RSTR_NM;
+          apitext.textContent += data.body[num.value].MENU_NM;
+          apitext.textContent += data.body[num.value].MENU_PRICE;
+          console.log(this.response)
+        }
+      }
+    }
+    const btnapi = document.querySelector('#btnapi');
+    btnapi.addEventListener('click', openapi);
+  </script>
+</body>
+
+</html>
