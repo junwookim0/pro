@@ -13,8 +13,8 @@ app.get("/", (request, response) => {
     <h1> Hello express </h1>
     <a href="/정적파일.html"> 파일입니다</a>
     <a href="/bot.jpg"> 사진입니다</a>
-    <a href="/bot.zip"> zip입니다</a>
-    <a href="/bot.jpg"> 사진입니다</a>
+    <a href="/openAPI_docs_busan-food.pdf">pdf입니다<a>
+    <a href="/public.zip">zip입니다<a>
     
     `;
     response.send(template);
