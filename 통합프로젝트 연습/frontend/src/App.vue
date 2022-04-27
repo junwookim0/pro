@@ -8,6 +8,7 @@
 
       <div v-if="login">
       <v-btn outlined @click="$router.push('/')">홈</v-btn>
+      <v-btn outlined @click="$router.push('/write')">글쓰기</v-btn>
       <v-btn outlined @click="$router.push(`/user/${user}`)">{{user}}님의 정보</v-btn>
       <v-btn outlined @click="loginOut"> 로그아웃 </v-btn>
       

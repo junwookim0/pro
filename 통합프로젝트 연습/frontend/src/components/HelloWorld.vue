@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1> express에 연결한 vue 입니다 hello component </h1>
+    <h1> express에 연결한 vue 입니다 hello component Home 화면 </h1>
   </div>
 </template>
 

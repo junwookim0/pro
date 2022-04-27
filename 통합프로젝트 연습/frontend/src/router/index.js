@@ -41,6 +41,13 @@ const routes = [
       return import("../views/UserView.vue");
     },
   },
+  {
+    path: "/write",
+    name: "write",
+    component: function () {
+      return import("../views/WriteView.vue");
+    },
+  },
 ]
 
 const router = new VueRouter({

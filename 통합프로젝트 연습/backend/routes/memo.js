@@ -17,6 +17,23 @@ router.get("/", function (req, res, next) {
      * (5) memos의 값을 response 를 통해 보내줌
      */
 });
+router.post("/", function(req, res, next) {
+    console.log(req.body);
+    const title = req.body.data.title;
+    const memo = req.body.data.memo;
+    const writer = req.body.data.writer;
+    const id = memos.length //메모가 삭제되지않을 경우 사용 가능 
+    const memoboard = {
+        id: id+1,
+        title : title,
+        memo : memo,
+        writer : writer
+    }
+
+    memos.push(memoboard);
+    res.send('ok');
+
+});
 
 // /api/memo/:id (:id 와 같은 : 콜론 기호를 붙이는 곳은 라우터에서만)
 /*
