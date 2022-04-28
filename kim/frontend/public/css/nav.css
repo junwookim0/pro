@@ -1,0 +1,74 @@
+body div #app {
+    background-color:  rgba(32,73,105,1) ;
+}
+a {
+    text-decoration: none;
+}
+/*메인 파란색*/
+.original_blue_color{
+    color: rgba(32,73,105,1) !important;
+}
+.original_blue_color--text{
+    color: rgba(32,73,105,1);
+}
+
+/* 폰트 */
+#appbar_font{
+    font-family: 'Ubuntu', sans-serif;
+    z-index: 100;
+}
+
+/*main line font */
+#carouseltext{
+    font-family: 'BIZ UDPMincho', serif;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: white;
+}
+
+/*main-carousel font*/
+.textfont{
+    font-family: 'Poppins', sans-serif;
+}
+.textfont2{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: larger;
+}
+
+/*appbar logo*/
+#logo {
+    font-size: 25px;
+    color: black;
+    line-height: 10px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+/* appbar icon color*/
+#holiday_village{
+    color: black;
+}
+#dots-vertical{
+    color: black;
+}
+
+
+#appbar_menu{
+    margin-top: 10px;
+}
+
+
+/* main-carousel div*/
+#carouselp{
+    font-size: 35px;
+    margin: 170px auto;
+    color: white;
+}
+/*main-carousel text*/
+#uptext{
+    vertical-align: top;
+    font-size: 20px;
+    line-height: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
