@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <v-img  height="950" src="/img/1.jpg" aspect-ratio="1.5">
+    <v-img  height="1000" src="/img/1.jpg" aspect-ratio="1.5">
     <v-row
         class="fill-height"
         align="center"
