@@ -1,5 +1,5 @@
 <template>
-    <form class="review-form" v-on:submit.prevent="onSubmit">
+   <form class="review-form" v-on:submit.prevent="onSubmit">
     <h3>리뷰를 남기세요</h3>
     <label for="name">이름 :</label>
     <input v-model="name">

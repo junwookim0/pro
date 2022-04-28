@@ -11,12 +11,12 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import MainLine from './components/MainLine.vue'
+import MainLine from './components/MainLine.vue'`
 import MainCarousel from './components/MainCarousel'
 
 export default {
   name: 'App',
-  components : {
+  components : {`
       HelloWorld,
       MainLine,
       MainCarousel,

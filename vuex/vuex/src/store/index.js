@@ -39,12 +39,31 @@ export default new Vuex.Store({
     }, //methods로 사용가능 helloworld.vue 참고 
     removecount : function(state){
       state.count--;
+    },
+    ncount : function(state , n){
+      state.count += n;
     }
+
   },
-  actions: {
+  actions: {//비동기적으로 실행
     addcount : function(context){
       context.commit('addcount')
-    }
+    },
+    timer : function(context){
+      setTimeout(function(){
+        context.commit('addcount');
+      },1000)
+    },
+    ntimer : function(context,time){
+      setTimeout(function(){
+        context.commit('ncount', time.count);
+      }, time.time)
+    },
+    timersecond : function(context) {
+      setInterval(function(){
+        context.commit('addcount');
+      }, 1000)
+    },
   },
   modules: {
   }

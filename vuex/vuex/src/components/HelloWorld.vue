@@ -9,6 +9,7 @@
 
         <button @click="addcount"> 헬로월드 카운트 증가 </button>
         <button @click="removecount"> 카운트 감소</button>
+
   </div>
 </template>
 
@@ -25,9 +26,10 @@ export default {
     ]),
   },
   methods : {
-    ...mapMutations([
+    ...mapMutations([ 
       'addcount',
-      'removecount'
+      'removecount',
+
     ])
   }
 }

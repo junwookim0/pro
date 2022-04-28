@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ajax대신 fetch API를 사용하여 웹에 접근</p>
+    <P>콜백으로 비동기접근이 아닌 promise와 await/async로 비동기 접근</P>
+
+    <script>
+        //fetch는 데이터의 CRUD 작업을 할수 있게 웹에서 접근할수있다
+        //http request, Response, POST, GET과 같은 메서드 작업가능
+        //반환값이 promise 객체로 반환 된다
+        fetch('./datd.json')
+            .then(pResponse => {
+                //처음에 들어오는 반환값 : response 값 (promise 객체)
+                console.log(pResponse);
+                return pResponse.text();
+            })
+            .then(pJSON => console.log(pJSON))
+            //다음을 return해준 값(여기서는 pResponse.text())
+            //then을 이용해서 값을 받아올때까지 기다린다
+
+
+            //await 와 async로 비동기 접근
+            //await : 기다리다 > 함수 앞에 붙여주게 되면 기다린다
+            //async : 비동기 > 함수 앞에 붙여주게 됨녀 비동기로 처리한다.
+
+            async function dofetch(){
+                const response = await fetch('./datd.json')
+                const data = await response.json();
+                //consolo.log(response.json())
+                console.log(data)
+
+            }
+
+    </script>
+    
+</body>
+</html>
