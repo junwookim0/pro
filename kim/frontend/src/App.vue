@@ -1,14 +1,21 @@
 <template>
   <div id="app">
-    <div class="sidebar">
 
-        <router-link to="/">Home</router-link>
-        <router-link to="/modelinghotel">HOTEL</router-link>
-        <router-link to="/modelingdew">LIVING SPACE</router-link>
-        <router-link to="/modelingcafe">CAFE</router-link>
-        <router-link to="/modelinghairshop">HAIRSHOP</router-link>
-        <router-link to="/portfolio">PORTFOLIO</router-link>
-        <v-icon>mdi-thumb-up</v-icon>
+    <div class="sidebar">
+      <div id="logo">
+      <v-icon class="mb-2" size="32px" id="holiday_village">holiday_village</v-icon>  MY <br> INTERIOR  
+      </div>
+
+        <router-link to="/"> <v-icon>home</v-icon>Home</router-link>
+        <router-link to="/modelinghotel"><v-icon>apartment</v-icon> HOTEL</router-link>
+        <router-link to="/modelingdew"> <v-icon>living</v-icon> LIVING SPACE</router-link>
+        <router-link to="/modelingcafe"><v-icon>local_cafe</v-icon> CAFE</router-link>
+        <router-link to="/modelinghairshop"><v-icon>content_cut</v-icon> HAIRSHOP</router-link>
+        <router-link to="/portfolio"><v-icon>description</v-icon> PORTFOLIO</router-link>
+
+        <div id="Menubtn">
+          <button @click="Menu=!Menu"> <v-icon>keyboard_double_arrow_left</v-icon></button>
+        </div>
 
     </div>
     <router-view/>
@@ -21,9 +28,9 @@ export default {
   name: 'App',
   data : () => {
     return{
-      collapsed : true
+      Menu : true
     }
-  }
+  },
 }
 </script>
 
@@ -36,22 +43,26 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+.v-icon{
+  margin-right: 8px;
+}
+
 
 a {
   font-weight: bold;
   padding: 15px;
-  color: bisque;
+  color: white;
 }
 a:hover{
   color: black;
 }
 a.router-link-exact-active {
-  color: white;
+  color: bisque;
 }
 
 .sidebar{
   color : white;
-  background-color:    #42b983;
+  background-color:  rgba(32,73,105,1);
 
   float: left;
   position: fixed;
@@ -65,6 +76,7 @@ a.router-link-exact-active {
 
   display: flex;
   flex-direction: column;
+  text-align: start;
   }
 
 </style>

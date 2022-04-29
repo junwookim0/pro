@@ -1,15 +1,5 @@
-body div #app {
-    background-color:  rgba(32,73,105,1) ;
-}
 a {
     text-decoration: none;
-}
-/*메인 파란색*/
-.original_blue_color{
-    color: rgba(32,73,105,1) !important;
-}
-.original_blue_color--text{
-    color: rgba(32,73,105,1);
 }
 
 /* 폰트 */
@@ -37,16 +27,21 @@ a {
 
 /*appbar logo*/
 #logo {
-    font-size: 25px;
-    color: black;
-    line-height: 10px;
+    font-size: 22px;
+    color: white;
+    line-height: 8px;
     font-family: 'Playfair Display', serif;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-top: 20px;
 }
+
+
 
 /* appbar icon color*/
 #holiday_village{
-    color: black;
+    color: white;
+    margin-bottom: 8px;
 }
 #dots-vertical{
     color: black;
@@ -63,6 +58,7 @@ a {
     font-size: 35px;
     margin: 170px auto;
     color: white;
+    
 }
 /*main-carousel text*/
 #uptext{
@@ -71,4 +67,14 @@ a {
     line-height: 40px;
     margin-right: 20px;
     margin-left: 20px;
+}
+
+#Menubtn {
+    float: left;
+    margin-left: 15px;
+    position: fixed; bottom: 20px;
+    transition: all ease 1s;
+}
+#Menubtn:hover {
+    transform: rotate(180deg);
 }
