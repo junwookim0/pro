@@ -1,23 +1,119 @@
 <template>
   <div id="app">
 
-    <div class="sidebar">
+    
+    <div class="sidebar" v-if="Menu">
       <div id="logo">
       <v-icon class="mb-2" size="32px" id="holiday_village">holiday_village</v-icon>  MY <br> INTERIOR  
       </div>
-
-        <router-link to="/"> <v-icon>home</v-icon>Home</router-link>
-        <router-link to="/modelinghotel"><v-icon>apartment</v-icon> HOTEL</router-link>
-        <router-link to="/modelingdew"> <v-icon>living</v-icon> LIVING SPACE</router-link>
-        <router-link to="/modelingcafe"><v-icon>local_cafe</v-icon> CAFE</router-link>
-        <router-link to="/modelinghairshop"><v-icon>content_cut</v-icon> HAIRSHOP</router-link>
-        <router-link to="/portfolio"><v-icon>description</v-icon> PORTFOLIO</router-link>
-
+        <router-link to="/"> <v-icon dark>home</v-icon>Home</router-link>
+        <router-link to="/modelinghotel"><v-icon  dark>apartment</v-icon> HOTEL</router-link>
+        <router-link to="/modelingdew"> <v-icon  dark>living</v-icon> LIVING SPACE</router-link>
+        <router-link to="/modelingcafe"><v-icon  dark>local_cafe</v-icon> CAFE</router-link>
+        <router-link to="/modelinghairshop"><v-icon  dark>content_cut</v-icon> HAIRSHOP</router-link>
+        <router-link to="/portfolio"><v-icon  dark>description</v-icon> PORTFOLIO</router-link>
         <div id="Menubtn">
-          <button @click="Menu=!Menu"> <v-icon>keyboard_double_arrow_left</v-icon></button>
+          <button @click="toggle"> <v-icon  dark>keyboard_double_arrow_right</v-icon></button>
         </div>
 
+
     </div>
+    <div class="sidebar" v-else>
+      <div id="logo">
+      <v-icon class="mb-2" size="32px" id="holiday_village">holiday_village</v-icon>  
+      </div>
+
+      <v-tooltip right>
+      <template v-slot:activator="{ on, attrs }">
+        <router-link to="/">
+        <v-icon
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          mdi-home
+        </v-icon>
+        </router-link>
+      </template>
+      <span>Home</span>
+    </v-tooltip>
+    <v-tooltip right>
+      <template v-slot:activator="{ on, attrs }">
+        <router-link to="/modelinghotel">
+        <v-icon
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          apartment
+        </v-icon>
+        </router-link>
+      </template>
+      <span>Hotel</span>
+    </v-tooltip>
+    <v-tooltip right>
+      <template v-slot:activator="{ on, attrs }">
+        <router-link to="/modelingdew">
+        <v-icon
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          living
+        </v-icon>
+        </router-link>
+      </template>
+      <span>Living Space</span>
+    </v-tooltip>
+    <v-tooltip right>
+      <template v-slot:activator="{ on, attrs }">
+        <router-link to="/modelingcafe">
+        <v-icon
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          local_cafe
+        </v-icon>
+        </router-link>
+      </template>
+      <span>Living Space</span>
+    </v-tooltip>
+    <v-tooltip right>
+      <template v-slot:activator="{ on, attrs }">
+        <router-link to="/modelinghairshop">
+        <v-icon
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          content_cut
+        </v-icon>
+        </router-link>
+      </template>
+      <span>Hair Shop</span>
+    </v-tooltip>
+    <v-tooltip right>
+      <template v-slot:activator="{ on, attrs }">
+        <router-link to="/portfolio">
+        <v-icon
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          description
+        </v-icon>
+        </router-link>
+      </template>
+      <span>PORTFOLIO</span>
+    </v-tooltip>
+
+        <div id="Menubtn">
+          <button @click="toggle"> <v-icon  dark>keyboard_double_arrow_left</v-icon></button>
+        </div>
+    </div>
+
+
     <router-view/>
 </div>
 </template>
@@ -31,6 +127,11 @@ export default {
       Menu : true
     }
   },
+  methods : {
+    toggle(){
+      this.Menu = !this.Menu
+    }
+  }
 }
 </script>
 
@@ -59,7 +160,6 @@ a:hover{
 a.router-link-exact-active {
   color: bisque;
 }
-
 .sidebar{
   color : white;
   background-color:  rgba(32,73,105,1);
