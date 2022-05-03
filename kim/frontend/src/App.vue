@@ -1,7 +1,6 @@
 <template>
   <div id="app">
 
-    
     <div class="sidebar" v-if="Menu">
       <div id="logo">
       <v-icon class="mb-2" size="32px" id="holiday_village">holiday_village</v-icon>  MY <br> INTERIOR  
