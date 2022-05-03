@@ -10,7 +10,9 @@
         <router-link to="/modelingdew"> <v-icon  dark>living</v-icon> LIVING SPACE</router-link>
         <router-link to="/modelingcafe"><v-icon  dark>local_cafe</v-icon> CAFE</router-link>
         <router-link to="/modelinghairshop"><v-icon  dark>content_cut</v-icon> HAIRSHOP</router-link>
-        <router-link to="/portfolio"><v-icon  dark>description</v-icon> PORTFOLIO</router-link>
+        <router-link to="/modelingportfolio">
+        <v-icon  dark>description</v-icon> PORTFOLIO
+        </router-link>
         <div id="Menubtn">
           <button @click="toggle"> <v-icon  dark>keyboard_double_arrow_right</v-icon></button>
         </div>
@@ -132,6 +134,7 @@ export default {
     }
   }
 }
+
 </script>
 
 
@@ -162,7 +165,6 @@ a.router-link-exact-active {
 .sidebar{
   color : white;
   background-color:  rgba(32,73,105,1);
-
   float: left;
   position: fixed;
   z-index: 1;
