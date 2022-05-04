@@ -21,7 +21,7 @@ router.post("/", function (req, res, next) {
       id: count,
       title: title,
       memo: memo,
-      writer: "jun", 
+      writer: "익명", 
     };
     memos.push(memoboard);
     res.send("ok");
@@ -35,7 +35,7 @@ router.post("/", function (req, res, next) {
       id: count,
       title: title,
       memo: memo.memo,
-      writer: "jun",
+      writer: "익명",
     };
     memos.push(memoboard);
     res.redirect("/");

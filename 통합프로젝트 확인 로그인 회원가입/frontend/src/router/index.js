@@ -49,6 +49,15 @@ const routes = [
       return import('../views/WriteForm.vue')
     }
   },
+  {
+    path: '/signup',
+    name: 'signup',
+    
+    component: function () {
+      return import('../views/SignUpView.vue')
+    }
+  },
+
 ]
 
 const router = new VueRouter({

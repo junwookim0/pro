@@ -4,6 +4,7 @@
             <v-img  height="600" src="/img/salon.jpg" aspect-ratio="1.5"></v-img>
         </div>
         <div>
+            <v-app>
         <v-card>
             <v-card-title class="text-center justify-center py-6">
             <h1 class="font-weight-bold text-h2 original_blue_color--text">
@@ -64,6 +65,7 @@
                 
             </v-tabs>
         </v-card>
+        </v-app>
     </div>
     </div>
 </template>

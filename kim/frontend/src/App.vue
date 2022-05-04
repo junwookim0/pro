@@ -24,7 +24,7 @@
       <v-icon class="mb-2" size="32px" id="holiday_village">holiday_village</v-icon>  
       </div>
 
-      <v-tooltip right>
+      <v-tooltip right color="rgba(32,73,105,1)">
       <template v-slot:activator="{ on, attrs }">
         <router-link to="/">
         <v-icon
@@ -38,7 +38,7 @@
       </template>
       <span>Home</span>
     </v-tooltip>
-    <v-tooltip right>
+    <v-tooltip right color="rgba(32,73,105,1)">
       <template v-slot:activator="{ on, attrs }">
         <router-link to="/modelinghotel">
         <v-icon
@@ -52,7 +52,7 @@
       </template>
       <span>Hotel</span>
     </v-tooltip>
-    <v-tooltip right>
+    <v-tooltip right color="rgba(32,73,105,1)">
       <template v-slot:activator="{ on, attrs }">
         <router-link to="/modelingdew">
         <v-icon
@@ -66,7 +66,7 @@
       </template>
       <span>Living Space</span>
     </v-tooltip>
-    <v-tooltip right>
+    <v-tooltip right color="rgba(32,73,105,1)">
       <template v-slot:activator="{ on, attrs }">
         <router-link to="/modelingcafe">
         <v-icon
@@ -80,7 +80,7 @@
       </template>
       <span>Living Space</span>
     </v-tooltip>
-    <v-tooltip right>
+    <v-tooltip right color="rgba(32,73,105,1)">
       <template v-slot:activator="{ on, attrs }">
         <router-link to="/modelinghairshop">
         <v-icon
@@ -94,9 +94,9 @@
       </template>
       <span>Hair Shop</span>
     </v-tooltip>
-    <v-tooltip right>
+    <v-tooltip right color="rgba(32,73,105,1)">
       <template v-slot:activator="{ on, attrs }">
-        <router-link to="/portfolio">
+        <router-link to="/modelingportfolio">
         <v-icon
           dark
           v-bind="attrs"
