@@ -6,6 +6,7 @@ const oFirebase = firebase.initializeApp({
   // 파이어베이스 콘솔에서 복사하여 붙여넣기
   //apiKey: "AIzaSyA3XCvs-3jz1M07_la2ORmWfEijfpTnqhA",
   //authDomain: "pwa-auth-login.firebaseapp.com",
+  
   apiKey: "AIzaSyCdIxIK5rBwASC0U_oS3GnO8BTz2yvmD7w",
   authDomain: "login-8cffa.firebaseapp.com",
 });

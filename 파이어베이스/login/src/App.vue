@@ -105,8 +105,16 @@
         this.$store.dispatch('fnDoLogout')
       },
       fnDoDelete(){
+        if(confirm("회원 탈퇴 하시겠습니까?") == true){
         this.$store.dispatch('fnDoDelete')
-      }
+        alert("탈퇴되었습니다")
+        }else{
+          return;
+        }
+      },
+     /* fnDoDelete(){
+        this.$store.dispatch('fnDoDelete')
+      } */
     },
     name: 'App'
   }

@@ -102,6 +102,33 @@ export default {
           commit('fnSetLoading', false)
         })
     },
+    //페이스북 로그인
+    fnDoFacebookLogin_Popup({
+      commit
+    }) {
+      commit('fnSetLoading', true) // 스토어에 시간걸림으로 상태 변경
+      // 파이어베이스에 구글 회원 로그인 인증 처리 요청
+      // 로그인제공자객체를 생성
+      let fProvider = new firebase.auth.FacebookAuthProvider();
+      fProvider.addScope('user_birthday');
+      firebase.auth().signInWithPopup(fProvider)
+        .then(pUserInfo => {
+          // 로그인이 성공하면 스토어에 계정정보 저장
+          commit('fnSetUser', {
+            id: pUserInfo.user.uid,            // <-- 파이어베이스 v9 마이그레이션 : user 추가
+            name: pUserInfo.user.displayName,  // <-- 파이어베이스 v9 마이그레이션 : user 추가
+            email: pUserInfo.user.email,       // <-- 파이어베이스 v9 마이그레이션 : user 추가
+            photoURL: pUserInfo.user.photoURL  // <-- 파이어베이스 v9 마이그레이션 : user 추가
+          })
+          commit('fnSetLoading', false) // 시간걸림 상태 해제
+          commit('fnSetErrorMessage', '') // 에러메세지 초기화
+          router.push('/main') // 로그인 후 화면으로 이동
+        })
+        .catch(err => {
+          commit('fnSetErrorMessage', err.message)
+          commit('fnSetLoading', false)
+        })
+    },
     
     // 자동 로그인 처리
     fnDoLoginAuto({

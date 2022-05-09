@@ -70,7 +70,7 @@
             pPassword: this.sPassword
           })
         }
-      }
+      },
     },
     watch: {
       // fnGetErrMsg 함수가 오류메시지를 반환하면 오류 메시지 표시
