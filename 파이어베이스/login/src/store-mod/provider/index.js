@@ -79,7 +79,7 @@ export default {
       commit('fnSetLoading', true) // 스토어에 시간걸림으로 상태 변경
       // 파이어베이스에 구글 회원 로그인 인증 처리 요청
       // 로그인제공자객체를 생성
-      var oProvider = new firebase.auth.GoogleAuthProvider();
+      let oProvider = new firebase.auth.GoogleAuthProvider();
       // 오픈 계정의 범위를 설정합니다. 
       // https://developers.google.com/identity/protocols/googlescopes
       oProvider.addScope('profile');
@@ -102,6 +102,7 @@ export default {
           commit('fnSetLoading', false)
         })
     },
+    
     // 자동 로그인 처리
     fnDoLoginAuto({
       commit
@@ -124,6 +125,21 @@ export default {
       firebase.auth().signOut()
       commit('fnSetUser', null) // 스토어에 계정정보 초기화
       router.push('/') // 첫 화면으로 이동
-    }
+    },
+    //회원탈퇴
+    fnDoDelete({
+      commit
+    }){
+      const user = firebase.auth().currentUser;
+      user.delete()
+        .then(()=>{
+          //스토어의 회원에 빈값을 넣음
+          commit("fnSetUser", null);
+          router.push("/");
+      }).catch((err)=>{
+        console.log(err)
+      })
+    },
   }
 }
+

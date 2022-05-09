@@ -24,6 +24,14 @@
           이메일 로그인
         </v-btn>
       </v-col>
+      <v-col offset="3" cols="6" class="text-center mt-5">
+        <!-- 구글 계정 로그인 버튼 표시 및 처리 -->
+        <v-btn @click="fnDoFacebookLogin_Popup" block  color="blue" large dark>
+          <!-- 머티리얼디자인아이콘 사용 시 아이콘 이름에 'mdi-' 붙임 -->
+          <v-icon left>mdi-facebook</v-icon>
+          페이스북 로그인
+        </v-btn>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -32,6 +40,9 @@
     methods: {
       fnDoGoogleLogin_Popup() { // 스토어에 구글계정 로그인 처리 요청
         this.$store.dispatch("fnDoGoogleLogin_Popup")
+      },
+      fnDoFacebookLogin_Popup(){
+        this.$store.dispatch("fnDoFacebookLogin_Popup")
       }
     },
     computed: {

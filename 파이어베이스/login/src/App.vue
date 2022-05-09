@@ -20,8 +20,16 @@
             <v-icon>mdi-arrow-right-bold-box-outline</v-icon>
           </v-list-item-action>
           <v-list-item-title>로그아웃</v-list-item-title>
+        </v-list-item>ㄴ
+        <!-- 로그인 된 경우만 회원탈퇴 버튼을 표시함-->
+        <v-list-item @click="fnDoDelete" v-if="fnGetAuthStatus">
+          <v-list-item-action>
+            <v-icon>mdi-arrow-right-bold-box</v-icon>
+          </v-list-item-action>
+          <v-list-item-title>회원탈퇴</v-list-item-title>
         </v-list-item>
       </v-list>
+
     </v-navigation-drawer>
     <!-- 탑색서랍이 툴바 아래에 위치할 때 메뉴 아이콘이 적절히 좌측에 배치되도록 app과 clipped-left 어트리뷰트 지정 -->
     <v-app-bar app clipped-left color="primary" dark>
@@ -47,7 +55,12 @@
         <v-btn text @click="fnDoLogout" v-if="fnGetAuthStatus">
           <v-icon left>mdi-arrow-right-bold-box-outline</v-icon>로그아웃
         </v-btn>
+        <!-- 로그인 된 경우만 회원탈퇴 버튼을 메뉴에 표시함 -->
+        <v-btn text @click="fnDoDelete" v-if="fnGetAuthStatus">
+          <v-icon left>mdi-arrow-right-bold-box</v-icon>회원탈퇴
+        </v-btn>
       </v-toolbar-items>
+
     </v-app-bar>
     <v-main>
       <router-view />
@@ -90,6 +103,9 @@
     methods: {
       fnDoLogout() {
         this.$store.dispatch('fnDoLogout')
+      },
+      fnDoDelete(){
+        this.$store.dispatch('fnDoDelete')
       }
     },
     name: 'App'
