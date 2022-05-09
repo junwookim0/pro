@@ -6,6 +6,7 @@ module.exports = defineConfig({
 })
 
 
+
 const path = require('path')
 
 module.exports = {
@@ -26,3 +27,4 @@ module.exports = {
         },
     },
 };
+

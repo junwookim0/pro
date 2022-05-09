@@ -38,6 +38,13 @@ const routes = [
       return import(/* webpackChunkName: "about" */ '../views/HairshopView.vue')
     }
   },
+  {
+    path: '/modelingportfolio',
+    name: 'portfolio',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/PortFolio.vue')
+    }
+  },
 ]
 
 const router = new VueRouter({

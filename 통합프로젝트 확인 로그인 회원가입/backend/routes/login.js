@@ -25,16 +25,10 @@ router.post("/", function (req, res, next) {
     res.send("ok");
 });
 
-
-router.get('/:id', function(req, res, next) {    
-    const m = logins.filter( login => login.id == req.params.id);
-    res.send(m[0]);
-});
-
-router.post("/login", function (req, res, next) {
+router.get("/login", function (req, res, next) {
     const user = req.body.data.user;
-    const password = req.body.data.password;
-    const logincheck = logins.filter(login => login.user == user, login.password ==password);
+    //const password = req.body.data.password;
+    const logincheck = logins.filter(login => login.user == user);
     res.send(logincheck);
 });
 
