@@ -112,9 +112,11 @@
           return;
         }
       },
-     /* fnDoDelete(){
+      /*
+      fnDoDelete(){
         this.$store.dispatch('fnDoDelete')
-      } */
+      } 
+      */
     },
     name: 'App'
   }
