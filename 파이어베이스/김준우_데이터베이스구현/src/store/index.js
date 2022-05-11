@@ -4,7 +4,7 @@ import router from "@/router";
 
 // 초기화한 파이어베이스 불러옴
 import "@/datasources/firebase";
-// 9버전
+// 9버전 auth
 import { getAuth, 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
@@ -12,6 +12,11 @@ import { getAuth,
   GoogleAuthProvider,
   signOut,
   deleteUser } from "firebase/auth";
+
+// 9버전 storage
+import { getStorage, ref } from "firebase/storage";
+const storage = getStorage();
+
 
 // 파이어베이스 인증을 위한 객체
 const auth = getAuth();
