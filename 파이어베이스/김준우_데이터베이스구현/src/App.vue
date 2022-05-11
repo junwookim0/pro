@@ -5,9 +5,9 @@
       <router-link to="/register">회원가입</router-link>
     </nav>
     <nav v-else>
-      <router-link to="/">Home</router-link> |
-      <a >로그아웃</a> |
-      <a >회원탈퇴</a>
+      <router-link to="/main">Home</router-link> |
+      <a @click="fnDoLogout">로그아웃</a> |
+      <a @click="fnDoDelete">회원탈퇴</a>
     </nav>
     <router-view/>
   </div>
@@ -19,6 +19,24 @@ export default {
     fnGetAuthStatus(){
       return this.$store.getters.fnGetAuthStatus
     }
+  },
+  methods: {
+    fnDoDelete(){
+        if(confirm("회원 탈퇴 하시겠습니까?") == true){
+        this.$store.dispatch('fnDoDelete')
+        alert("탈퇴되었습니다")
+        }else{
+          return;
+        }
+      },
+      fnDoLogout() {
+        if(confirm("로그아웃 하시겠습니까?")== true){
+          this.$store.dispatch('fnDoLogout')
+          alert("로그아웃 되었습니다")
+        }else{
+          return;
+        }
+      },
   }
 }
 </script>

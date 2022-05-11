@@ -4,8 +4,19 @@ import router from "@/router";
 
 // 초기화한 파이어베이스 불러옴
 import "@/datasources/firebase";
-// 9버젼을 사용한 방법
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+// 9버전 auth
+import { getAuth, 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword, 
+  signInWithPopup, 
+  GoogleAuthProvider,
+  signOut,
+  deleteUser } from "firebase/auth";
+
+// 9버전 storage
+import { getStorage, ref } from "firebase/storage";
+const storage = getStorage();
+
 
 // 파이어베이스 인증을 위한 객체
 const auth = getAuth();
@@ -70,7 +81,7 @@ export default new Vuex.Store({
       oProvider.addScope("profile");
       oProvider.addScope("email");
 
-      signInWithPopup(auth, oProvider)
+    signInWithPopup(auth, oProvider)
         .then((pUserInfo) => {
           commit("fnSetUser", {
             id: pUserInfo.user.uid,
@@ -84,6 +95,30 @@ export default new Vuex.Store({
           console.log(err.message);
         });
     },
+    fnDoLogout({
+      commit
+    }) {
+      // 파이어베이스에 로그아웃 요청
+      signOut(auth).then(() => {
+        commit('fnSetUser', null) // 스토어에 계정정보 초기화
+        router.push('/') // 첫 화면으로 이동
+      })
+    },
+    //회원탈퇴
+    fnDoDelete({
+      commit
+    }){
+      const user = auth.currentUser;
+      deleteUser(user)
+        .then(()=>{
+          //스토어의 회원에 빈값을 넣음
+          commit("fnSetUser", null);
+          router.push("/");
+      }).catch((err)=>{
+        console.log(err)
+      })
+    },
   },
+
   modules: {},
 });
