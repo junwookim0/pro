@@ -26,10 +26,8 @@ router.post("/", function (req, res, next) {
 });
 
 router.get("/login", function (req, res, next) {
-    const user = req.body.data.user;
-    //const password = req.body.data.password;
-    const logincheck = logins.filter(login => login.user == user);
-    res.send(logincheck);
+    const lo = logins.filter( login => login.id == req.params.id);
+    res.send(lo[0]);
 });
 
 

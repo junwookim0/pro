@@ -19,19 +19,19 @@ export default {
         return{
             user : '',
             password : '',
-            ex : []
+            ex : [],
         }
     },
     created(){
-        this.$http.get('/api/login/')
+        this.$http.get('/api/login')
             .then((response) => {
             this.ex = response.data
         })
     },
     methods : {
         loginUser : function(){
-            if(this.ex.user == this.user){
-                if(this.ex.password == this.password){
+            if(this.user == this.ex.user){
+                if( this.password == this.ex.password){
                     this.$emit('login-user', this.user)
                     alert("로그인 성공");
                 }else{

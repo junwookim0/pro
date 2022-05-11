@@ -42,7 +42,7 @@ router.post("/", function (req, res, next) {
   });
 
 
-router.get('/:id', function(req, res, next) {    
+router.get('/:id', function(req, res, next) {
     const m = memos.filter( memo => memo.id == req.params.id);
     res.send(m[0]);
 });

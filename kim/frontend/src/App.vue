@@ -78,7 +78,7 @@
         </v-icon>
         </router-link>
       </template>
-      <span>Living Space</span>
+      <span>CAFE</span>
     </v-tooltip>
     <v-tooltip right color="rgba(32,73,105,1)">
       <template v-slot:activator="{ on, attrs }">

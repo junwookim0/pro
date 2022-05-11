@@ -5,8 +5,8 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: /* 본인의 파이어 베이스 키값 */,
-  authDomain:/* 본인의 파이어 베이스 도메인값 */,
+  apiKey: "AIzaSyBoX4JqMqLdCoJM7g0EiZor0VcdiqTcDwo",
+  authDomain: "fir-test-login-85c6c.firebaseapp.com",
 };
 
 // Initialize Firebase
