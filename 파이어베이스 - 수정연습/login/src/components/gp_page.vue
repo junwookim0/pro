@@ -1,3 +1,4 @@
+<!-- 배송지 작성 페이지 -->
 <template>
     <v-container>
         <v-row>
@@ -33,7 +34,7 @@ export default {
         return{
             addressClick : false,
         }
-    },``
+    },
     methods: {
         findAddr(){
             new daum.Postcode({
