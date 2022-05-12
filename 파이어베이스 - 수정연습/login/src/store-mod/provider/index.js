@@ -174,6 +174,7 @@ export default {
         console.log(err)
       })
     },
+    
     //db에서 데이터불러옴
     fnDoCollenction({
       commit
@@ -189,7 +190,9 @@ export default {
       db.collection('product').get().then((result)=>{
         console.log(result)
       })
-    }
+    },
+
+
   }
 }
 

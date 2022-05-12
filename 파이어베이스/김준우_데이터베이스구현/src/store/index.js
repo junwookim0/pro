@@ -118,6 +118,11 @@ export default new Vuex.Store({
         console.log(err)
       })
     },
+    fndoUpload({
+      commit
+    }){
+      
+    }
   },
 
   modules: {},

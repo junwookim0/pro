@@ -1,23 +1,23 @@
 <template>
     <v-container>
             <h1 class="display-1 my-1">home page 컨텐츠</h1>
+            <input type="number" id="num">
+            <v-btn id="btnapi" @click="openapi">검색</v-btn>
         <v-row>
         <v-col cols="12" sm="6" md="4" lg="3" 
-        v-for="(col ,i) in fnGetCollection" :key="i">
+        v-for="n in 6" :key="n">
             <v-card
             class="mx-auto my-2"
             max-width="374"
             >
                 <v-img
                     height="250"
-                    :src="col.photoURL"
+                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
                 ></v-img>
-                <v-card-title>{{col.title}}</v-card-title>
+                <v-card-title>제목</v-card-title>
                 <v-card-text>
-                    <div class="my-4 text-subtitle-1">
-                        {{col.name}}
-                    </div>
-                    <div>{{col.content}} </div>
+                    <div class="my-4 text-subtitle-1">작성자</div>
+                    <div>내용</div>
                 </v-card-text>
                 <v-card-title>Tonight's availability </v-card-title>
                 <v-card-actions>
@@ -26,7 +26,7 @@
                         text
                         to="/"
                     >
-                        관심
+                        click
                     </v-btn>
                 </v-card-actions>
             </v-card>
@@ -37,26 +37,6 @@
 
 
 <script>
-import {
-    oFirebaseAuth
-} from '@/datasources/firebase'
 export default {
-    computed: {
-        fnGetCollection() {
-            let oproductInfo = this.$store.getters.fnGetCollection
-            return oproductInfo
-        },
-    },
-    methods: {
-        fnSendPasswordReset() {
-            // 비밀번호 재설정 메일 발송하기
-            oFirebaseAuth.sendPasswordResetEmail(this.fnGetUser.email).then(function () {
-            console.log("비밀번호 재설정메일을 발송했습니다!")
-            alert('비밀번호 변경링크를 보냈습니다 E-MAIL을 확인하세요')
-            }).catch(function (error) {
-            console.log(error);
-            })
-        },
-    }
 }
 </script>
