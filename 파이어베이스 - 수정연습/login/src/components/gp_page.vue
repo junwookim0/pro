@@ -22,6 +22,14 @@
             <input id="member_post"  type="text" placeholder="우편 번호" readonly>
             <input id="member_addr" type="text" placeholder="기본주소" readonly> <br>
             <input type="text" placeholder="상세주소 및 상제 건물명">
+            
+            <p class="mt-15">배송지 정보</p>
+            <br>
+            <v-btn @click="findAddr()" block outlined color="red" large dark class="">주소찾기1</v-btn>
+            <input id="member_post"  type="text" placeholder="우편 번호" readonly>
+            <input id="member_addr" type="text" placeholder="기본주소" readonly> <br>
+            <input type="text" placeholder="상세주소 및 상제 건물명">
+            
         </v-col>
         </v-row>
     </v-container>

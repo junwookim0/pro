@@ -29,8 +29,16 @@ const router = new Router({
       component: () => import('./components/ct_page.vue')
     },
     {
-      path: '/gp', name: 'ct_page',
+      path: '/gp', name: 'gp_page',
       component: () => import('./components/gp_page.vue')
+    },
+    {
+      path: '/pd', name: 'ProductPage',
+      component: () => import('./components/ProductPage.vue')
+    },
+    {
+      path: '/add', name: 'AddedProductList',
+      component: () => import('./components/AddedProductList.vue')
     },
     {
       // 사용자가 라우터에 등록된 것 외에 다른 주소 입력 시 에러 페이지 연결
