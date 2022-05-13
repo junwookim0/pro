@@ -54,6 +54,18 @@ const updateMyVehicle= [{
     year : 2021,
 }]
 const myUpdatedVehicle = myVehicle.concat(updateMyVehicle);
+const myUpdatedVehicle2 = [...myVehicle,...updateMyVehicle]
 console.log(myUpdatedVehicle);
+console.log(myUpdatedVehicle2);
 
+const myVehicle2 = {
+    brand : 'ford',
+    model : 'Mustang'
+}
+const updateMyVehicle2= {
+    type : 'car',
+    year : 2021,
+}
+const myUpdatedVehicle3 = {...myVehicle2,...updateMyVehicle2};
+console.log(myUpdatedVehicle3);
 
