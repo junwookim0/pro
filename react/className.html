@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="className.css">
+</head>
+<style>
+    .rct_color{
+        color: red;
+    }
+</style>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function MyApp() {
+            const name = "react"
+            return(
+                <div>
+                    <h1 className="react-style">{name}</h1>
+                    <h1 class="st">gd</h1>
+
+                    <input type="text"></input>{/*주석 사용법*/}
+                    <input type="text"
+                    //주석사용가능 
+                    />
+                </div>
+        )
+    }
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<MyApp />)
+
+    </script>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    
+</body>
+</html>
