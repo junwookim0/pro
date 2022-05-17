@@ -4,6 +4,7 @@ import InputClass from './components/InputClass';
 import InputArrow from './components/inputArrow';
 
 function App() {
+  const isActive = true;
   return (
     <div className="App">
       <header className="App-header">

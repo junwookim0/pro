@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        class Car {
+    constructor(name){
+        this.brand = name;
+    }
+    printbrand(){
+        console.log(this.brand)
+    }
+}
+const mycar = new Car("Ford");
+
+class UserClass{
+    constructor(name, age){
+        this.age = age;         
+        this.name = name;
+    }
+    get name(){
+        return this._name+'님';
+    }
+    set name(value){
+        if(value.length < 3){
+            console.log("이름이 너무 짧습니다")
+            return;
+        }
+        this._name = value;
+    }
+    sayhi(){
+        console.log(`반갑습니다 ${this.name}입니다`)
+    }
+}
+        let user = new UserClass("홍길동",30);
+        user.sayhi();
+
+class Dog{
+    constructor(family,name,age){
+        this.family = family;
+        this.name = name;
+        this.age = age;
+        
+    }
+}
+const mydog = new Dog("진돗개" ,"백구",1);
+mydog.sayhi();
+mydog.setName("마루");
+console.log(mydog.getName());
+mydog.family = "시베리안허스키"
+
+
+class Animal{
+    constructor(name){
+        this.speed = 0;
+        this.name = name;
+    }
+    run(speed){
+        this.speed = speed;
+        console.log(`${this.name}은 ${this.speed}로 달립니다`);
+    }
+    stop(){
+        //부모에 있는stop을 가져와서 출력 - super키워드 사용
+        super.stop();
+        //자기 자신에 있는 hide를 가져와서 출력 -this키워드 사용
+        this.hide();
+        /*
+        this.speed =0;
+        console.log(`${this.name}이 멈췄습니다`);
+        */
+    }
+}
+class Rabbit extends Animal{
+    constructor(name, earLength){
+        super(name);
+        this.earLength = earLength;
+    }
+    hide(){
+        console.log(`${this.name}이 숨었습니다`);
+    }
+}
+
+let rabbit = new Rabbit('흰토끼');
+rabbit.run(5);
+rabbit.hide();
+rabbit.stop();
+
+</script>
+    
+</body>
+</html>

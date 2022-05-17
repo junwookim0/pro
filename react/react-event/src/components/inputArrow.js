@@ -7,9 +7,11 @@ const InputArrow = () => {
         user : "",
         message : "",
     });
+
     const inputChange = (e) => {
         setMessage(e.target.value);
     };
+
     const formChange = (e) => {
         //스프레드 연산자 사용 form안의 값을 꺼내서 사용
         const nextForm={
@@ -18,6 +20,7 @@ const InputArrow = () => {
         };
         setForm(nextForm);
     }
+    
     return( 
     <div> 
         <h1> {message} </h1> 
