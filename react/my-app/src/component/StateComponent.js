@@ -13,10 +13,18 @@ class StateComponent extends Component{
             <div>
                 <h1>{number}</h1>
                 <button
-                onClick={()=>{
+                onClick={ () => {
                     this.setState({number : number+1 });
                 }}
                 >+1</button>
+
+                <button
+                onClick = {()=>{
+                    this.setState((prevState)=>({
+                        number : prevState.number -1,
+                    }));
+                }}
+                >-1</button>
             </div>
         );
     }

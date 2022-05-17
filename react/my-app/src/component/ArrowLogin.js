@@ -1,4 +1,4 @@
-//화살표함수형
+
 
 function UserGreeting(props) {
     return (

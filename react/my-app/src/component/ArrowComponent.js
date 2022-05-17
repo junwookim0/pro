@@ -13,6 +13,8 @@ const ArrowComponent = (props) => {
 //값을 작성해주지않으면 아래값으로 들어가서 출력된다
 ArrowComponent.defaultProps ={
     name : "기본이름",
+    //children 값은 app.js의 태그 사이값
+    
 };
 
 ArrowComponent.protoTypes = {

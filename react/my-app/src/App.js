@@ -8,6 +8,9 @@ import MyArrowLogin from './component/ArrowLogin';
 import StateComponent from './component/StateComponent';
 import True from './component/true'
 import False from './component/false'
+import MyLogin from './component/MyLogin';
+import Game from './component/tit';
+import ArrowState from './component/ArrowState';
 
 
 function App() {
@@ -25,7 +28,7 @@ function App() {
 
         <MyComponent/>
 
-        <ArrowComponent name="3"> 태그사이로 전달되는 props</ArrowComponent>
+        <ArrowComponent name="3"> 태그사이로 전달되는 props(children값입니다)</ArrowComponent>
         
       </body>
       <section className='App-header'>
@@ -48,6 +51,20 @@ function App() {
       <p>컴포넌트의 삼항연산자</p>
       </section>
 
+      <section className='App-body'>
+      <img src={logo} className="App-logo" alt="logo" />
+      <MyLogin login={true} name="성춘향"/>
+      </section>
+
+      <section className='App-header'>
+      <img src={logo} className="App-logo" alt="logo" />
+      <Game/>
+      </section>
+
+      <section className='App-body'>
+      <img src={logo} className="App-logo" alt="logo" />
+      <ArrowState/>
+      </section>
 
     </div>
   );
