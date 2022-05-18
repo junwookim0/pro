@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        /*
+        function MyApp() {
+            const login = true;
+            const logintr = "홍길동"
+            const loginfal = "react"
+                if(login == true){
+                    return <h2> 로그인에 성공하였습니다  
+                        {logintr} 입니다</h2>;
+                }
+                return <h2> 로그인이 필요합니다 {loginfal} 입니다 </h2>
+            
+        
+    }*/
+    function MyApp() {
+            const user = '홍길동';
+            return (
+                <div>
+                    {user === '홍길동' && (
+                        <h1>홍길동 입니다 </h1>
+                    )}
+                    <p>내용</p>
+                </div>
+
+                )
+            
+        
+    }
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<MyApp />)
+
+    </script>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    
+</body>
+</html>
