@@ -1,0 +1,23 @@
+
+[
+        {
+            "code" : 1,
+            "name" : "아무이름",
+            "url"  : "logo192.png"
+        },
+        {
+            "code" : 2,
+            "name" : "아무이름",
+            "url"  : "cafe.jpg"
+        },
+        {
+            "code" : 3,
+            "name" : "아무이름",
+            "url"  : "exhotel.jpg"
+        },
+        {
+            "code" : 4,
+            "name" : "아무이름",
+            "url"  : "living.jpg"
+        }
+]
