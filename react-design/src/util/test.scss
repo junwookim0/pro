@@ -1,0 +1,66 @@
+/**
+* npm install sass 를 통해 프로젝트에 설치
+* .scss 이름으로 원하는 파일 생성
+*
+* sass의 특징 : css에 변수를 추가해서 사용할 수 있다
+* react 컴포넌트와 함께 사용 : 특정 디자인이 된 컴포넌트
+*/
+
+$blue : #228be6; //228be6
+$gray : #495057;
+$pink : #f06595;
+
+// 자바스크립의 함수와 동일하게 사용
+// function  함수이름(매개변수){}
+@mixin button-color($color) {
+    background-color: $color;
+    // & 자기자신(MyButton을 가져올수 있음)
+    &:hover {
+        // lighten을 통해서 색의 밝기 조절 가능
+        background-color: lighten($color, 10%);
+    }
+
+    &:active {
+        // darken을 통해서 색의 어둡기 조절 가능
+        background-color: darken($color, 10%);
+    }
+}
+
+
+
+
+.MyButton {
+    display: inline-flex;
+    color : white;
+    font-weight: bold;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+
+    height: 2.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+
+
+
+    // 두개의 클래스를 사용하기위해서
+    // & 를 이용하여 자기자신을 가져오고, 뒤에 사용할 클래스 이름 작성
+    &.large {
+        height: 3rem;
+        padding: 0 3rem;
+        font-size: 1.25rem;
+    }
+
+    // 색상관리
+    &.blue {
+        @include button-color($blue);
+    }
+    &.gray {
+        @include button-color($gray);
+    }
+    &.pink {
+        @include button-color($pink);
+    }
+}
