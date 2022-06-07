@@ -16,7 +16,7 @@ function init(initialCount) {
         case 'reset':
             return init(action.payload);
         default:
-            throw new Error(); //state
+            throw new Error(); 
         }
     }
     

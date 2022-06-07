@@ -1,17 +1,27 @@
 import './App.css';
 import { auth } from './firebase';
 import { GoogleAuthProvider, signInWithPopup,
-          FacebookAuthProvider
+          FacebookAuthProvider,getAuth, signOut
 } from 'firebase/auth';
 import { useState } from 'react';
-import {firestore} from './firebase'
-import { useEffect } from 'react';
+
+import { firestore } from './firebase'
+import { useEffect } from 'react'
+
+import { collection, getDocs } from "firebase/firestore";
 
 function App() {
-
   useEffect(() => {
     console.log(firestore);
+
+    const querySnapshot = getDocs(collection(db,"post"));
+    querySnapshot.forEach((doc) => {
+      // document의 데이터를 가져옴
+      console.log(`${doc.id} => ${doc.data()}`);
+    });
   });
+
+
   const [userData, setUserData] = useState(null);
 
   function handleGoogleLogin() {
@@ -36,6 +46,15 @@ function App() {
         console.log(err);
       });
   }
+  function DoLogout(){
+    const auth = getAuth();
+    signOut(auth).then(()=>{
+      setUserData(null); 
+    }).catch((err)=>{
+      console.log(err);
+    })
+    
+  }
 
   return (
     <div className="App">
@@ -52,7 +71,7 @@ function App() {
       <p>
           {userData ? <img src={userData.photoURL}/>  : null}
       </p>
-
+      <button onClick={DoLogout}>로그아웃</button>
       
       </header>
     </div>

@@ -13,3 +13,4 @@ export default function filterEmoji(searchText, maxResults) {
     })
     .slice(0, maxResults);
 }
+
