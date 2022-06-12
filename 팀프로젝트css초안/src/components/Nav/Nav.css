@@ -3,7 +3,6 @@
     top: 0;
     z-index: 10;
     width: 100%;
-    background-color: blanchedalmond;
 }
 .fix-container .navbar {
     height: 120px;
@@ -13,6 +12,7 @@
 }
 .fix-container.scrolled .navbar {
     height: 80px;
+    background-color: blanchedalmond;
     transition: height 0.3s ease;
 }
 
@@ -21,6 +21,8 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    background-color: white;
+    cursor: pointer;
 }
 .navbar_logo {
     font-weight: bold;
