@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-
+import './Nav.css'
 //nav바 
 
 const Nav = () => {
@@ -9,25 +9,35 @@ const Nav = () => {
     
     //navicate를 사용하여 mypage로 이동하세요
     const goHome = () => {
-        navigate("/");
+        navigate("/home");
     };
-
+    const goIntro = () => {
+        navigate("/intro");
+    };
+    const goEvent = () => {
+        navigate("/event");
+    };
+    const goReview = () => {
+        navigate("/reviewlist");
+    };
 
     return (
         <div>
-            <header style={{ background: "lightgray", padding: 16 }}>
-                <nav>
-                    <ul>
-                        <li><a>index</a></li>
-                        <li><a>event</a></li>
-                        <li><a>리뷰</a></li>
-                        <li><a>거래</a></li>
-                            {/* 클릭했을 때 홈으로 이동 */}
-                            <li><a className="mainLogo" onClick={goHome}>로고</a></li>
+            <header>
+                <nav className="navbar">
+                    <div className="navbar_logo" onClick={goHome}>
+                        <span className="logo_text">: UPTOWN</span>
+                    </div>
+                    <ul className="navbar_menu">
+                        <li onClick={goIntro}>소개</li>
+                        <li onClick={goEvent}>이벤트</li>
+                        <li onClick={goReview}>리뷰</li>
+                        <li>거래</li>
+                    </ul>
+                    <ul class="gnb_img">
+                        <li>마이페이지</li>
+                        <li>로그인</li>
                         
-                            {/* 팝업 */}
-                            <li>마이페이지</li>
-                            
                     </ul>
                 </nav>
             </header>
@@ -35,8 +45,7 @@ const Nav = () => {
             <main>
                 <Outlet></Outlet>
             </main>
-            
-            <footer>푸터</footer>
+        
     </div>
     );
 };

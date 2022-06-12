@@ -1,0 +1,40 @@
+.fix-container {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: blanchedalmond;
+}
+.fix-container .navbar {
+    height: 120px;
+}
+.fix-container.scrolled {
+    box-shadow: 2px 2px 2px rgb(2, 2, 2);
+}
+.fix-container.scrolled .navbar {
+    height: 80px;
+    transition: height 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar_logo {
+    font-weight: bold;
+}
+.logo_text{
+    font-family: 'Joan', serif;
+    font-size: 35px;
+
+}
+.navbar_menu {
+    list-style: none;
+    display: flex;
+}
+.navbar_menu li {
+    padding: 8px 12px;
+    font-size: 25px;
+}
