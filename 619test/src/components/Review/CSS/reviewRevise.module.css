@@ -1,0 +1,81 @@
+.reviewDescription {
+    width: 50%;
+    height: 500px;
+}
+
+/*모달창 관련 CSS*/
+
+.buttonClose{
+    border: none;
+    background-color: #afb8c9;
+    padding: 17px 55px 17px 55px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    box-shadow: 0 10px 25px #3c4a56 45;
+    outline: none;
+    cursor: pointer;
+
+    padding: 10px;
+    align-self: flex-end;
+    background-color: transparent;
+    box-shadow: none;
+    color: #838282;
+    border: none;
+}
+h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+p {
+    font-size: 16px;
+}
+.modal_container {
+    position:absolute;
+    left:28%;
+    top: 10%;
+    width: 20rem;
+    height: 20rem;
+    padding: 0;
+    border-radius: 6px;
+    animation: appear 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    box-shadow: 0 25px 40px -20px #3c4a56;
+}
+.dialog__animate-out {
+    animation: dissappear 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+.dialog__inner {
+    color: #838282;
+    background:white;
+    border-radius:10px;
+    width: 20rem;
+    height: 20rem;
+}
+.dialog__close-btn {
+    align-self: flex-end;
+}
+.dialog__content {
+    padding: 0 55px 55px 55px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+   }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+   }
+}
+@keyframes dissappear {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+   }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+   }
+}

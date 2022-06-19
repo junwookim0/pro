@@ -9,8 +9,9 @@ import Reviewdetail from './components/Review/Reviewdetail';
 import ReviewWrite from './components/Review/ReviewWrite';
 import NotFound from './page/NotFound';
 
-function App() {
 
+function App() {
+  
   return (
     <div className="App">
         <Routes>

@@ -1,0 +1,16 @@
+.Login_Container {
+    display: grid;
+}
+.Login_Container Button{
+    width: 250px;
+    height: 50px;
+}
+.googleLogin{
+    
+}
+.FacebookLogin{
+    
+}
+.Logout{
+    
+}
