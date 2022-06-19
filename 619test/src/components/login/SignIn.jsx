@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signIn } from "../../firebase";
+import { signIn, signInWithGoogle, signInWithFacebook} from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -7,6 +7,15 @@ const Login = () => {
         const [password, setPassword] = useState("");
         const [error, seterror] = useState("");
         const navigate = useNavigate();
+
+        const handleGoolge = () => {
+            signInWithGoogle();
+            navigate("/home");
+        };
+        const handleFacebook = () => {
+            signInWithFacebook();
+            navigate("/home");
+        };
         const handleSubmit = async (e) => {
             e.preventDefault();
             setEmail("");
@@ -35,6 +44,8 @@ const Login = () => {
                     />
                     <input type="submit" value="submit" />
                 </form>
+                <button onClick={handleGoolge}>구글 로그인</button>
+                <button onClick={handleFacebook}>페이스북 로그인</button>
             </div>
         );
 };

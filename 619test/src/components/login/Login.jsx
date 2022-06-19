@@ -1,7 +1,5 @@
 import { auth } from '../../firebase';
-import { GoogleAuthProvider, signInWithPopup,
-            FacebookAuthProvider,signOut,onAuthStateChanged
-} from 'firebase/auth';
+import { signOut,onAuthStateChanged } from 'firebase/auth';
 import { useState ,useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
 import './Login.css'

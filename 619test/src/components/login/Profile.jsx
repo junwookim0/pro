@@ -15,7 +15,7 @@ const Profile = () => {
     else {
         return (
             <div>
-                <h1>{user} Profile</h1>
+                <h1> Profile</h1>
                 <button onClick={handleLogout}>Logout</button>
             </div>
         );

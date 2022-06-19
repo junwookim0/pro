@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { signUp } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
-    const [Nickname , setNickname ] = useState("");
+
     const [error, seterror] = useState("");
+    const navigate = useNavigate();
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (password !== password2) {
@@ -15,9 +18,9 @@ const Signup = () => {
         } else {
             setEmail("");
             setPassword("");
-            setNickname("");
-            const res = await signUp(email, password, Nickname);
+            const res = await signUp(email, password);
             if (res.error) seterror(res.error)
+            navigate("/signin");
         }
     };
     return (
@@ -33,14 +36,6 @@ const Signup = () => {
                         placeholder="Your Email"
                         required
                         onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        name="Nickname"
-                        value={Nickname}
-                        placeholder="Your Nickname"
-                        required
-                        onChange={(e) => setNickname(e.target.value)}
                     />
                     <input
                         type="password"

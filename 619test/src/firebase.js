@@ -52,20 +52,21 @@ function handleFacebookLogin(){
     });
 }
 */
+//회원가입
 const signUp = async (email, password, Nickname) => {
     try {
-        const userCredential = await createUserWithEmailAndPassword(auth,email,password,Nickname);
+        const userCredential = await createUserWithEmailAndPassword(auth,email,password);
         const user = userCredential.user;
         await addDoc(collection(firestore, "users"), {
             uid: user.uid,
             email: user.email,
-            Nickname : user.Nickname,
         });
         return true
     } catch (error) {
         return {error: error.message}
     }
 };
+//로그인
 const signIn = async (email, password) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth,email,password);
@@ -75,6 +76,15 @@ const signIn = async (email, password) => {
         return {error: error.message}
     }
 };
+//구글로그인
+const gprovider = new GoogleAuthProvider();
+    gprovider.setCustomParameters({'display': 'popup'});
+const signInWithGoogle = () => signInWithPopup(auth, gprovider);
+
+//페이스북 로그인
+const fprovider = new FacebookAuthProvider();
+    fprovider.setCustomParameters({'display': 'popup'});
+    const signInWithFacebook = () => signInWithPopup(auth, fprovider);
 
 const SignOut = async() => {
     try {
@@ -88,4 +98,6 @@ const SignOut = async() => {
 
 const storage = getStorage(app);
 
-export { app , auth , db , firestore ,signIn , signUp, SignOut, storage};
+export { app , auth , db , 
+    firestore, storage, signIn, signUp, SignOut, 
+    signInWithGoogle, signInWithFacebook};
