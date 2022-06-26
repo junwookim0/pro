@@ -1,0 +1,113 @@
+.signin_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+.div_signin {
+    width: 550px;
+    height: 600px;
+    background-image: url("../../../public/images/topImage2.jpg");
+    opacity: 0.9;
+    border-radius: 15px;
+}
+/*social-btn*/
+.social-btns button,
+.social-btns button:before {
+    transition: all 0.35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.social-btns button:before {
+    top: 80%;
+    left: -110%;
+}
+.social-btns button  {
+    transform: scale(0.8);
+}
+
+.social-btns .facebook:before {
+    background-color: #3b5998;
+    z-index: -1000;
+}
+.social-btns .facebook {
+    color: #3b5998;
+}
+.social-btns .google:before {
+    background-color: #dc4a38;
+    z-index: -1000;
+}
+.social-btns .google {
+    color: #dc4a38;
+}
+.social-btns .github:before {
+    background-color: #03001c;
+    z-index: -1000;
+}
+.social-btns .github {
+    color: #03001c;
+}
+.social-btns button:hover:before {
+    top: -10%;
+    left: -10%;
+}
+.social-btns button:hover  {
+    transform: scale(1);
+    color: white;
+}
+
+.social-btns {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.social-btns button {
+    display: inline-block;
+    background-color: #fff;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    margin: 0 10px;
+    overflow: hidden;
+    border-radius: 28%;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+    opacity: 0.99;
+}
+.social-btns button:before {
+    content: '';
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    transform: rotate(45deg);
+}
+.social-btns button {
+    font-size: 30px;
+    vertical-align: middle;
+    border: 0;
+    cursor: pointer;
+}
+/*input button*/
+.signin_button,
+.signin_submit{
+    cursor: pointer;
+    font-weight: bold;
+}
+/*input form*/
+.input_signin {
+    width: 400px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+.input_signin input{
+    width: 300px;
+    height: 36px;
+    font-size: 15px;
+    padding-left: 20px;
+    border: 0;
+    border-radius: 15px;
+    margin: 5px;
+}

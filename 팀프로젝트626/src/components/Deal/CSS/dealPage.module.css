@@ -1,0 +1,16 @@
+.reviewPage {
+    position: relative;
+    text-align: center;
+}
+
+
+
+
+.button_write {
+    margin-left: 3rem;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+}

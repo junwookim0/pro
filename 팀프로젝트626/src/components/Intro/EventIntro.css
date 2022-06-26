@@ -1,0 +1,31 @@
+.post {
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 150px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'LeferiPoint-WhiteObliqueA';
+}
+.eventpost{
+    width: 1000px;
+    height: 400px;
+    object-fit: cover;
+    padding: 20px;
+}
+.eventpost:hover{
+    filter: brightness(80%);
+}
+/*모달창의서의 이미지*/
+.eventModal{
+    height: 600px;
+}
+
+.slick-slider{  
+    width: 700px;
+    background-color: #e9ecef;
+}
+.slick-slide .img{
+        width: 200px;     
+}
+
+

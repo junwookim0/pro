@@ -1,0 +1,93 @@
+.video_box_main{
+    position: relative;
+    overflow: hidden;
+}
+.introVideo_main{
+    width: 100%;
+    opacity: 0.8;
+    display: flex;
+}
+.video_text_main{
+    position: absolute; top: 30%; width: 100%;
+    margin-top: -24px; 
+    text-align: center; 
+    font-size: 48px; 
+    color: #ffffff;
+}
+.video_text_main button{
+    margin-top: 40px;
+    width: 140px;
+    background-color: transparent;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.introVideo_main {
+	animation: introVideo_main 5s ease-out both;
+}
+@keyframes introVideo_main {
+    0% {
+        transform: scale(1) translateY(0);
+        transform-origin: 50% 84%;
+    }
+    100% {
+        transform: scale(1.25) translateY(15px);
+        transform-origin: bottom;
+    }
+}
+
+.video_text_main_h2 {
+	animation: video_text_main_h2 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@keyframes video_text_main_h2{
+    0% {
+        transform: translateX(-120px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.video_text_main_h3{
+	animation: video_text_main_h3 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@keyframes video_text_main_h3{
+    0% {
+        transform: translateX(120px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.signupBtn_div{
+    display: none;
+}
+
+@media screen and (max-width: 882px) {
+    .video_text_main{
+        display: none;
+    }
+    .signupBtn{
+        margin-top: 40px;
+        width: 140px;
+        background-color: transparent;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .signupBtn_div{
+        position: absolute; top: 30%;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+}

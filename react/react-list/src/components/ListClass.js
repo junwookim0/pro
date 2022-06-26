@@ -90,6 +90,7 @@ class ListClass extends Component {
                 <tr key={student.id}>
                   <td>{student.id}</td>
                   <td>{student.name}</td>
+                  <td><button>x</button></td>
                 </tr>
               )
             )}

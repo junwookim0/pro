@@ -1,0 +1,47 @@
+.signup_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+.div_signup {
+    width: 550px;
+    height: 600px;
+    background-image: url("../../../public/images/topImage2.jpg");
+    background: op;
+    border-radius: 15px;
+}
+.signup_error{
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+
+}
+
+/*input form*/
+.input_signup {
+    width: 400px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+.input_signup input{
+    width: 300px;
+    height: 36px;
+    font-size: 15px;
+    padding-left: 20px;
+    border: 0;
+    border-radius: 15px;
+    margin: 5px;
+}
+.login-link {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}

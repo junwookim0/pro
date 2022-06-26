@@ -1,0 +1,138 @@
+
+.fix-container {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+.fix-container .navbar {
+    height: 120px;
+}
+
+.fix-container.scrolled .navbar {
+    height: 100px;
+    background-color: white;
+    color: black;
+    opacity: 0.7;
+    transition: height 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color:transparent;
+    cursor: pointer;
+    list-style: none;
+    color: white;
+    
+}
+.navbar_logo {
+    font-weight: bold;
+}
+.logo_text{
+    font-family: 'Joan', serif;
+    font-size: 34px;
+
+}
+.navbar_menu {
+    list-style: none;
+    display: flex;
+}
+.navbar_menu li {
+    padding: 8px 10px;
+    font-size: 25px;
+}
+.navbar_property{
+    list-style: none;
+    display: flex;
+}
+.navbar_property li{
+    padding: 8px 10px;
+    font-size: 15px;
+    list-style: none;
+}
+.Hamburger{
+    display: none;
+}
+/*모달창 버튼*/
+.swal2-actions button{
+    border: 0;
+    border-radius: 0.25em;
+    background: initial;
+    background-color: #92af94;
+    color: #fff;
+    font-size: 1em;
+    margin: 0.3125em;
+    padding: 0.625em 1.1em;
+    transition: box-shadow .1s;
+    box-shadow: 0 0 0 3px transparent;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1260px) {
+    .navbar_property{
+        display: none;
+    }
+    .navbar_property.active{
+        display: inline-block;
+        position: fixed;
+        top: 10%;
+        right: 2%;
+    }
+    .Hamburger{
+        position: absolute;
+        right: 30px;
+        top: 24%;
+        display: block;
+    }
+    .navbar_menu {
+        position: fixed;
+        left: 30%;
+    }
+    .navbar_logo{
+        position: fixed;
+        left: 5%;
+    }
+}
+@media screen and (max-width: 820px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar_menu {
+        align-items: center;
+        display: none;
+    }
+    .navbar_menu li{
+        width: 100%;
+        text-align: center;
+        font-size: 21px;
+        
+    }
+    .navbar_property{
+        justify-content: center;
+    }
+    .Hamburger{
+        position: absolute;
+        right: 30px;
+        top: 24%;
+        display: block;
+    }
+    .navbar_logo{
+        position: fixed;
+        left: 5%;
+    }
+    .navbar_menu.active{
+        display:flex;
+        position: relative;
+        margin-top: 110px;
+        left: 1%;
+    }
+    .navbar_property.active{
+        display:flex;
+        position: fixed;
+        margin-top: 60px;
+    }
+}

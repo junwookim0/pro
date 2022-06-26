@@ -1,0 +1,48 @@
+.first_nav_div{
+    background-color:transparent;
+    list-style: none;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+.first_nav_div.scrolled .first_nav__Container {
+    color: black;
+    background-color: white;
+    transition: height 0.3s ease;
+    opacity: 0.7;
+}
+
+.first_nav_div.scrolled .first_nav__Container button{
+    color: black;
+}
+
+.first_nav__Container{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color:transparent;
+    height: 100px;
+    list-style: none;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.first_nav_loginbtn button{
+    width: 82px;
+    height: 35px;
+    background-color: transparent;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.first_nav_text{
+    font-weight: bold;
+    font-size: 34px;
+}

@@ -1,0 +1,35 @@
+@value makerWhite,makerGrey,makerPink,makerLightGrey from '../../Review/common/color.css';
+@value fontEn from '../../Review/common/font.css';
+
+.container {
+    border: 1px solid makerLightGrey;
+    width: 26rem;
+    padding: 0.8rem;
+    background-color: makerWhite;
+
+}
+
+.title {
+    font-family: fontEn;
+    margin-right: 0.8rem;
+}
+
+.container input {
+    border: none;
+    width: 15rem;
+    padding: 0.5rem;
+    margin: 0;
+
+}
+
+.search {
+    border: 0;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    background-color: transparent;
+}
+
+.search i {
+    padding: 0;
+    margin: 0;
+}

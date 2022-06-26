@@ -1,0 +1,35 @@
+.first_page_title{
+    margin-top: 50px;
+    text-align: center; 
+    height: 140px;
+}
+/*first*/
+.first_page_box{
+    height: 326px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.first_intro_img{
+    width: 400px;
+    margin-right: 25px;
+}
+.first_intro_card{
+    font-size: 22px;
+}
+
+/*second*/
+.second_page_box{
+    height: 326px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+.second_intro_img{
+    width: 400px;
+}
+.second_intro_card{
+    font-size: 22px;
+    margin-right: 25px;
+}
