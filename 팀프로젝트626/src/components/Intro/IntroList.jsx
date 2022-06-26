@@ -37,12 +37,13 @@ const IntroList = () => {
                 <div className="cInnerContent_1_right">
                     <img className="intro01"src="../../images/intro01(수정).PNG" alt='intro01'></img>
                 </div>
-                <div className='cInnerContent_3'>
-                <div className='cInnerContent_3_title'>
+            </div>
+            <div className='cInnerContent_2'>
+                <div className='cInnerContent_2_title'>
                     <p> 세상을 바꾸는 작은 노력 </p>
                     <h1><span>업타운</span>은 <span>여러분</span>과 함께 합니다.</h1>
                 </div>
-                <ul className='cInnerContent_31'>
+                <ul className='cInnerContent_2_1'>
                     <li className='cInnerContent_list'>
                     <i className="fab fa-envira"></i>
                         <h3>아껴쓰기</h3>
@@ -65,7 +66,49 @@ const IntroList = () => {
                     </li>
                 </ul>
             </div>
+            <div className='about_page'>
+                <div className='about_page_title'>
+                    <h1>UPCYCLE TOWN</h1>
+                    <p>업사이클링 아이디어와 영감</p>
+                </div>
+                <div className='about_page_box'>
+                    <img className='about_intro_img' src="../../images/frontImg3.jpg" alt='소개img1'></img>
+                    <div className='about_intro_card'>
+                        <h2>ABOUT UPTOWN</h2>
+                        <p>업사이클링은 낭비라고 생각되는 것을 재활용하는 것입니다.</p>
+                        <p>업사이클링된 아이템은 종종 이전보다 더 기능적이거나 아름다워집니다.</p>  
+                        <p>그래서 아이템의 가치가 높아졌다고 해서 업사이클링이라고 해요!</p>
+                    </div>
+                </div>
+                <div className='about_second_page_box'>
+                    <img className='about_second_intro_img' src="../../images/frontImg3.jpg" alt='소개img2'></img>
+                    <div className='about_second_intro_card'>
+                        <h2>ABOUT UPCYCLING</h2>
+                        <p>업사이클링은 낭비라고 생각되는 것을 재활용하는 것입니다.</p>
+                        <p>업사이클링된 아이템은 종종 이전보다 더 기능적이거나 아름다워집니다.</p>  
+                        <p>그래서 아이템의 가치가 높아졌다고 해서 업사이클링이라고 해요!</p>
+                    </div>
+                </div>
+                <div className='about_page_box'>
+                    <img className='about_intro_img' src="../../images/frontImg3.jpg" alt='소개img2'></img>
+                    <div className='about_intro_card'>
+                        <h2>What 3333?</h2>
+                        <p>업사이클링은 낭비라고 생각되는 것을 재활용하는 것입니다.</p>
+                        <p>업사이클링된 아이템은 종종 이전보다 더 기능적이거나 아름다워집니다.</p>  
+                        <p>그래서 아이템의 가치가 높아졌다고 해서 업사이클링이라고 해요!</p>
+                    </div>
+                </div>
+                <div className='about_second_page_box'>
+                    <img className='about_second_intro_img' src="../../images/frontImg3.jpg" alt='소개img2'></img>
+                    <div className='about_second_intro_card'>
+                        <h2>What 444?</h2>
+                        <p>업사이클링은 낭비라고 생각되는 것을 재활용하는 것입니다.</p>
+                        <p>업사이클링된 아이템은 종종 이전보다 더 기능적이거나 아름다워집니다.</p>  
+                        <p>그래서 아이템의 가치가 높아졌다고 해서 업사이클링이라고 해요!</p>
+                    </div>
+                </div>
             </div>
+            
 
         </div>
 
