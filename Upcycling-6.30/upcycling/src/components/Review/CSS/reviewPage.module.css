@@ -1,0 +1,45 @@
+@value makerWhite,makerGrey,makerPink,makerLightGrey, makerDarkGreen, makerGreen from '../../Review/common/color.css';
+@value fontEn from '../../Review/common/font.css';
+
+.reviewPage {
+    margin: auto;
+    max-width: 80%;
+    position: relative;
+    text-align: center;
+    background-color: makerWhite;
+    margin-bottom: 5rem;
+}
+
+/*search input*/
+.header {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    margin-top: 3rem;
+    align-items: center;
+}
+
+.result {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: makerDarkGreen;
+}
+
+
+/*review list*/
+.list {
+    position: relative;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*반응형*/
+@media screen and (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        height: 8rem;
+        justify-content: space-between;
+    }
+}

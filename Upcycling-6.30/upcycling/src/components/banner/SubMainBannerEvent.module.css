@@ -1,0 +1,83 @@
+/* subMainBanner*/
+
+.img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url("../../../public/images/flea-market-g71c6d8602_1280.jpg");
+    background-size: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 500px;
+    opacity: 0.6;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 459px;
+
+    background-color: #F8F3E8;
+    position: relative;
+    color: #004236;
+    font-size: 50px;
+}
+
+
+
+.text > h3, .text > p{
+    position: relative;
+    top: 150px;
+    text-align: center;
+}
+
+.text > h3 {
+    font-size:  4.5rem;
+    margin: 2.5rem;
+}
+
+.text >p {
+    font-size: 1rem;
+}
+
+.span {
+    font-size: 2.5rem;
+}
+
+
+
+.text {
+    animation: subMainBanner-text 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@keyframes subMainBanner-text {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .img{
+        display: none;
+    }
+    .text {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 459px;
+    
+        background-color: #F8F3E8;
+        position: relative;
+        color: #004236;
+        font-size: 50px;
+    }
+    
+}

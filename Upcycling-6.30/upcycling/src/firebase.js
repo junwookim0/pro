@@ -3,17 +3,16 @@ import { getDatabase } from "firebase/database";
 import { getFirestore , collection, addDoc} from "firebase/firestore"
 import { GoogleAuthProvider, signInWithPopup,
     FacebookAuthProvider,createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,signOut,getAuth,GithubAuthProvider
+    signInWithEmailAndPassword,signOut,getAuth,GithubAuthProvider,updateProfile
 } from 'firebase/auth';
 import { getStorage } from "firebase/storage";
+
+
 const firebaseConfig = {
-
-    //파이어베이스 인증키랑 지울게요! -지은-
     
-
 };
-// Initialize Firebase 
 
+// Initialize Firebase 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
@@ -48,10 +47,22 @@ const signIn = async (email, password) => {
         return {error: error.message}
     }
 };
+//프로필설정
+
+const ProfileUpdate = async ( displayName, photoURL ) => {
+    await updateProfile(auth.currentUser, {
+        displayName , photoURL
+    }).then(() => {
+        console.log("프로필 업데이트");
+    }).catch((error) => {
+        console.log(error);
+    });
+}
 //구글로그인
 const gprovider = new GoogleAuthProvider();
     gprovider.setCustomParameters({'display': 'popup'});
     const signInWithGoogle = () => signInWithPopup(auth, gprovider);
+    
 
 //페이스북 로그인
 const fprovider = new FacebookAuthProvider();
@@ -62,7 +73,6 @@ const fprovider = new FacebookAuthProvider();
 const gitprovider = new GithubAuthProvider();
     gitprovider.setCustomParameters({'display': 'popup'});
     const signInWithGithub = () => signInWithPopup(auth, gitprovider);
-
 
 const SignOut = async() => {
     try {
@@ -77,5 +87,4 @@ const storage = getStorage(app);
 
 export { app , auth , db , 
     firestore ,storage, signIn , signUp, SignOut,
-    signInWithGoogle, signInWithFacebook ,signInWithGithub};
-    
+    signInWithGoogle, signInWithFacebook ,signInWithGithub, ProfileUpdate};

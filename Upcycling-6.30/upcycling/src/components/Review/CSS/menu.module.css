@@ -1,0 +1,68 @@
+@value makerWhite,makerGrey,makerPink,makerLightGrey, makerDarkGreen, makerGreen from '../../Review/common/color.css';
+@value fontEn from '../../Review/common/font.css';
+
+.comments_ellipsis {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    border: none;
+    margin-right: 1rem;
+    color: makerGrey;
+    font-size: 1.2rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.comments_ellipsis_container {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: makerWhite;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid makerLightGrey;
+    border-radius: 10px;
+    width: 110px;
+    height: 100px;
+    z-index: 1;
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.comments_ellipsis_container_none {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: makerWhite;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid makerLightGrey;
+    border-radius: 10px;
+    width: 110px;
+    height: 100px;
+    z-index: 1;
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+
+
+.comments_ellipsis_container > button {
+    position: relative;
+    cursor: pointer;
+    top: 15px;
+    border: none;
+    margin: auto;
+    width: 100%;
+    height: 35%;
+    background-color: transparent;
+}
+
+.comments_ellipsis_container > button:hover {
+    background-color: #EEEDED;
+    
+}

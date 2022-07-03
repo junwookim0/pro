@@ -1,0 +1,43 @@
+.Event_box{
+    background-color: white;
+}
+.Event_box_h1{
+    padding-top: 50px;
+    color: #004236;
+    text-align: center;
+}
+.ReactGridGallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+#EventImg_size .ReactGridGallery .ReactGridGallery_tile{
+    width: 350px;
+    height: 450px;
+    margin: 20px !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#EventImg_size .ReactGridGallery .ReactGridGallery_tile .ReactGridGallery_tile-viewport {
+    overflow: visible !important;
+}
+#EventImg_size .ReactGridGallery .ReactGridGallery_tile .ReactGridGallery_tile-viewport img{
+    width: 350px;
+    height: 450px !important;
+    overflow: visible !important;
+    /*object-fit: cover;*/
+}
+.ReactGridGallery_tile-icon-bar{
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+    .ReactGridGallery{
+        margin-left: 72px;
+    }
+}

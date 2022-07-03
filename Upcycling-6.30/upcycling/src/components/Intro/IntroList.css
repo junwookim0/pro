@@ -1,0 +1,254 @@
+/*인트로1단*/
+.cInnerContent{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'LeferiPoint-WhiteObliqueA';
+ /* background-color: #004236;*/
+}
+/*cInnerContent_1*/
+.cInnerContent_1{
+  background-color: #92af94;
+  display: flex;
+  height: 700px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.cInnerContent_1_left{
+  align-items: center;
+  margin-top: -100px;
+  margin-right: 50px;
+  width: 400px;
+}
+
+.intro_point {
+  color: #004236;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+.cInnerContent_1_left > h3{
+  color: #004236;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.cInnerContent_1_left > p{
+  font-size: 1rem;
+  width: 35rem;
+}
+
+.sub_point {
+  color: #004236;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.8rem;
+  font-weight: bold;
+}
+
+.cInnerContent_1_right {
+  margin-left: 50px;
+  margin-top: 240px;
+}
+.cInnerContent_1_right img{
+  border-radius: 25px;
+  position: relative;
+  left: 70px;
+  max-width: 500px;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/*인트로 2단*/
+.cInnerContent_2{
+  position: relative;
+  top: 0vh;
+  height: 47rem;
+  text-align: center;
+  line-height:10px;
+  color: #004236;
+  background-color: #F8F3E8;
+}
+.cInnerContent_2_title{
+  padding-top:8rem;
+  line-height: 50px;
+  display: block;
+}
+.cInnerContent_2_title  p{
+  font-size: 20px;
+  color: #004236;
+  font-weight: bolder;
+}
+.cInnerContent_2_title h1{
+  font-size: 35px;
+}
+.cInnerContent_2_title span{
+  color:  #D6CE4B;
+  font-size: 40px;
+}
+/*2단 아이콘 */
+.cInnerContent_list svg {
+  width: 50px;
+  height: 50px;
+  font-size: 3em;
+  color: #D6CE4B;
+  background-color: #004236;
+  padding: 1.3rem;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  margin: auto;
+}
+.cInnerContent_2_1{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.cInnerContent_list{
+  margin: 2rem;
+  list-style-type: none;
+  position: relative;
+  top: 30px;
+  padding: 25px;
+  max-width: 20rem;
+  height: 226px;
+}
+
+.cInnerContent_2_1 h3{
+  line-height: 1.6rem;
+  font-size: 1.5rem;
+  color: #3A857E;
+  margin-bottom: 2rem;
+  }
+
+.cInnerContent_2_1 p{
+line-height: 1.2rem;
+}
+
+
+/* 업사이클링 대해*/
+.about_page{
+  background-color: #004236;
+  color:  white;
+  display: flex;
+  flex-direction: column;
+}
+/* .about_page_title{
+  background-color: #F8F3E8;
+  font-size: 30px;
+  text-align: center; 
+  height: 20rem;
+  width: 100%;
+  margin: auto;
+}
+
+.about_logo {
+  background-color: #004236;
+  color: #D6CE4B;
+  width: 32rem;
+  margin: auto;
+  padding: 0.5rem;
+}
+
+.about_page_title p{
+  font-size: 28px;
+  font-weight: bolder;
+  margin-top: 1rem;
+  color: #D0C9C0;
+} */
+
+
+
+
+/* about page 안의 컨텐츠 */
+
+
+.about_page_box_odd, .about_page_box_even{
+  display: flex;
+  flex-direction: row;
+}
+
+.about_page_box_odd {
+  flex-direction: row-reverse
+}
+
+.about_intro_img{
+  width: 50%;
+  height: 42rem;
+  object-fit: cover;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.about_intro_card{
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+.about_intro_title {
+  color: #D6CE4B;
+  font-size: 3.5rem;
+  font-weight: lighter;
+  font-family: 'Black Han Sans', sans-serif;;
+}
+
+.about_intro_text {
+  width: 60%;
+  font-size: 1rem;
+  margin: auto;
+  word-break:keep-all;
+  padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .about_page_box_odd{
+    display: flex;
+
+  }
+  .about_page_box_even{
+    flex-direction: column-reverse;
+  }
+  .about_page_box_odd {
+    flex-direction: column-reverse;
+  }
+
+  .about_intro_img{
+    width: 100%;
+    height: 38rem;
+    object-fit: cover;
+    margin: 0;
+    opacity: 0.85;
+  }
+
+  .about_intro_card{
+    text-align: center;
+    margin: auto;
+    padding-bottom: 46px;
+    width: 100%;
+  }
+  .cInnerContent_1{
+    display: block;
+  }
+  .cInnerContent_1_left{
+    margin-left: 50px;
+    padding-top: 200px;
+  }
+  .cInnerContent_1_right{
+    display: none;
+  }
+  .cInnerContent_2{
+    height: 1600px;
+  }
+  .cInnerContent_2_1{
+    display:block;
+  }
+  .cInnerContent_list{
+    margin: auto;
+    height: 310px;
+  }
+}

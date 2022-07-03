@@ -1,0 +1,53 @@
+.titleBox {
+    border-bottom: 1px double lightgray;
+    border-top: 1px solid black;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+
+}
+
+.title {
+    text-align: center;
+}
+
+.commentList {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    width: 70%;
+    height: 150px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.612);
+    margin-bottom: 1rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+
+.img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+.comment_container {
+    width: 100%;
+    margin-left: 1rem;
+}
+
+
+.commten_info {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0.3rem;
+}
+
+.date {
+    margin: 0;
+}
+
+.date, .reviewTitle {
+    color: grey;
+    margin: 0;
+}

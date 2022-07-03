@@ -1,12 +1,15 @@
 import './App.css';
 import { Route, Routes, useNavigate } from "react-router-dom";
-import Home from './components/Intro/IntroList';
-import Contents from './page/Contents';
+/* navbar link*/
+import Home from './page/Home';
+import About from './components/Intro/IntroList';
 import FirstMain from './page/FirstMain/FirstMain';
 import EventIntro from './components/Intro/EventIntro';
 import SignIn from './components/login/SignIn';
 import Mypage from './page/Mypage';
+import Abup from './page/Abup';
 import SignUp from './components/login/SignUp';
+/* firebase api */
 import { useContext } from "react";
 import AuthContext from "./components/context/AuthContext";
 /*🍎 지은 import*/
@@ -23,14 +26,17 @@ import DealRevise from './components/Deal/DealRevise';
 /* 🥑 박선주 import 끝 */
 import NotFound from './page/NotFound';
 import {useState, useEffect} from 'react';
-
+/* app.js > firestore(db) */ 
 import { firestore } from './firebase';
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+/*footer*/
+import Footer from './components/Intro/footer';
 
 function App({reviewRepository, commentRepository, imageUploader, likeRepository}) {
-  
+  /*firebase api 에서 user값 불러오기*/
   const { user } = useContext(AuthContext);
   const userId = user ? user.uid : null
+  /*useNavigate로 컴포넌트간 이동 주소 사용*/
   const navigator = useNavigate();
 
 
@@ -40,11 +46,10 @@ const createAndUpdateReview = (review,userId) => {
 }
 
 //🍎지은 : delete review 
-const deleteReview = (deletedItem) => {
+const deleteReview = (deletedItem,currentComment) => {
 
   if(window.confirm("게시글을 정말 삭제 하시겠습니까?")){
-    reviewRepository.removeReview(userId,deletedItem)
-    imageUploader.delete(deletedItem.reviewIMG)
+    reviewRepository.removeReview(userId,deletedItem,currentComment)
     alert('게시글을 삭제했습니다.');
     navigator('/reviews')
   }
@@ -98,35 +103,33 @@ const removeLike = (userId,review) => {
         setDeals(dealArray);
       })
   }, []);
-
+  
 
   return (
     <div className="App">
         <Routes>
-          <Route path="/" element={!user?<FirstMain/> : <Home/>}></Route>
-          <Route path="/home" element={user ? <Home /> :<SignIn/> }></Route>
-          <Route path="/contents" element={<Contents/>}></Route>
-          <Route path="/mypage" element={< Mypage deals={deals}/>}></Route>
+          <Route path="/" element={!user?<FirstMain/> : <Home reviewRepository={reviewRepository}/>}></Route>
+          <Route path="/home" element={user ? <Home reviewRepository={reviewRepository} /> :<SignIn/> }></Route>
+          <Route path="/about" element={<About/>}></Route>
+          <Route path="/aboutupcycling" element={<Abup/>}></Route>
+          <Route path="/mypage" element={< Mypage reviewRepository={reviewRepository} deals={deals}/>}></Route>
           <Route path="/signIn" element={<SignIn/>}></Route>
           <Route path="/signUp" element={<SignUp/>}></Route>
           <Route path="/event" element={<EventIntro />}></Route>
-          
           {/* 🍎윤지은 router */}
           <Route path='/reviews'  element={<ReviewPage reviewRepository={reviewRepository}/>}/>
           <Route path='/reviews/:id' element={<ReviewDetail reviewRepository={reviewRepository} clickLike={clickLike} removeLike={removeLike} createAndUpdateComment={createAndUpdateComment} deleteReview={deleteReview} deleteComment={deleteComment}/>}/>
           <Route path='/reviews/write' element={<ReviewWrite imageUploader={imageUploader} createAndUpdateReview={createAndUpdateReview}/>}/>
           <Route path='/review/revise/:id' element={<ReviewRevise imageUploader={imageUploader} createAndUpdateReview={createAndUpdateReview} />}/>
-
           {/* 🥑 박선주 route 시작 */}
-          <Route path='/deals' element={<DealPage deals={deals}/>} />
-          <Route path='/deals/:createdAt' element={<DealDetail deals={deals}/>} />
-          <Route path='/deals/write' element={<DealWrite/>} />
+          <Route path='/deals' element={<DealPage deals={deals} />} />
+          <Route path='/deals/:createdAt' element={<DealDetail deals={deals} />} />
+          <Route path='/deals/write' element={<DealWrite />} />
           <Route path='/deals/revise/:createdAt' element={<DealRevise />} />
           {/* 🥑 박선주 route 끝 */}
           <Route path="/not-found" element={<NotFound />}></Route>
         </Routes>
-        <hr></hr>
-        <footer>Copyright ⓒ uptown All rights reserved</footer>
+        <Footer/>
     </div>
   );
 }

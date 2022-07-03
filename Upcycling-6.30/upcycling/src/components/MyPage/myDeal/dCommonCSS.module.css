@@ -1,0 +1,92 @@
+.myReview {
+    color: #004236;
+    margin-bottom: 0;
+}
+
+/*contents가 없을때*/
+.contents_empty {
+    margin-top: 0;
+    background-color: #F8F3E8;
+    margin: auto;
+    width: 70%;
+    height: 22rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my_review_titleBox {
+    border-bottom: 1px double lightgray;
+    border-top: 1px solid black;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+.my_review_title {
+    text-align: center;
+}
+
+
+/*콘텐츠가 있을 때*/
+.my_review_container {
+    margin: 3rem 2rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    background-color: #F8F3E8;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.my_review_reviewImg {
+    width: 18rem;
+    height: 18rem;
+    object-fit: cover;
+}
+
+.my_review_title {
+    font-size: 1.3rem;
+    margin: 0.8rem;
+    color: #004236;
+}
+
+.my_review_name {
+    color: #3A857E;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.my_review_email {
+    margin: 0;
+    color: grey;
+}
+
+.my_review_likeBox {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.my_review_icon {
+    margin: 0;
+    padding:0;
+    flex: 1;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    background-color: #D6CE4B;
+    color: #004236;
+}
+
+.my_review_amount {
+    flex: 3;
+    margin: 0;
+    padding:0;
+    height: 2rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    background-color: #004236;
+    color: white;
+}

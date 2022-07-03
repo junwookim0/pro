@@ -1,0 +1,32 @@
+.is-active {
+    text-align: center;
+    font-size: 20px;
+    height: 100px;
+    width: 200px;
+    color:#004236;
+    border: 1px solid #004236;
+    background-color: white;
+    line-height: 100px;
+    font-weight: bold;
+}
+.not {
+    text-align: center;
+    font-size: 20px;
+    height: 100px;
+    width: 200px;
+    color: lightgrey;
+    background-color: #F8F3E8;
+    border: 1px solid #F8F3E8;
+    line-height: 100px;
+}
+
+.tabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 2rem;
+}

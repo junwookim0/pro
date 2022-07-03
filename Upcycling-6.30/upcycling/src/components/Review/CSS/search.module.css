@@ -1,0 +1,46 @@
+@value makerMidGrey,makerDarkGreen, makerWhite,makerGrey,makerPink,makerLightGrey from '../../Review/common/color.css';
+@value fontEn from '../../Review/common/font.css';
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.container {
+    border: 1px solid makerGrey;
+    width: 26rem;
+    padding: 0.8rem;
+    background-color: makerWhite;
+
+}
+
+.title {
+    font-family: fontEn;
+    margin-right: 0.8rem;
+}
+
+.container input {
+    border: none;
+    width: 13rem;
+    padding: 0.5rem;
+    margin: 0;
+
+}
+
+.search {
+    border: 0;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    background-color: transparent;
+    color: makerDarkGreen;
+    cursor: pointer;
+}
+
+.search i {
+    padding: 0;
+    margin: 0;
+}
+
+/*반응형*/
+@media screen and (max-width: 900px) {
+   
+}

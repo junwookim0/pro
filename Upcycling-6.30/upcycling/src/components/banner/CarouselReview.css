@@ -1,0 +1,139 @@
+.contents_swiper .swiper {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.contents_swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.contents_swiper .swiper-slide img {
+  display: block;
+  width: 18rem;
+  height: 18rem;
+  object-fit: cover;
+}
+.contents_swiper .swiper-slide:hover {
+  transform: scale(1.05);
+  transition: transform 250ms linear;
+  cursor: pointer;
+}
+
+.contents_swiper .append-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contents_swiper .append-buttons button {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #007aff;
+  color: #007aff;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+  font-size: 13px;
+}
+.contents_swiper .Carousel_text{
+  text-align: center;
+  font-size: 32px;
+  color: #004236;
+}
+.contents_swiper .swiper-button-next {
+  background: url('../../../public/circle-chevron-right-solid.svg') no-repeat;
+  background-position: center;
+  font-size: 30px;
+}
+
+.contents_swiper .swiper-button-prev {
+  background: url('../../../public/circle-chevron-left-solid.svg') no-repeat;
+  background-position: center;
+}
+.contents_swiper .swiper-button-next::after,
+.contents_swiper .swiper-button-prev::after {
+  display: none;
+}
+
+.Carousel_text{
+  margin-top: 50px;
+}
+
+
+/*content CSS*/
+
+.home_review_container {
+    margin: 3rem 2rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    background-color: #F8F3E8;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.home_review_reviewImg {
+    width: 18rem;
+    height: 18rem;
+    object-fit: cover;
+}
+
+.Home_review_title {
+    font-size: 1.3rem;
+    margin: 0.8rem;
+    color: #004236;
+}
+
+.home_review_name {
+    color: #3A857E;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.home_review_email {
+    margin: 0;
+    color: grey;
+}
+
+.home_review_likeBox {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.home_review_icon {
+    margin: 0;
+    padding:0;
+    flex: 1;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    background-color: #D6CE4B;
+    color: #004236;
+}
+
+.home_review_amount {
+    flex: 3;
+    margin: 0;
+    padding:0;
+    height: 2rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    background-color: #004236;
+    color: white;
+}

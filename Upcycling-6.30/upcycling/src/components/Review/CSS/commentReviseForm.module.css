@@ -1,0 +1,99 @@
+@value makerWhite,makerLime, makerGrey,makerPink,makerLightGrey, makerMidGrey, makerDarkGreen, makerGreen from '../../Review/common/color.css';
+@value fontEn from '../../Review/common/font.css';
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.container {
+    margin-top: 0.8rem;
+    border: 4px solid makerLightGrey;
+    border-radius: 10px;
+    width: 100%;
+    height: 12rem;
+    display: block;
+}
+
+.container_none {
+    display: none;
+}
+
+.user {
+    margin-left: 1.1rem;
+}
+
+.user > span {
+    font-size: 0.9rem;
+    color: makerGrey;
+}
+
+.comment_form {
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+
+}
+.textarea {
+    width: 85%;
+    height: 110px;
+    border: none;
+    resize: none;
+}
+
+.button {
+    border: none;
+    color: makerGrey;
+    background-color: transparent;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+
+
+.button_ok {
+    border: none;
+    color: makerWhite;
+    background-color: makerDarkGreen;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.button_ok:hover {
+    color: makerDarkGreen;
+    background-color: makerLime;
+}
+
+/*반응형*/
+@media screen and (max-width: 900px) {
+    .textarea {
+        margin-left: 1rem;
+    }
+
+    .buttons {
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: row;
+        width: 13rem;
+        font-weight: 400;
+    }
+
+    .button {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+    .button_ok {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+}

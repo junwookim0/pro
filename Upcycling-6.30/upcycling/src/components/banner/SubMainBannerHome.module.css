@@ -1,0 +1,65 @@
+/* subMainBanner*/
+.subMainBanner_img{
+    background-image: linear-gradient(rgba(161, 196, 197, 0.5), rgba(83, 116, 106, 0.5)), url("../../../public/images/bannerHome2.jpg");
+    background-position: bottom;
+    background-size: 100vw;
+    margin-top: 100px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.subMainBanner_text {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    margin-top: 150px;
+    margin-left: 120px;
+    flex-direction: column;
+}
+.subMainBanner_text div p {
+    font-size: 25px;
+    font-weight: 500;
+}
+.subMainBanner_text {
+    animation: subMainBanner-text 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+.movediv {
+    background-color: hsl(169, 100%, 13%);
+    margin-bottom: 5px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.movediv a{
+    font-size: 18px;
+}
+.movediv:hover {
+    background-color: #D6CE4B;
+}
+
+.movediv a:link{
+    color: white;
+}
+.movediv a:visited{
+    color: white;
+}
+.movediv a:hover{
+    color:  #004236;
+}
+@keyframes subMainBanner-text {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}

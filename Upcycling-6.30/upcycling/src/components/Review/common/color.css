@@ -1,0 +1,29 @@
+@value makerBlack: black;
+@value makerWhite: white;
+@value makerLightGrey: #EEEDED;
+@value makerLightPink: #ffeae8;
+@value makerMidGrey: ##E5E5E5;
+@value makerGrey: #999999;
+@value makerPink: pink;
+@value makerShadow: rgba(217, 217, 217, 1);
+@value makerDarkGreen: #004236;
+@value makerGreen: #3A857E;
+@value makerLime: #D6CE4B;
+
+@value makerBeige: #F8F3E8;
+@value makerDarkBeige: #D0C9C0;
+
+/*컴포넌트에서 사용할때 
+
+@value makerGrey,makerLightGrey from '../Review/common/color.css';
+*/
+
+
+@value mainGrren: #004236;
+@value mainBeige: #F8F3E8;
+@value mainLightGreen: #3A857E;
+
+
+
+/*하늘 날던 비행기가 '네임 태그'로
+스크린·택배 포장지가 '가방'으로*/
