@@ -9,7 +9,14 @@ import { getStorage } from "firebase/storage";
 
 
 const firebaseConfig = {
-    
+    apiKey: "AIzaSyBg-siU5D0pRcjFzkFvco6QkhN1L_sdYMc",
+    authDomain: "upcycling-cfaac.firebaseapp.com",
+    databaseURL: "https://upcycling-cfaac-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "upcycling-cfaac",
+    storageBucket: "upcycling-cfaac.appspot.com",
+    messagingSenderId: "315903748780",
+    appId: "1:315903748780:web:860f4e1d3059a71db78d09",
+    measurementId: "G-BNTPVWJ575"
 };
 
 // Initialize Firebase 

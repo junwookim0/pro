@@ -1,0 +1,6 @@
+.bar{
+    display: none;
+}
+.bar.active{
+    display: block;
+}

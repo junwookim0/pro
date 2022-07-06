@@ -1,0 +1,92 @@
+:root {
+    --red-color:rgb(189, 15, 15);
+    --yellow-color :  rgb(246, 203, 59);
+    --ligthgray-color : rgb(214,211,214);
+}
+body {
+    background-image: url(../../public/galaxy-gfd78d24f9_1280.png);
+    height: 100vh;
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+/*전체창*/
+.home_box{
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    height: 800px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* 영화 선택창*/
+.movie_incontainer {
+    border: solid var(--red-color);
+    background-color: var(--red-color);
+    padding: 10px 10px;
+    border-radius: 12px;
+}
+.movie_incontainer label {
+    color: white;
+    padding: 1px 46px;
+}
+/*좌석선택 icon*/
+.movie-seat-ex{
+    display: flex;
+}
+.available span{
+    color: var(--yellow-color);
+}
+.selected span{
+    color: var(--red-color);
+}
+.occupied span{
+    color: var(--ligthgray-color);
+}
+.movie_poster {
+    float: left;
+    padding-left: 30px;
+}
+.screen {
+    background-color: rgba(0, 0, 0, 0.432);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 60px;
+}
+/*poster*/
+.poster1 {
+    background-image: url(http://kiramonthly.com/wp-content/uploads/2020/02/2.jpg);
+    background-size: cover;
+    border-radius: 12px;
+    height: 650px;
+    width: 450px;
+}
+.seat{
+    display: grid;
+    grid-template-columns: 20px 60px 20px 60px 20px 60px 20px 60px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar{
+    color: var(--yellow-color);
+}
+.bar_active{
+    color: var(--red-color);
+}
+@media screen and (max-width: 980px) {
+    .home_box {
+        width: 700px;
+    }
+    .movie_poster{
+        display: none;
+    }
+
+    .movie_container{
+        width: 600px;
+    }
+}
