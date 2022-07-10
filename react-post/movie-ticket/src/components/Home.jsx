@@ -57,12 +57,22 @@ const Menu = ({ id,  isToggle }) => {
                     <span className="material-icons">square</span>
                 </div>
             </div>
-                <div>
+                <div className={toggle ? 'pri_active': 'pri'}>
                     {pri}
                 </div>
         </div>
     );
 };
+const Check = ({ pri  })=>{
+    const [sumpri, setsumpri] = useState(pri);
+    return(
+        <div>
+            <div>
+                {sumpri}
+            </div>
+        </div>
+    )
+}
 
 function Home() {
     const [list] = useState(db);
@@ -112,6 +122,9 @@ function Home() {
                                 </Menu>
                             ))}
                         </div>
+                    </div>
+                    <div>
+                        <Check></Check>
                     </div>
                 </div>
             </div>

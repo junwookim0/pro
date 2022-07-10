@@ -78,6 +78,10 @@ body {
 .bar_active{
     color: var(--red-color);
 }
+.pri{
+    display: none;
+}
+
 @media screen and (max-width: 980px) {
     .home_box {
         width: 700px;
