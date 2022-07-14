@@ -21,7 +21,16 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.movie_poster {
+    float: left;
+    margin: auto;
+
+}
 /* 영화 선택창*/
+.movie_container{
+    margin: auto;
+    
+}
 .movie_incontainer {
     border: solid var(--red-color);
     background-color: var(--red-color);
@@ -35,6 +44,9 @@ body {
 /*좌석선택 icon*/
 .movie-seat-ex{
     display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
 }
 .available span{
     color: var(--yellow-color);
@@ -45,16 +57,12 @@ body {
 .occupied span{
     color: var(--ligthgray-color);
 }
-.movie_poster {
-    float: left;
-    padding-left: 30px;
-}
 .screen {
     background-color: rgba(0, 0, 0, 0.432);
     padding: 12px;
     border-radius: 12px;
     text-align: center;
-    margin-top: 60px;
+    
 }
 /*poster*/
 .poster1 {

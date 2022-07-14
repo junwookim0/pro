@@ -15,7 +15,7 @@ const DataProvider = ({ children }) => {
     {
       id: 1,
       product: "책",
-      user: "green",
+      user: "user",
       text: "좋습니다",
       img: null,
     },

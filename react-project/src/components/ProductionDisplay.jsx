@@ -6,6 +6,7 @@ import CommentWriteform from "./CommentWriteform";
 const ProductionDisplay = ({ product }) => {
   const data = useContext(DataContext);
   return (
+    <div>
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" src={require(`../img/${product.img}`)} />
       <Card.Body>
@@ -15,6 +16,7 @@ const ProductionDisplay = ({ product }) => {
         {/** 카드 안에 사용할 모달컴포넌트 */}
         <CommentWriteform />
       </Card.Body>
+
       <Card.Footer>
         {
           // data.state.comments의 값을 바로 쓰지말고 product값과 name 값을 비교해서 사용
@@ -30,6 +32,7 @@ const ProductionDisplay = ({ product }) => {
         }
       </Card.Footer>
     </Card>
-  );
-};
+    </div>
+    );
+  };
 export default ProductionDisplay;
