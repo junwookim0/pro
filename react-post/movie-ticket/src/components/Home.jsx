@@ -48,7 +48,7 @@ const Menu = ({ id,  isToggle }) => {
     const [pri, setPri] = useState([]);
     const onChange = () => {
         setToggle(!toggle);
-        setPri(10);
+        setPri(100);
     };
     return (
         <div>
